@@ -1,30 +1,27 @@
 @font-face {
   font-family: "Satoshi Bold";
-  src: url("/SatoshiBold.otf");
+  src: url("/fonts/SatoshiBold.otf");
 }
-@font-face {
-  font-family: "Satoshi Bold";
-  src: url("/SatoshiBold.otf");
-}
+
 @font-face {
   font-family: "Satoshi Medium";
-  src: url("/SatoshiMedium.otf");
+  src: url("/fonts/SatoshiMedium.otf");
 }
 @font-face {
   font-family: "Campton Bold";
-  src: url("/CamptonBold.ttf");
+  src: url("/fonts/CamptonBold.ttf");
 }
 @font-face {
-  font-family: "Campton Bold";
-  src: url("/CamptonLight.ttf");
+  font-family: "Campton Light";
+  src: url("/fonts/CamptonLight.ttf");
+}
+@font-face {
+  font-family: "Graphik Semibold";
+  src: url("/fonts/GraphikSemibold.otf");
 }
 @font-face {
   font-family: "Graphik Regular";
-  src: url("/GraphikRegular.otf");
-}
-@font-face {
-  font-family: "Graphik Regular";
-  src: url("/GraphikRegular.otf");
+  src: url("/fonts/GraphikRegular.otf");
 }
 
 @tailwind base;
