@@ -15,6 +15,10 @@ const MenuIcon = () => {
 
 const Navbar = () => {
   const [isMenuActive, setMenuActive] = useState(false);
+
+  const OpenMenu = () => setMenuActive(true);
+  const CloseMenu = () => setMenuActive(false);
+
   return (
     <>
       <nav className="w-full h-20 border-b px-6 flex items-center justify-between">
@@ -26,11 +30,14 @@ const Navbar = () => {
             Craft.
           </a>
         </div>
-        <button className="h-full aspect-square flex items-center justify-end">
+        <button
+          onClick={OpenMenu}
+          className="h-full aspect-square flex items-center justify-end"
+        >
           <MenuIcon />
         </button>
       </nav>
-      <NavMenu isMenuActive={isMenuActive} setMenuActive={setMenuActive} />
+      <NavMenu isMenuActive={isMenuActive} CloseMenu={CloseMenu} />
     </>
   );
 };
