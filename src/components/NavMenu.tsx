@@ -4,7 +4,7 @@ import { CancelSvg } from "./Svgs";
 
 interface NavProps {
   isMenuActive: boolean;
-  CloseMenu: Event;
+  CloseMenu: any;
 }
 
 const MenuVariants = {
