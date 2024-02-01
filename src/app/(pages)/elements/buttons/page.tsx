@@ -1,5 +1,8 @@
+"use client";
 import PageLayout from "@/app/layouts/PageLayout";
+
 import type { Pageprops } from "@/lib/Interfaces";
+import ButtonCard from "./components/ButtonCard";
 
 const PageOptions: Pageprops = {
   page: "Buttons",
@@ -11,19 +14,14 @@ const Buttons = () => {
   return (
     <PageLayout pageOptions={PageOptions}>
       <section className="w-full h-full grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-      
-        <article className="w-full aspect-square border bg-zinc-100 rounded-xl flex flex-col justify-between">
-          <div></div>
-          <div className="flex justify-end p-4">
-            <button className="font-satoshi-medium">code</button>
-          </div>
-        </article>
-        <article className="w-full aspect-square border bg-zinc-100 rounded-xl flex flex-col justify-between">
-          <div></div>
-          <div className="flex justify-end p-4">
-            <button className="font-satoshi-medium">code</button>
-          </div>
-        </article>
+        <ButtonCard
+          codeBlock={{
+            javascript: "",
+            typescript: "",
+          }}
+        >
+          <button>button</button>
+        </ButtonCard>
       </section>
     </PageLayout>
   );

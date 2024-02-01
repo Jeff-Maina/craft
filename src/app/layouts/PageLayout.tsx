@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { FC } from "react";
 
@@ -42,7 +44,7 @@ const PageLayout: FC<ComponentProps> = ({ children, pageOptions }) => {
           </p>
         )}
       </header>
-      
+
       <section>{children}</section>
     </main>
   );
