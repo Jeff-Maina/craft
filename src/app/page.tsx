@@ -1,4 +1,4 @@
-import { Elements, ElementsData, Sections } from "@/data/AppData";
+import { ElementsData, Sections } from "@/data/AppData";
 import Link from "next/link";
 
 export default function Home() {
