@@ -3,6 +3,7 @@ import { SectionsData } from "@/data/AppData";
 import Link from "next/link";
 
 import type { Pageprops } from "@/lib/Interfaces";
+import ComponentCard from "@/app/layouts/Cards/ComponentCard";
 
 const PageOptions: Pageprops = {
   page: "Sections",
@@ -17,16 +18,12 @@ const Sections = () => {
         <div className="grid gap-5">
           {SectionsData.map((section, index) => {
             return (
-              <Link href={section.sectionPagePath}>
-                <div className="w-full aspect-video border rounded-xl p-4 flex flex-col font-graphik-semibold justify-end">
-                  <p className="text-[#111]">
-                    {section.sectionName}{" "}
-                    <sup className="text-zinc-500 font-campton-bold text-sm">
-                      {section.componentCount}
-                    </sup>{" "}
-                  </p>
-                </div>
-              </Link>
+              <ComponentCard
+                componentName={section.sectionName}
+                componentCount={section.componentCount}
+                pagePath={section.sectionPagePath}
+                key={index}
+              />
             );
           })}
         </div>

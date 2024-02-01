@@ -17,7 +17,14 @@ const Elements = () => {
       <section>
         <div className="grid gap-3 md:grid-cols-2 lg:gap-5">
           {ElementsData.map((element, index) => {
-            return <ComponentCard component={element} key={index} />;
+            return (
+              <ComponentCard
+                componentName={element.elementName}
+                componentCount={element.componentCount}
+                pagePath={element.elementPagePath}
+                key={index}
+              />
+            );
           })}
         </div>
       </section>
