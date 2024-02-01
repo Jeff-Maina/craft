@@ -3,6 +3,7 @@ import { ElementsData } from "@/data/AppData";
 import Link from "next/link";
 
 import type { Pageprops } from "@/lib/Interfaces";
+import ComponentCard from "@/app/layouts/Cards/ComponentCard";
 
 const PageOptions: Pageprops = {
   page: "Elements",
@@ -14,20 +15,9 @@ const Elements = () => {
   return (
     <PageLayout pageOptions={PageOptions}>
       <section>
-        <div className="grid gap-5">
+        <div className="grid gap-3 md:grid-cols-2 lg:gap-5">
           {ElementsData.map((element, index) => {
-            return (
-              <Link href={element.elementPagePath}>
-                <div className="w-full aspect-video border rounded-xl p-4 flex flex-col font-graphik-semibold justify-end">
-                  <p className="text-[#111]">
-                    {element.elementName}{" "}
-                    <sup className="text-zinc-500 font-campton-bold text-sm">
-                      {element.componentCount}
-                    </sup>{" "}
-                  </p>
-                </div>
-              </Link>
-            );
+            return <ComponentCard component={element} key={index} />;
           })}
         </div>
       </section>
