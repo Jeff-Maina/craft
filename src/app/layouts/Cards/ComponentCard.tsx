@@ -8,6 +8,7 @@ interface ComponentProps {
     componentCount: number;
   };
 }
+
 const ComponentCard: FC<ComponentProps> = ({ component }) => {
   return (
     <Link href={component.elementPagePath}>
