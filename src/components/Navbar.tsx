@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full h-20 border-b px-6 flex items-center justify-between">
+      <nav className="w-full h-20 px-6 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <a
             href="/"
