@@ -1,5 +1,7 @@
+import Button from "@/components/ui/Buttons";
 import { ElementsData, SectionsData } from "@/data/AppData";
 import Link from "next/link";
+import ComponentCard from "./layouts/Cards/ComponentCard";
 
 export default function Home() {
   return (
@@ -30,21 +32,17 @@ export default function Home() {
         <br />
         <section className="grid gap-3 md:grid-cols-2 lg:gap-6">
           {ElementsData.map((element, index) => (
-            <Link href={element.elementPagePath}>
-              <div
-                key={index}
-                className="h-36 md:h-44 lg:h-96 w-full lg:aspect-video border border-zinc-300 rounded-xl p-4 lg:p-6 flex flex-col justify-end font-satoshi-medium hover:border-black transition-all duration-300"
-              >
-                <p className="text-[#333] lg:text-xl">
-                  {element.elementName}{" "}
-                  <sup className="text-zinc-500 font-campton-bold text-sm">
-                    {element.componentCount}
-                  </sup>{" "}
-                </p>
-              </div>
-            </Link>
+            <ComponentCard
+              key={index}
+              componentName={element.elementName}
+              componentCount={element.componentCount}
+              pagePath={element.elementPagePath}
+            />
           ))}{" "}
         </section>
+        <div className="flex justify-center mt-10 lg:mt-20">
+          <Button label="View all" path="/elements" />
+        </div>
       </section>
       <section className="p-6 max-w-7xl m-auto w-full">
         <h1 className="text-center font-graphik-semibold text-2xl tracking-tight lg:text-4xl">
@@ -54,22 +52,17 @@ export default function Home() {
         <br />
         <section className="grid gap-3 md:grid-cols-2 lg:gap-6">
           {SectionsData.map((section, index) => (
-            <Link href={section.sectionPagePath}>
-              <div
-                key={index}
-                className="h-36 md:h-44 lg:h-96 w-full lg:aspect-video border border-zinc-300 rounded-xl p-4 lg:p-6 flex flex-col justify-end font-satoshi-medium hover:border-black transition-all duration-300"
-              >
-                
-                <p className="text-[#333] lg:text-xl">
-                  {section.sectionName}{" "}
-                  <sup className="text-zinc-500 font-campton-bold text-sm">
-                    {section.componentCount}
-                  </sup>{" "}
-                </p>
-              </div>
-            </Link>
+            <ComponentCard
+              key={index}
+              componentName={section.sectionName}
+              componentCount={section.componentCount}
+              pagePath={section.sectionPagePath}
+            />
           ))}{" "}
         </section>
+        <div className="flex justify-center mt-10 lg:mt-20">
+          <Button label="View all" path="/sections" />
+        </div>{" "}
       </section>
     </main>
   );
