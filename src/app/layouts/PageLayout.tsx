@@ -9,7 +9,7 @@ interface ComponentProps {
 
 const PageLayout: FC<ComponentProps> = ({ children, page, componentCount }) => {
   return (
-    <main className="p-6 pt-10 flex flex-col">
+    <main className="p-6 pt-10 flex flex-col min-h-screen">
       <header className="flex flex-col gap-4 border-b pb-10">
         <div className="font-satoshi-medium flex items-center gap-3">
           <Link href="/elements">Elements</Link> {page !== "Elements" && "/"} {page !== "Elements" && page}
