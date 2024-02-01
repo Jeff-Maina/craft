@@ -8,7 +8,7 @@ interface ModalProps {
   }
 }
 
-const CodeModal: FC<ModalProps> = () => {
+const CodeModal: FC<ModalProps> = ({isModalActive,codeBlock}) => {
   return <section></section>;
 };
 
