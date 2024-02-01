@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return ( <main className="flex flex-col gap-16">
-      <header className="h-[35vh] flex flex-col items-center justify-center">
+      <header className="h-[40vh] flex flex-col items-center justify-center">
         <p className="text-[8rem] md:text-[11rem] lg:text-[15rem] tracking-tighter font-campton-bold text-center ">
           craft.
         </p>
@@ -24,7 +24,7 @@ export default function Home() {
       </header>
       <section className="p-6">
         <h1 className="text-center font-graphik-semibold text-2xl tracking-tight">
-          Browse elements
+          Browse elements.
         </h1>
         <br />
         <br />
