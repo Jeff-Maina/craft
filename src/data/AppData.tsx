@@ -37,25 +37,21 @@ export const Sections: Array<SectionProps> = [
   },
 ];
 
-export const Elements: Array<ElementProps> = [
+export const ElementsData: Array<ElementProps> = [
   {
     elementName: "Buttons",
-    elementPagePath: "/buttons",
-    componentCount: 1,
+    elementPagePath: "/elements/buttons",
+    componentCount: 0,
   },
-  {
-    elementName: "Tabs",
-    elementPagePath: "/Tabs",
-    componentCount: 5,
-  },
+
   {
     elementName: "Links",
-    elementPagePath: "/Links",
-    componentCount: 38,
+    elementPagePath: "/elements/links",
+    componentCount: 0,
   },
   {
-    elementName: "Dropdowns",
-    elementPagePath: "/Dropdowns",
-    componentCount: 200,
+    elementName: "Text",
+    elementPagePath: "/elements/text",
+    componentCount: 0,
   },
 ];

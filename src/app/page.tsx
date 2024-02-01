@@ -1,8 +1,9 @@
-import { Elements, Sections } from "@/data/AppData";
+import { Elements, ElementsData, Sections } from "@/data/AppData";
 import Link from "next/link";
 
 export default function Home() {
-  return ( <main className="flex flex-col gap-16">
+  return (
+    <main className="flex flex-col gap-16">
       <header className="h-[50vh] flex flex-col items-center justify-center">
         <p className="text-[8rem] md:text-[11rem] lg:text-[15rem] tracking-tighter font-campton-bold text-center ">
           craft.
@@ -29,8 +30,12 @@ export default function Home() {
         <br />
         <br />
         <section className="flex flex-col gap-3">
-          {Elements.map((element, index) => (
-            <a href={element.elementPagePath} className="h-36 apsect-video border border-zinc-200 rounded p-4 flex flex-col justify-end font-graphik-semibold">
+          {ElementsData.map((element, index) => (
+            <a
+              href={element.elementPagePath}
+              key={index}
+              className="h-36 apsect-video border border-zinc-200 rounded p-4 flex flex-col justify-end font-graphik-semibold"
+            >
               <p className="text-[#111]">
                 {element.elementName}{" "}
                 <sup className="text-zinc-500 font-campton-bold text-sm">
