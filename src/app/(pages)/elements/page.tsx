@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Elements = () => {
   return (
-    <PageLayout page="Elements" componentCount={ElementsData.length}>
+    <PageLayout page="Elements" componentCount={ElementsData.length} category="Elements">
       <section>
         <div className="grid gap-5">
           {ElementsData.map((element, index) => {
