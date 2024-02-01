@@ -12,28 +12,28 @@ interface ElementProps {
 export const SectionsData: Array<SectionProps> = [
   {
     sectionName: "Navbars",
-    sectionPagePath: "/navbars",
-    componentCount: 1,
+    sectionPagePath: "/sections/navbars",
+    componentCount: 0,
   },
   {
     sectionName: "Testimonials",
-    sectionPagePath: "/testimonials",
-    componentCount: 5,
+    sectionPagePath: "/sections/testimonials",
+    componentCount: 0,
   },
   {
     sectionName: "FAQS",
-    sectionPagePath: "/FAQ",
-    componentCount: 38,
+    sectionPagePath: "/sections/FAQ",
+    componentCount: 0,
   },
   {
     sectionName: "Contact",
-    sectionPagePath: "/contact",
-    componentCount: 200,
+    sectionPagePath: "/sections/contact",
+    componentCount: 0,
   },
   {
     sectionName: "Footer",
-    sectionPagePath: "/footer",
-    componentCount: 143,
+    sectionPagePath: "/sections/footer",
+    componentCount: 0,
   },
 ];
 

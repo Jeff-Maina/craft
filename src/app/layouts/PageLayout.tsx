@@ -3,17 +3,15 @@ import { FC } from "react";
 
 interface ComponentProps {
   children: JSX.Element;
-  page: string;
-  componentCount: number;
-  category: string;
+  pageOptions: {
+    page: string;
+    category: string;
+    componentCount: number;
+  };
 }
 
-const PageLayout: FC<ComponentProps> = ({
-  children,
-  page,
-  componentCount,
-  category,
-}) => {
+const PageLayout: FC<ComponentProps> = ({ children, pageOptions }) => {
+  const { page, category, componentCount } = pageOptions;
   const isMainPage = page === "Sections" || page === "Elements";
   return (
     <main className="p-6 pt-10 flex flex-col min-h-screen">
