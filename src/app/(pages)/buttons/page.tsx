@@ -1,7 +1,7 @@
 const Buttons = () => {
   return (
-    <main className="p-6 pt-10">
-      <header className="flex flex-col gap-6">
+    <main className="p-6 pt-10 flex flex-col">
+      <header className="flex flex-col gap-4 border-b pb-10">
         <p className="font-satoshi-medium">Elements / Buttons</p>
         <h1 className="font-satoshi-bold text-5xl text-[#111] tracking-tighter">
           Buttons.
