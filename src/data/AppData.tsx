@@ -9,7 +9,7 @@ interface ElementProps {
   componentCount: number;
 }
 
-export const Sections: Array<SectionProps> = [
+export const SectionsData: Array<SectionProps> = [
   {
     sectionName: "Navbars",
     sectionPagePath: "/navbars",

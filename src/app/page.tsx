@@ -1,4 +1,4 @@
-import { ElementsData, Sections } from "@/data/AppData";
+import { ElementsData, Sections, SectionsData } from "@/data/AppData";
 import Link from "next/link";
 
 export default function Home() {
@@ -53,7 +53,7 @@ export default function Home() {
         <br />
         <br />
         <section className="flex flex-col gap-3">
-          {Sections.map((section, index) => (
+          {SectionsData.map((section, index) => (
             <div className="h-36 apsect-video border border-zinc-200 rounded p-4 flex flex-col justify-end font-graphik-semibold">
               <p className="text-[#111]">
                 {section.sectionName}{" "}
