@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import { FC } from "react";
 
 interface ModalProps {
@@ -6,8 +7,13 @@ interface ModalProps {
   setModalActive: () => void;
 }
 
+
 const Modal: FC<ModalProps> = ({ children, isModalActive, setModalActive }) => {
-  return <section>{children}</section>;
+  return (
+    <AnimatePresence mode="wait">
+      {isModalActive && <section>{children}</section>}
+    </AnimatePresence>
+  );
 };
 
 export default Modal;
