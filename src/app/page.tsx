@@ -31,18 +31,19 @@ export default function Home() {
         <br />
         <section className="flex flex-col gap-3">
           {ElementsData.map((element, index) => (
-            <a
-              href={element.elementPagePath}
-              key={index}
-              className="h-36 apsect-video border border-zinc-200 rounded p-4 flex flex-col justify-end font-graphik-semibold"
-            >
-              <p className="text-[#111]">
-                {element.elementName}{" "}
-                <sup className="text-zinc-500 font-campton-bold text-sm">
-                  {element.componentCount}
-                </sup>{" "}
-              </p>
-            </a>
+            <Link href={element.elementPagePath}>
+              <div
+                key={index}
+                className="h-36 apsect-video border border-zinc-200 rounded p-4 flex flex-col justify-end font-graphik-semibold"
+              >
+                <p className="text-[#111]">
+                  {element.elementName}{" "}
+                  <sup className="text-zinc-500 font-campton-bold text-sm">
+                    {element.componentCount}
+                  </sup>{" "}
+                </p>
+              </div>
+            </Link>
           ))}{" "}
         </section>
       </section>
@@ -54,14 +55,16 @@ export default function Home() {
         <br />
         <section className="flex flex-col gap-3">
           {SectionsData.map((section, index) => (
-            <div className="h-36 apsect-video border border-zinc-200 rounded p-4 flex flex-col justify-end font-graphik-semibold">
-              <p className="text-[#111]">
-                {section.sectionName}{" "}
-                <sup className="text-zinc-500 font-campton-bold text-sm">
-                  {section.componentCount}
-                </sup>{" "}
-              </p>
-            </div>
+            <Link href={section.sectionPagePath}>
+              <div className="h-36 apsect-video border border-zinc-200 rounded p-4 flex flex-col justify-end font-graphik-semibold">
+                <p className="text-[#111]">
+                  {section.sectionName}{" "}
+                  <sup className="text-zinc-500 font-campton-bold text-sm">
+                    {section.componentCount}
+                  </sup>{" "}
+                </p>
+              </div>
+            </Link>
           ))}{" "}
         </section>
       </section>

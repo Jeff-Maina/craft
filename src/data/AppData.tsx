@@ -22,7 +22,7 @@ export const SectionsData: Array<SectionProps> = [
   },
   {
     sectionName: "FAQS",
-    sectionPagePath: "/sections/FAQ",
+    sectionPagePath: "/sections/FAQs",
     componentCount: 0,
   },
   {
