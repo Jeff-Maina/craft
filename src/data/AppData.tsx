@@ -43,7 +43,6 @@ export const ElementsData: Array<ElementProps> = [
     elementPagePath: "/elements/buttons",
     componentCount: 0,
   },
-
   {
     elementName: "Links",
     elementPagePath: "/elements/links",
