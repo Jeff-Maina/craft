@@ -53,7 +53,7 @@ const PageLayout: FC<ComponentProps> = ({ children, pageOptions }) => {
         )}
       </header>
       {/* 😍 */}
-      <section className="px-4">{children}</section>
+      <section className="">{children}</section>
     </main>
   );
 };
