@@ -53,10 +53,10 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
           e.stopPropagation();
           openModal();
         }}
-        className="w-[90%] h-3/4 bg-black max-w-2xl rounded"
+        className="w-[90%] h-3/4 bg-black max-w-xl rounded overflow-hidden"
       >
         <header className="w-full flex items-center  border-b border-[#2a2a2a] font-satoshi-medium text-[#555] justify-between pr-2">
-          <div className="flex items-center text-sm md:text-base">
+          <div className="flex items-center text-sm">
             <button
               className={`px-4 lg:px-6 py-2 hover:bg-[#222] hover:text-[#888] transition-all duration-150 ${
                 isJavaScript && activeClass
@@ -81,12 +81,12 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
             {buttonSvg}
           </button>
         </header>
-        <div>
+        <div className="p-3 h-full pb-10">
           <SyntaxHighlighter
-            showLineNumbers
+            // showLineNumbers
             language="javascript"
             style={nord}
-            className="codeHighlighter"
+            className="codeHighlighter !text-xs h-full selection:bg-yellow-500 selection:text-black"
           >
             {currentLanguage}
           </SyntaxHighlighter>

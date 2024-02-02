@@ -35,3 +35,8 @@ body::-webkit-scrollbar {
 .codeHighlighter {
   background-color: transparent !important;
 }
+
+.codeHighlighter::-webkit-scrollbar {
+  background-color: transparent;
+  
+}
