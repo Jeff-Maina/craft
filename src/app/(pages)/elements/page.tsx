@@ -36,13 +36,13 @@ const Dropdown: FC<dropdownprops> = ({ isDropDownActive, closeDropDown }) => {
           initial="initial"
           animate="active"
           exit="inactive"
-          className="absolute top-full right-0 bg-zinc-50 w-full border overflow-hidden border-zinc-200/60 flex flex-col items-start divide-y divide-zinc-200/60"
+          className="absolute top-[120%] right-0 bg-zinc-50 w-full border overflow-hidden border-zinc-300 flex flex-col items-start divide-y divide-zinc-200/60"
         >
           {ElementsData.map(({ elementName, elementPagePath }, index) => {
             return (
               <Link href={elementPagePath} className="w-full">
                 <div
-                  className="p-4 pl-8 text-start w-full"
+                  className="p-4 lg:p-6 text-sm md:text-base lg:text-lg hover:bg-black transition-all duration-150 hover:text-white pl-8 text-start w-full"
                   key={index}
                   onClick={closeDropDown}
                 >
@@ -61,12 +61,12 @@ const Header = () => {
   const toggleDropDown = () => setDropDownActive(!isDropDownActive);
   const closeDropDown = () => setDropDownActive(false);
   return (
-    <div className="sticky top-4 z-10 font-satoshi-medium">
-      <div className="h-14 border  divide-x divide-zinc-200/60 border-zinc-200/60 bg-white">
+    <div className="sticky top-4 z-10 font-satoshi-medium max-w-xs">
+      <div className="h-14 lg:h-16 border  divide-x divide-zinc-200/60 border-zinc-200/60 bg-white">
         <div className="w-full h-full relative">
           <button
             onClick={toggleDropDown}
-            className="h-full w-full flex items-center justify-center gap-3 px-4 bg-zinc-50"
+            className="h-full w-full text-sm md:text-base lg:text-lg flex items-center justify-center gap-3 px-4 bg-zinc-50"
           >
             All components
             <ChevronLeft
