@@ -51,10 +51,10 @@ const Elements = () => {
         <div className="grid w-full md:grid-cols-2 divide-y divide-zinc-200/60 border-t border-b border-zinc-200/60">
           {ElementsData.map((element, index) => {
             return (
-              <div className="h-44 w-full p-4 flex flex-col justify-end">
-                <p className="font-satoshi-medium text-black">
+              <div className="h-52 w-full p-4 flex flex-col justify-end">
+                <p className="font-satoshi-bold text-lg text-black">
                   {element.elementName}
-                  <sup>{element.componentCount}</sup>
+                  <sup className="text-zinc-500">{element.componentCount}</sup>
                 </p>
               </div>
             );
