@@ -11,6 +11,7 @@ import type { Pageprops } from "@/lib/Interfaces";
 // component imports;
 import PageLayout from "@/app/layouts/PageLayout";
 import { opacityVariants } from "@/lib/animations";
+import Link from "next/link";
 
 // ts stuff;
 const PageOptions: Pageprops = {
@@ -34,17 +35,19 @@ const Dropdown: FC<dropdownprops> = ({ isDropDownActive, closeDropDown }) => {
           initial="initial"
           animate="active"
           exit="inactive"
-          className="absolute top-[120%] right-0 bg-white w-full border overflow-hidden border-zinc-200/60 flex flex-col items-start divide-y divide-zinc-200/60"
+          className="absolute top-full right-0 bg-zinc-50 w-full border overflow-hidden border-zinc-200/60 flex flex-col items-start divide-y divide-zinc-200/60"
         >
-          {ElementsData.map(({ elementName }, index) => {
+          {ElementsData.map(({ elementName, elementPagePath }, index) => {
             return (
-              <button
-                className="p-4 pl-8 text-start w-full"
-                key={index}
-                onClick={closeDropDown}
-              >
-                {elementName}
-              </button>
+              <Link href={elementPagePath} className="w-full">
+                <div
+                  className="p-4 pl-8 text-start w-full"
+                  key={index}
+                  onClick={closeDropDown}
+                >
+                  {elementName}
+                </div>
+              </Link>
             );
           })}
         </motion.div>
@@ -57,12 +60,12 @@ const Header = () => {
   const toggleDropDown = () => setDropDownActive(!isDropDownActive);
   const closeDropDown = () => setDropDownActive(false);
   return (
-    <div className="sticky top-0 z-10 font-satoshi-medium">
+    <div className="sticky top-4 z-10 font-satoshi-medium">
       <div className="h-14 border  divide-x divide-zinc-200/60 border-zinc-200/60 bg-white">
         <div className="w-full h-full relative">
           <button
             onClick={toggleDropDown}
-            className="h-full w-full flex items-center justify-center gap-3 px-4"
+            className="h-full w-full flex items-center justify-center gap-3 px-4 bg-zinc-50"
           >
             All components
             <ChevronLeft
@@ -82,8 +85,6 @@ const Header = () => {
 };
 
 const Elements = () => {
-  const [activeElement, setActiveElement] = useState("All components");
-
   return (
     <PageLayout pageOptions={PageOptions}>
       <section className="px-4">
