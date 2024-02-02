@@ -28,25 +28,27 @@ const NavMenu: FC<NavProps> = ({ isMenuActive, CloseMenu }) => {
           initial="initial"
           animate="active"
           exit="inactive"
-          className="w-screen h-screen top-0 left-0 fixed bg-[#1a1a1a] p-6 flex flex-col gap-16"
+          className="w-screen h-screen top-0 left-0 fixed bg-white z-50 flex flex-col gap-16"
         >
-          <header className="flex justify-end">
+          <header className="flex justify-end border-b">
             <button
               onClick={CloseMenu}
-              className="size-16 rounded-full border border-green-700 grid place-items-center"
+              className="size-20 border-l grid place-items-center"
             >
-              <CancelSvg className="h-[25px] w-[25px] fill-green-200" />
+              <CancelSvg className="h-[25px] w-[25px] fill-black" />
             </button>
           </header>
-          <div className="">
-            <ul className="w-full text-green-200 font-satoshi-bold text-4xl gap-5 flex flex-col">
+          <div className="p-6">
+            <ul className="w-full text-black font-satoshi-bold text-4xl gap-5 flex flex-col">
               <li className="">Components.</li>
               <li className="">Sections.</li>
               <li className="">Elements.</li>
               <li className="">Pages.</li>
             </ul>
           </div>
-          s
+          <footer className="absolute bottom-0 p-6">
+            <p className="font-satoshi-medium">Craft</p>
+          </footer>
         </motion.section>
       )}
     </AnimatePresence>
