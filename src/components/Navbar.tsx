@@ -8,9 +8,8 @@ import { DarkModeSvg } from "./Svgs";
 const MenuIcon = () => {
   return (
     <div className="flex flex-col gap-[5px]">
-      <div className="w-6 h-[2px] rounded-full bg-[#2a2a2a]"></div>
-      <div className="w-6 h-[2px] rounded-full bg-[#2a2a2a]"></div>
-      <div className="w-6 h-[2px] rounded-full bg-[#2a2a2a]"></div>
+      <div className="w-6 h-[2px] rounded-full bg-black"></div>
+      <div className="w-6 h-[2px] rounded-full bg-black"></div>
     </div>
   );
 };
