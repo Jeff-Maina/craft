@@ -25,7 +25,7 @@ const PageLayout: FC<ComponentProps> = ({ children, pageOptions }) => {
       : "/";
 
   return (
-    <main className="p-6 pt-10 flex flex-col min-h-screen max-w-7xl m-auto gap-14 lg:gap-24">
+    <main className="p-6 pt-10 flex flex-col min-h-screen max-w-[90rem] lg:px-20 lg:border-r lg:border-l lg:border-zinc-300 m-auto gap-14 lg:gap-24">
       <header className="flex flex-col gap-4 lg:gap-6">
         <div className="font-satoshi-medium flex items-center gap-3 md:text-lg">
           <Link href={`/${path}`}>{category}</Link>{" "}
