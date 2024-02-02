@@ -10,7 +10,7 @@ const PageOptions: Pageprops = {
 const Text = () => {
   return (
     <PageLayout pageOptions={PageOptions}>
-      <article className="w-full aspect-square border bg-zinc-100 rounded-xl"></article>
+      <article className="w-full aspect-square border bg-zinc-100 rounded"></article>
     </PageLayout>
   );
 };

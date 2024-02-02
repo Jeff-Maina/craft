@@ -23,7 +23,7 @@ const ButtonCard: FC<ButtonProps> = ({ children, codeBlock }) => {
   };
   
   return (
-    <article className="w-full aspect-square border bg-zinc-100 rounded-xl flex flex-col justify-between">
+    <article className="w-full aspect-square border bg-zinc-100  flex flex-col justify-between">
       <div>{children}</div>
       <div className="flex justify-end p-4">
         <button onClick={toggleModal} className="font-satoshi-medium">

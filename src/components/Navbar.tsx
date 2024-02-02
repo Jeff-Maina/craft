@@ -32,19 +32,30 @@ const Navbar = () => {
               Craft.
             </a>
           </div>
-          <div className=" lg:gap-10 items-center flex flex-row-reverse md:flex-row h-full">
-            <div className="h-full md:flex items-center gap-5 font-satoshi-medium hidden text-lg">
-              <Link href="/elements" className="hover:underline">Elements</Link>
-              <Link href="/sections" className="hover:underline">Sections</Link>
-            </div>{" "}
+          <div className=" items-center flex flex-row-reverse md:flex-row h-full">
+            <ul className="h-full md:flex items-center font-satoshi-medium hidden text-lg">
+              <li className="h-full">
+                <Link
+                  href="/elements"
+                  className="hover:bg-black hover:text-white h-full flex items-center lg:px-10 transition-all duration-150  px-6 border-l"
+                >
+                  Elements
+                </Link>
+              </li>
+              <li className="h-full">
+                <Link href="/sections" className="hover:bg-black hover:text-white h-full flex items-center lg:px-10 border-l transition-all duration-150  px-6">
+                  Sections
+                </Link>
+              </li>
+            </ul>{" "}
             <button
               onClick={OpenMenu}
-              className="h-full aspect-square flex items-center justify-center md:hidden border-l"
+              className="h-full aspect-square flex items-center justify-center md:hidden"
             >
               <MenuIcon />
             </button>
-            <button className="h-full aspect-square grid place-items-center p-2 transition-all duration-200 border-l">
-              <DarkModeSvg className="h-[24px] w-[24px]" />
+            <button className="h-full aspect-square grid place-items-center p-2 transition-all duration-150 border-l border-r hover:bg-black group">
+              <DarkModeSvg className="h-[24px] w-[24px] fill-black group-hover:fill-white group-hover:stroke-white stroke-black transition-all duration-150" />
             </button>
           </div>
         </div>
