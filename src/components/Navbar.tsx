@@ -24,11 +24,11 @@ const Navbar = () => {
       <nav
         className={`w-full h-20 lg:h-28 border-b border-zinc-200/60 z-20 lg:border-zinc-300 top-0 bg-white transition-all duration-0`}
       >
-        <div className="flex items-center justify-between w-full h-full m-auto max-w-[90rem] ">
-          <div className="flex items-center gap-2 pl-6">
+        <div className="flex items-center justify-between w-full h-full m-auto lg:px-20 ">
+          <div className="flex items-center gap-2">
             <a
               href="/"
-              className="font-campton-bold lg:text-2xl leading-none rounded-lg text-black"
+              className="font-campton-bold lg:text-2xl leading-none rounded-lg text-black pl-6 lg:pl-0"
             >
               CRAFT.
               {/* Craft. */}
