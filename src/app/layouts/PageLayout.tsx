@@ -26,10 +26,10 @@ const PageLayout: FC<ComponentProps> = ({ children, pageOptions }) => {
       : "/";
 
   return (
-    <main className="flex flex-col min-h-screen lg:px-20 lg:border-r lg:border-l lg:border-zinc-300 m-auto gap-14 lg:gap-24">
+    <main className="flex flex-col min-h-screen max-w-7xl lg:border-zinc-300 m-auto gap-14">
       {!isMainPage && (
-        <div className="px-4 border-b border-zinc-200/60 sticky top-0 backdrop-blur-lg bg-[#ffffffcd] z-10">
-          <div className="font-satoshi-medium flex items-center gap-1 md:text-lg py-5">
+        <div className="px-4 border-b border-zinc-200/60 lg:border-none sticky top-0 backdrop-blur-lg bg-[#ffffffcd] z-[5]">
+          <div className="font-satoshi-medium flex items-center gap-1 md:text-lg lg:text-xl py-5 lg:py-6">
             <Link href={`/${path}`} className="text-zinc-500">
               {category}
             </Link>{" "}

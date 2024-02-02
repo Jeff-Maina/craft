@@ -15,7 +15,7 @@ const Elements = () => {
   return (
     <PageLayout pageOptions={PageOptions}>
       <section>
-        <div className="grid gap-3 md:grid-cols-2 lg:gap-5">
+        <div className="grid w-full md:grid-cols-2 gap-3">
           {ElementsData.map((element, index) => {
             return (
               <ComponentCard

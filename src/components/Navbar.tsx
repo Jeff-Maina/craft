@@ -22,9 +22,9 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`w-full h-16 lg:h-28 border-b border-zinc-200/60 z-20 lg:border-zinc-300 top-0 bg-white transition-all duration-0`}
+        className={`w-full h-16 lg:h-28 border-b border-zinc-200/60 z-20  top-0 bg-white transition-all duration-0`}
       >
-        <div className="flex items-center justify-between w-full h-full m-auto lg:px-20 ">
+        <div className="flex items-center justify-between w-full h-full m-auto max-w-7xl">
           <div className="flex items-center gap-2">
             <a
               href="/"
@@ -39,7 +39,7 @@ const Navbar = () => {
               <li className="h-full">
                 <Link
                   href="/elements"
-                  className="hover:bg-black hover:text-white border-zinc-200/60 h-full flex items-center lg:px-10 transition-all duration-150  px-6 border-l hover:border-black lg:border-zinc-300"
+                  className="hover:bg-black hover:text-white border-zinc-200/60 h-full flex items-center lg:px-10 transition-all duration-150  px-6 border-l hover:border-black "
                 >
                   Elements
                 </Link>
@@ -47,7 +47,7 @@ const Navbar = () => {
               <li className="h-full">
                 <Link
                   href="/sections"
-                  className="hover:bg-black hover:border-black hover:text-white h-full flex items-center lg:px-10 border-l transition-all duration-150  px-6 border-zinc-200/60 lg:border-zinc-300"
+                  className="hover:bg-black hover:border-black hover:text-white h-full flex items-center lg:px-10 border-l transition-all duration-150  px-6 border-zinc-200/60 "
                 >
                   Sections
                 </Link>
@@ -59,7 +59,7 @@ const Navbar = () => {
             >
               <MenuIcon />
             </button>
-            <button className="h-full aspect-square grid place-items-center p-2 transition-all duration-150 border-l border-r hover:bg-black group lg:border-zinc-300">
+            <button className="h-full aspect-square grid place-items-center p-2 transition-all duration-150 border-l border-r hover:bg-black group ">
               <DarkModeSvg className="h-[24px] w-[24px] fill-black group-hover:fill-white group-hover:stroke-white stroke-black transition-all duration-150" />
             </button>
           </div>

@@ -30,7 +30,7 @@ export default function Home() {
         </h1>
         <br />
         <br />
-        <section className="grid gap-3 md:grid-cols-2 lg:gap-6">
+        <section className="grid gap-3 md:grid-cols-2 lg:gap-3">
           {ElementsData.map((element, index) => (
             <ComponentCard
               key={index}
@@ -50,7 +50,7 @@ export default function Home() {
         </h1>
         <br />
         <br />
-        <section className="grid gap-3 md:grid-cols-2 lg:gap-6">
+        <section className="grid gap-3 md:grid-cols-2 lg:gap-3">
           {SectionsData.map((section, index) => (
             <ComponentCard
               key={index}
