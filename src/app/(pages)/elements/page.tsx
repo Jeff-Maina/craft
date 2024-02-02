@@ -91,7 +91,7 @@ const Elements = () => {
       <section className="px-4">
         <Header />
         <br />
-        <div className="grid w-full md:grid-cols-2 divide-y divide-zinc-200/60  border  border-zinc-200/60">
+        <div className="grid w-full md:grid-cols-2 md:divide-x divide-y divide-zinc-200/60  border  border-zinc-200/60">
           {ElementsData.map((element, index) => (
             <ComponentCard
               componentName={element.elementName}
