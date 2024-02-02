@@ -22,9 +22,9 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full h-20 px-6">
+      <nav className="w-full h-20 border-b">
         <div className="flex items-center justify-between w-full h-full m-auto max-w-[90rem] ">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 pl-6">
             <a
               href="/"
               className="text-xl bg-[#2a2a2a] text-white font-satoshi-medium px-4 leading-none py-2 rounded-lg"
@@ -32,18 +32,18 @@ const Navbar = () => {
               Craft.
             </a>
           </div>
-          <div className=" lg:gap-10 items-center flex flex-row-reverse md:flex-row gap-4">
+          <div className=" lg:gap-10 items-center flex flex-row-reverse md:flex-row h-full">
             <div className="h-full md:flex items-center gap-5 font-satoshi-medium hidden text-lg">
               <Link href="/elements" className="hover:underline">Elements</Link>
               <Link href="/sections" className="hover:underline">Sections</Link>
             </div>{" "}
             <button
               onClick={OpenMenu}
-              className="h-full aspect-square flex items-center justify-end md:hidden"
+              className="h-full aspect-square flex items-center justify-center md:hidden border-l"
             >
               <MenuIcon />
             </button>
-            <button className="h-full aspect-square grid place-items-center p-2 rounded-full  hover:bg-zinc-100 transition-all duration-200">
+            <button className="h-full aspect-square grid place-items-center p-2 transition-all duration-200 border-l">
               <DarkModeSvg className="h-[24px] w-[24px]" />
             </button>
           </div>
