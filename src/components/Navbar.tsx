@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full h-20 border-b">
+      <nav className="w-full h-20 border-b border-zinc-200/60">
         <div className="flex items-center justify-between w-full h-full m-auto max-w-[90rem] ">
           <div className="flex items-center gap-2 pl-6">
             <a
@@ -37,13 +37,16 @@ const Navbar = () => {
               <li className="h-full">
                 <Link
                   href="/elements"
-                  className="hover:bg-black hover:text-white h-full flex items-center lg:px-10 transition-all duration-150  px-6 border-l"
+                  className="hover:bg-black hover:text-white border-zinc-200/60 h-full flex items-center lg:px-10 transition-all duration-150  px-6 border-l hover:border-black"
                 >
                   Elements
                 </Link>
               </li>
               <li className="h-full">
-                <Link href="/sections" className="hover:bg-black hover:text-white h-full flex items-center lg:px-10 border-l transition-all duration-150  px-6">
+                <Link
+                  href="/sections"
+                  className="hover:bg-black hover:border-black hover:text-white h-full flex items-center lg:px-10 border-l transition-all duration-150  px-6 border-zinc-200/60"
+                >
                   Sections
                 </Link>
               </li>

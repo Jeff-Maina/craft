@@ -30,10 +30,10 @@ const NavMenu: FC<NavProps> = ({ isMenuActive, CloseMenu }) => {
           exit="inactive"
           className="w-screen h-screen top-0 left-0 fixed bg-white z-50 flex flex-col gap-16"
         >
-          <header className="flex justify-end border-b">
+          <header className="flex justify-end border-b border-zinc-200/60">
             <button
               onClick={CloseMenu}
-              className="size-20 border-l grid place-items-center"
+              className="size-20 border-l grid place-items-center border-zinc-200/60"
             >
               <CancelSvg className="h-[25px] w-[25px] fill-black" />
             </button>
