@@ -34,11 +34,11 @@ const Dropdown: FC<dropdownprops> = ({ isDropDownActive, closeDropDown }) => {
           initial="initial"
           animate="active"
           exit="inactive"
-          className="absolute top-full w-full border bg-white border-zinc-200/60"
+          className="absolute top-full right-0 bg-zinc-100 w-full border overflow-hidden border-zinc-200/60 flex flex-col items-start divide-y divide-zinc-200/60"
         >
           {ElementsData.map(({ elementName }, index) => {
             return (
-              <button key={index} onClick={closeDropDown}>
+              <button className="p-4 pl-8 text-start w-full" key={index} onClick={closeDropDown}>
                 {elementName}
               </button>
             );
