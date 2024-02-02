@@ -1,19 +1,26 @@
 import { FC, useState } from "react";
 import CodeModal from "@/components/codeblock/CodeModal";
 
+// ts types;
+type codeBlock = {
+  javascript: string;
+  typescript: string;
+};
 interface ButtonProps {
   children: JSX.Element;
-  codeBlock: {
-    typescript: string;
-    javascript: string;
-  };
+  codeBlock: codeBlock;
 }
 
 const ButtonCard: FC<ButtonProps> = ({ children, codeBlock }) => {
   const [isModalActive, setModalActive] = useState(false);
-  const { javascript, typescript } = codeBlock;
-
+  // toggle modal;
   const toggleModal = () => setModalActive(!isModalActive);
+
+  const modalProps = {
+    isModalActive,
+    codeBlock,
+    setModalActive,
+  };
   return (
     <article className="w-full aspect-square border bg-zinc-100 rounded-xl flex flex-col justify-between">
       <div>{children}</div>
@@ -22,14 +29,7 @@ const ButtonCard: FC<ButtonProps> = ({ children, codeBlock }) => {
           code
         </button>
       </div>
-      <CodeModal
-        isModalActive={isModalActive}
-        codeBlock={{
-          javascript,
-          typescript,
-        }}
-        setModalActive={setModalActive}
-      />
+      <CodeModal modalProps={modalProps} />
     </article>
   );
 };

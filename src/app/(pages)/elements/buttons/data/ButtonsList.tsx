@@ -1,3 +1,3 @@
-import Button001 from "../components/Button001/Button001";
+import Button001 from "../examples/Button001/Button001";
 
 export const ButtonsList = [<Button001 />];
