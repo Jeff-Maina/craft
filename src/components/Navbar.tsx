@@ -26,9 +26,10 @@ const Navbar = () => {
           <div className="flex items-center gap-2 pl-6">
             <a
               href="/"
-              className="text-xl bg-[#2a2a2a] text-white font-satoshi-medium px-4 leading-none py-2 rounded-lg"
+              className="font-campton-bold leading-none rounded-lg text-black"
             >
-              Craft.
+              CRAFT.
+              {/* Craft. */}
             </a>
           </div>
           <div className=" items-center flex flex-row-reverse md:flex-row h-full">

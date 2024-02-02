@@ -6,7 +6,7 @@ import ComponentCard from "./layouts/Cards/ComponentCard";
 export default function Home() {
   return (
     <main className="flex flex-col gap-16">
-      <header className="h-[50vh] lg:h-[70vh] flex flex-col items-center justify-center">
+      <header className="h-[60vh] lg:h-[70vh] flex flex-col items-center justify-center pt-20">
         <p className="text-[8rem] md:text-[11rem] lg:text-[15rem] tracking-tighter font-campton-bold text-center ">
           craft.
         </p>
