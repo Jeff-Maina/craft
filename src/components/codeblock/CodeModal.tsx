@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
 import Modal from "../Modal";
+import { CopySvg, DoneSvg } from "../Svgs";
 
 type codeBlock = {
   javascript: string;
@@ -18,6 +19,7 @@ interface ModalProps {
 
 const CodeModal: FC<ModalProps> = ({ modalProps }) => {
   const { setModalActive, isModalActive, codeBlock } = modalProps;
+  const { typescript, javascript } = codeBlock;
 
   // toggle modal functions;
   const closeModal = () => setModalActive(false);
@@ -31,6 +33,14 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
   const isTypeScript = activeLanguage === "TS";
   const activeClass = "bg-[#222] text-white hover:!text-white";
 
+  // copying the text to clipboard;
+  const [hasCopied, setHasCopied] = useState(false);
+  const buttonSvg = hasCopied ? <DoneSvg className="h-[20px] w-[20px] stroke-green-500" /> : <CopySvg className="h-[20px] w-[20px] fill-[#555]" />;
+  const currentLanguage = isJavaScript ? javascript : typescript
+  const copySnippet = () => {
+    setHasCopied(true);
+    setTimeout(() => setHasCopied(false),2500)
+  }
   return (
     <Modal isModalActive={isModalActive} closeModal={closeModal}>
       <section
@@ -40,10 +50,10 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
         }}
         className="w-[90%] h-3/4 bg-black max-w-2xl rounded"
       >
-        <header className="w-full flex items-center  border-b border-[#2a2a2a] font-satoshi-medium text-[#555] justify-between">
-          <div className="flex items-center">
+        <header className="w-full flex items-center  border-b border-[#2a2a2a] font-satoshi-medium text-[#555] justify-between pr-2">
+          <div className="flex items-center text-sm md:text-base">
             <button
-              className={`px-3 lg:px-6 py-2 hover:bg-[#222] hover:text-[#888] transition-all duration-150 ${
+              className={`px-4 lg:px-6 py-2 hover:bg-[#222] hover:text-[#888] transition-all duration-150 ${
                 isJavaScript && activeClass
               }`}
               onClick={setJs}
@@ -52,14 +62,16 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
             </button>
             <button
               onClick={setTs}
-              className={`px-3 lg:px-6 py-2 hover:bg-[#222] hover:text-[#888] transition-all duration-150 ${
+              className={`px-4 lg:px-6 py-2 hover:bg-[#222] hover:text-[#888] transition-all duration-150 ${
                 isTypeScript && activeClass
               }`}
             >
               index.tsx
             </button>
           </div>
-          <button></button>
+          <button onClick={copySnippet} className="h-full aspect-square grid place-items-center p-2">
+            {buttonSvg}
+          </button>
         </header>
       </section>
     </Modal>

@@ -21,6 +21,7 @@ const ButtonCard: FC<ButtonProps> = ({ children, codeBlock }) => {
     codeBlock,
     setModalActive,
   };
+  
   return (
     <article className="w-full aspect-square border bg-zinc-100 rounded-xl flex flex-col justify-between">
       <div>{children}</div>
