@@ -23,7 +23,7 @@ const ButtonCard: FC<ButtonProps> = ({ children, codeBlock }) => {
         </button>
       </div>
       <CodeModal
-        isModalActive={true}
+        isModalActive={isModalActive}
         codeBlock={{
           javascript,
           typescript,

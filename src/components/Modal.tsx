@@ -39,7 +39,10 @@ const Modal: FC<ModalProps> = ({ children, isModalActive, closeModal }) => {
           animate="active"
           exit="inactive"
           className="fixed top-0 left-0 bg-[#00000061] h-screen w-screen backdrop-blur-sm"
-          onClick={closeModal}
+          onClick={() => {
+            closeModal();
+            console.log(isModalActive);
+          }}
         >
           {children}
         </motion.section>
