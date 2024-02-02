@@ -1,8 +1,7 @@
 "use client";
 import PageLayout from "@/app/layouts/PageLayout";
-
 import type { Pageprops } from "@/lib/Interfaces";
-import ButtonCard from "./components/ButtonCard";
+import { ButtonsList } from "./data/ButtonsList";
 
 const PageOptions: Pageprops = {
   page: "Buttons",
@@ -14,14 +13,7 @@ const Buttons = () => {
   return (
     <PageLayout pageOptions={PageOptions}>
       <section className="w-full h-full grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-        <ButtonCard
-          codeBlock={{
-            javascript: "",
-            typescript: "",
-          }}
-        >
-          <button>button</button>
-        </ButtonCard>
+        {ButtonsList.map((button, index) =><div key={index}>{button}</div> )}
       </section>
     </PageLayout>
   );
