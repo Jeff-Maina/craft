@@ -28,7 +28,7 @@ const Navbar = () => {
           <div className="flex items-center gap-2">
             <a
               href="/"
-              className="font-campton-bold lg:text-2xl rounded-lg text-black pl-6 lg:pl-0 leading-none"
+              className="font-campton-bold lg:text-2xl rounded-lg text-black pl-4 lg:pl-0 leading-none"
             >
               CRAFT.
               {/* Craft. */}
