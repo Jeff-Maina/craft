@@ -34,11 +34,15 @@ const Dropdown: FC<dropdownprops> = ({ isDropDownActive, closeDropDown }) => {
           initial="initial"
           animate="active"
           exit="inactive"
-          className="absolute top-full right-0 bg-zinc-100 w-full border overflow-hidden border-zinc-200/60 flex flex-col items-start divide-y divide-zinc-200/60"
+          className="absolute top-[120%] right-0 bg-white w-full border overflow-hidden border-zinc-200/60 flex flex-col items-start divide-y divide-zinc-200/60"
         >
           {ElementsData.map(({ elementName }, index) => {
             return (
-              <button className="p-4 pl-8 text-start w-full" key={index} onClick={closeDropDown}>
+              <button
+                className="p-4 pl-8 text-start w-full"
+                key={index}
+                onClick={closeDropDown}
+              >
                 {elementName}
               </button>
             );
@@ -55,7 +59,7 @@ const Header = () => {
   return (
     <div className="sticky top-0 z-10 font-satoshi-medium">
       <div className="h-14 border  divide-x divide-zinc-200/60 border-zinc-200/60 bg-white">
-        <div className="w-3/4 border-r h-full relative">
+        <div className="w-full h-full relative">
           <button
             onClick={toggleDropDown}
             className="h-full w-full flex items-center justify-center gap-3 px-4"
@@ -84,7 +88,8 @@ const Elements = () => {
     <PageLayout pageOptions={PageOptions}>
       <section className="px-4">
         <Header />
-        <div className="grid w-full md:grid-cols-2 divide-y divide-zinc-200/60  border border-t-white border-zinc-200/60">
+        <br />
+        <div className="grid w-full md:grid-cols-2 divide-y divide-zinc-200/60  border  border-zinc-200/60">
           {ElementsData.map((element, index) => {
             return (
               <div className="h-80 w-full flex flex-col justify-end">
