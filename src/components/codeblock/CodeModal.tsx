@@ -1,4 +1,7 @@
 import { FC, useState } from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { nord } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+
 import Modal from "../Modal";
 import { CopySvg, DoneSvg } from "../Svgs";
 
@@ -35,12 +38,14 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
 
   // copying the text to clipboard;
   const [hasCopied, setHasCopied] = useState(false);
-  const buttonSvg = hasCopied ? <DoneSvg className="h-[20px] w-[20px] stroke-green-500" /> : <CopySvg className="h-[20px] w-[20px] fill-[#555]" />;
-  const currentLanguage = isJavaScript ? javascript : typescript
+  const buttonSvg = hasCopied ?  <DoneSvg className="h-[20px] w-[20px] stroke-green-500" /> : 
+    <CopySvg className="h-[20px] w-[20px] fill-[#555] hover:!fill-white transition-all duration-150" />
+  
+  const currentLanguage = isJavaScript ? javascript : typescript;
   const copySnippet = () => {
     setHasCopied(true);
-    setTimeout(() => setHasCopied(false),2500)
-  }
+    setTimeout(() => setHasCopied(false), 2500);
+  };
   return (
     <Modal isModalActive={isModalActive} closeModal={closeModal}>
       <section
@@ -69,10 +74,23 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
               index.tsx
             </button>
           </div>
-          <button onClick={copySnippet} className="h-full aspect-square grid place-items-center p-2">
+          <button
+            onClick={copySnippet}
+            className="h-full aspect-square grid place-items-center p-2"
+          >
             {buttonSvg}
           </button>
         </header>
+        <div>
+          <SyntaxHighlighter
+            showLineNumbers
+            language="javascript"
+            style={nord}
+            className="codeHighlighter"
+          >
+            {currentLanguage}
+          </SyntaxHighlighter>
+        </div>
       </section>
     </Modal>
   );
