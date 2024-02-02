@@ -12,6 +12,7 @@ import type { Pageprops } from "@/lib/Interfaces";
 import PageLayout from "@/app/layouts/PageLayout";
 import { opacityVariants } from "@/lib/animations";
 import Link from "next/link";
+import ComponentCard from "@/app/layouts/Cards/ComponentCard";
 
 // ts stuff;
 const PageOptions: Pageprops = {
@@ -91,21 +92,14 @@ const Elements = () => {
         <Header />
         <br />
         <div className="grid w-full md:grid-cols-2 divide-y divide-zinc-200/60  border  border-zinc-200/60">
-          {ElementsData.map((element, index) => {
-            return (
-              <div className="h-80 w-full flex flex-col justify-end">
-                <div className="w-full flex justify-between border-t divide-x border-zinc-200/60 divide-zinc-200/60 h-16 font-satoshi-medium">
-                  <div className="col-span-4 h-full px-4 flex items-center">
-                    <p> {element.elementName}</p>
-                  </div>
-                  <div className="h-full aspect-square flex items-center justify-center">
-                    {" "}
-                    <p> {element.componentCount}</p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          {ElementsData.map((element, index) => (
+            <ComponentCard
+              componentName={element.elementName}
+              componentCount={element.componentCount}
+              pagePath={element.elementPagePath}
+              key={index}
+            />
+          ))}
         </div>
       </section>
     </PageLayout>

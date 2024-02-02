@@ -14,13 +14,15 @@ const ComponentCard: FC<ComponentProps> = ({
 }) => {
   return (
     <Link href={pagePath}>
-      <div className="h-44 lg:h-96 w-full lg:aspect-video border border-zinc-300 rounded lg:rounded p-4 lg:p-6 flex flex-col justify-end font-satoshi-medium hover:border-black transition-all duration-300">
-        <p className="text-[#111] md:text-lg">
-          {componentName}
-          <sup className="text-zinc-500 font-campton-bold text-sm">
-            {componentCount}
-          </sup>
-        </p>
+      <div className="h-80 w-full flex flex-col justify-end">
+        <div className="w-full flex justify-between border-t divide-x border-zinc-200/60 divide-zinc-200/60 h-16 font-satoshi-medium">
+          <div className="col-span-4 h-full px-4 flex items-center">
+            <p> {componentName}</p>
+          </div>
+          <div className="h-full aspect-square flex items-center justify-center">
+            <p> {componentCount}</p>
+          </div>
+        </div>
       </div>
     </Link>
   );
