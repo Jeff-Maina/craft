@@ -73,7 +73,7 @@ const NavMenu: FC<NavProps> = ({ isMenuActive, CloseMenu }) => {
             initial="initial"
             animate="active"
             exit="inactive"
-            className="flex flex-col gap-16 border-r w-[90%] h-full bg-white"
+            className="flex flex-col border-r w-[90%] h-full bg-white"
           >
             <header className="flex justify-end border-b border-zinc-200/60">
               <button
@@ -83,16 +83,24 @@ const NavMenu: FC<NavProps> = ({ isMenuActive, CloseMenu }) => {
                 <CancelSvg className="h-[25px] w-[25px] fill-black" />
               </button>
             </header>
-            <div className="p-6">
-              <ul className="w-full text-black font-satoshi-bold text-4xl gap-5 flex flex-col">
-                <li className="">Components.</li>
-                <li className="">Sections.</li>
-                <li className="">Elements.</li>
-                <li className="">Pages.</li>
+            <div className="p-8 font-satoshi-medium text-zinc-400">
+              <p>Navigation.</p>
+            </div>
+            <div className="">
+              <ul className="w-full text-black font-satoshi-bold text-3xl flex flex-col divide-y divide-zinc-200/60 leading-none border-t border-b border-zinc-200/60">
+                <li className="p-8">Components.</li>
+                <li className="p-8">Sections.</li>
+                <li className="p-8">Elements.</li>
+                <li className="p-8">Pages.</li>
               </ul>
             </div>
-            <footer className="absolute bottom-0 p-6 border-t border-zinc-200/60 w-full">
-              <p className="font-satoshi-medium">Craft</p>
+            <footer className="absolute bottom-0 border-t border-zinc-200/60 w-full grid grid-cols-2 divide-x divide-zinc-200/60 text-zinc-400">
+              <div className="p-8 ">
+                <p className="font-satoshi-medium">Craft</p>
+              </div>
+              <div className="grid place-items-center">
+                <p className="font-satoshi-medium">2024</p>
+              </div>
             </footer>
           </motion.div>
         </motion.section>
