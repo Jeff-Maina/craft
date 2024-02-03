@@ -1,36 +1,51 @@
 import { FC } from "react";
 import Link from "next/link";
-import { ArrowBigRight, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 interface ComponentProps {
   pagePath: string;
   componentName: string;
   componentCount: number;
+  children: JSX.Element;
+  className?: React.ComponentProps<"div">["className"];
+  isSection: boolean;
 }
 
 const ComponentCard: FC<ComponentProps> = ({
   pagePath,
   componentName,
   componentCount,
+  children,
+  className,
+  isSection,
 }) => {
   return (
-    <div className="h-80 lg:h-96 w-full flex flex-col justify-end">
-      <div className="w-full flex items-center justify-end border-t divide-x border-zinc-200/60 divide-zinc-200/60 h-16 lg:h-20 font-satoshi-medium">
-        <div className=" h-full px-4 flex items-center flex-grow">
-          <p className="lg:text-xl">
+    <div
+      className={`h-80 lg:h-96 xl:h-[30rem] w-full flex ${
+        !isSection ? "flex-col" : "flex-col-reverse"
+      } justify-end ${className} `}
+    >
+      <div>{children}</div>
+      <div
+        className={`w-full flex items-center justify-end ${
+          !isSection ? "border-t" : "border-b"
+        }  divide-x border-zinc-200/60 lg:border-zinc-200 divide-zinc-200/60 lg:divide-zinc-200 h-16 lg:h-20 xl:h-24 font-satoshi-medium`}
+      >
+        <div className=" h-full px-4 flex items-center flex-grow lg:px-10">
+          <p className="lg:text-xl xl:text-2xl xl:font-satoshi-bold">
             {" "}
             {componentName}
           </p>
         </div>
-        <div className="h-full aspect-square flex items-center justify-center group hover:bg-black transition-all duration-150">
+        <div className="h-full aspect-square flex items-center justify-center transition-all duration-150">
           {componentCount}
         </div>
-        <div className="h-full aspect-square flex items-center justify-center group hover:bg-black transition-all duration-150">
+        <div className="h-full aspect-square flex items-center justify-center group/button hover:bg-black transition-all duration-150">
           <Link
             href={pagePath}
             className="w-full h-full flex items-center justify-center"
           >
-            <ArrowUpRight className="group-hover:stroke-white transition-all duration-150" />
+            <ArrowUpRight className="group-hover/button:stroke-white transition-all duration-150" />
           </Link>
         </div>
       </div>

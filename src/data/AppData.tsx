@@ -1,56 +1,56 @@
 interface SectionProps {
-  sectionName: string;
-  sectionPagePath: string;
-  componentCount: number;
+  component_name: string;
+  component_path: string;
+  component_count: number;
 }
 interface ElementProps {
-  elementName: string;
-  elementPagePath: string;
-  componentCount: number;
+  component_name: string;
+  component_path: string;
+  component_count: number;
 }
 
 export const SectionsData: Array<SectionProps> = [
   {
-    sectionName: "Navbars",
-    sectionPagePath: "/sections/navbars",
-    componentCount: 0,
+    component_name: "Navbars",
+    component_path: "/sections/navbars",
+    component_count: 0,
   },
   {
-    sectionName: "Testimonials",
-    sectionPagePath: "/sections/testimonials",
-    componentCount: 0,
+    component_name: "Testimonials",
+    component_path: "/sections/testimonials",
+    component_count: 0,
   },
   {
-    sectionName: "FAQS",
-    sectionPagePath: "/sections/FAQs",
-    componentCount: 0,
+    component_name: "FAQS",
+    component_path: "/sections/FAQs",
+    component_count: 0,
   },
   {
-    sectionName: "Contact",
-    sectionPagePath: "/sections/contact",
-    componentCount: 0,
+    component_name: "Contact",
+    component_path: "/sections/contact",
+    component_count: 0,
   },
   {
-    sectionName: "Footer",
-    sectionPagePath: "/sections/footer",
-    componentCount: 0,
+    component_name: "Footer",
+    component_path: "/sections/footer",
+    component_count: 0,
   },
 ];
 
 export const ElementsData: Array<ElementProps> = [
   {
-    elementName: "Buttons",
-    elementPagePath: "/elements/buttons",
-    componentCount: 0,
+    component_name: "Buttons",
+    component_path: "/elements/buttons",
+    component_count: 0,
   },
   {
-    elementName: "Links",
-    elementPagePath: "/elements/links",
-    componentCount: 0,
+    component_name: "Links",
+    component_path: "/elements/links",
+    component_count: 0,
   },
   {
-    elementName: "Text",
-    elementPagePath: "/elements/text",
-    componentCount: 0,
+    component_name: "Text",
+    component_path: "/elements/text",
+    component_count: 0,
   },
 ];

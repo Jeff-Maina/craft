@@ -14,18 +14,44 @@ const PageOptions: Pageprops = {
 const Sections = () => {
   return (
     <PageLayout pageOptions={PageOptions}>
-      <section>
-        <div className="grid gap-5">
-          {SectionsData.map((section, index) => {
-            return (
-              <ComponentCard
-                componentName={section.sectionName}
-                componentCount={section.componentCount}
-                pagePath={section.sectionPagePath}
-                key={index}
-              />
-            );
-          })}
+      <section className="px-4">
+        <div className="grid w-full  border  border-zinc-200/60 lg:border-zinc-200 divide-y divide-zinc-200/60 lg:divide-zinc-200">
+          <ComponentCard
+            componentName="FAQs"
+            componentCount={0}
+            isSection={true}
+            pagePath="/sections/faqs"
+            className="xl:h-[80vh]"
+          >
+            <div></div>
+          </ComponentCard>
+          <ComponentCard
+            componentName="Hero sections"
+            componentCount={0}
+            isSection={true}
+            pagePath="/sections/hero_sections"
+            className="xl:h-[80vh]"
+          >
+            <div></div>
+          </ComponentCard>
+          <ComponentCard
+            componentName="Footer"
+            componentCount={0}
+            isSection={true}
+            pagePath="/sections/footer"
+            className="xl:h-[80vh]"
+          >
+            <div></div>
+          </ComponentCard>
+          <ComponentCard
+            componentName="Navbars"
+            componentCount={0}
+            isSection={true}
+            pagePath="/sections/navbar"
+            className="xl:h-[80vh]"
+          >
+            <div></div>
+          </ComponentCard>
         </div>
       </section>
     </PageLayout>
