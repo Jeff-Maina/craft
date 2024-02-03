@@ -1,3 +1,5 @@
+"use client";
+
 import { opacityVariants } from "@/lib/animations";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft } from "lucide-react";
@@ -18,6 +20,7 @@ type data = {
 
 interface headerProps {
   data: data[];
+  category: string;
 }
 
 // components;
@@ -55,7 +58,7 @@ const Dropdown: FC<dropdownprops> = ({
   );
 };
 
-const PageHeader: FC<headerProps> = ({ data }) => {
+const PageHeader: FC<headerProps> = ({ data,category }) => {
   const [isDropDownActive, setDropDownActive] = useState(false);
   const toggleDropDown = () => setDropDownActive(!isDropDownActive);
   const closeDropDown = () => setDropDownActive(false);
@@ -73,7 +76,7 @@ const PageHeader: FC<headerProps> = ({ data }) => {
             onClick={toggleDropDown}
             className="h-full w-full text-sm md:text-base lg:text-lg flex items-center justify-center gap-3 px-4 bg-zinc-50"
           >
-            All components
+            All {category}
             <ChevronLeft
               className={`h-[15px] w-[15px] ${
                 isDropDownActive ? "-rotate-90" : "rotate-0"

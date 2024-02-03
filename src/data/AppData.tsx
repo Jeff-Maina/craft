@@ -3,6 +3,7 @@ interface SectionProps {
   component_path: string;
   component_count: number;
 }
+
 interface ElementProps {
   component_name: string;
   component_path: string;

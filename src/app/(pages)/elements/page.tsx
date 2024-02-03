@@ -17,11 +17,10 @@ const PageOptions: Pageprops = {
 };
 
 const Elements = () => {
-  
   return (
     <PageLayout pageOptions={PageOptions}>
       <section className="px-4">
-        <PageHeader data={ElementsData} />
+        <PageHeader category="Elements" data={ElementsData} />
         <br />
         <div className="grid w-full md:grid-cols-2  border  border-zinc-200/60 lg:border-zinc-200 divide-y md:divide-y-0 divide-zinc-200/60 lg:divide-zinc-200">
           <ComponentCard
