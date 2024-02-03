@@ -5,4 +5,6 @@ export const ButtonsList = [
   <Button001 />,
   <Button001 />,
   <Button001 />,
+  <Button001 />,
+  <Button001 />,
 ];

@@ -3,7 +3,7 @@ import { codeblock } from "./codeblock";
 
 const Button001 = () => {
   return (
-    <ButtonCard codeBlock={codeblock}>
+    <ButtonCard className="md:border border-zinc-200/60" codeBlock={codeblock}>
       <button>button</button>
     </ButtonCard>
   );

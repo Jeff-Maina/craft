@@ -11,7 +11,7 @@ interface ButtonProps {
 const Button: FC<ButtonProps> = ({ path, label }) => {
   return (
     <Link
-      href={path}
+      href={path} 
       className="border w-full max-w-sm border-zinc-200/60 lg:border-zinc-200 bg-zinc-50 hover:bg-black hover:text-white flex items-center justify-center h-16 font-satoshi-medium gap-2 lg:text-lg"
     >
       {label}
