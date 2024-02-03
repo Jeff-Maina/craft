@@ -1,6 +1,4 @@
 import Button from "@/components/ui/Buttons";
-import { ElementsData, SectionsData } from "@/data/AppData";
-import Link from "next/link";
 import ComponentCard from "./layouts/Cards/ComponentCard";
 
 export default function Home() {
@@ -11,14 +9,8 @@ export default function Home() {
           craft.
         </p>
         <p className="font-satoshi-medium text-zinc-800 text-center md:text-xl max-w-xs md:max-w-sm w-full">
-          A collection of ui components for{" "}
-          {/* <span className="bg-gradient-to-r from-blue-900 to-blue-500 text-transparent bg-clip-text"> */}
-          React
-          {/* </span>{" "} */}
-          {/* , <span className="text-[#44bdf8]"> */}, Tailwind css
-          {/* </span> */} and
+          A collection of ui components for React , Tailwind css and
           <span className="bg-gradient-to-r text-transparent bg-clip-text from-blue-700 via-blue-500 to-pink-500">
-            {" "}
             Framer motion
           </span>
           .
@@ -31,14 +23,15 @@ export default function Home() {
         <br />
         <br />
         <section className="grid gap-3 md:grid-cols-2 lg:gap-3">
-          {ElementsData.map((element, index) => (
-            <ComponentCard
-              key={index}
-              componentName={element.elementName}
-              componentCount={element.componentCount}
-              pagePath={element.elementPagePath}
-            />
-          ))}{" "}
+          <ComponentCard
+            componentName="buttons"
+            componentCount={0}
+            pagePath="/buttons"
+            isSection={false}
+            className="border border-zinc-200/60"
+          >
+            <div></div>
+          </ComponentCard>
         </section>
         <div className="flex justify-center mt-10 lg:mt-20">
           <Button label="View all" path="/elements" />
@@ -51,14 +44,15 @@ export default function Home() {
         <br />
         <br />
         <section className="grid gap-3 md:grid-cols-2 lg:gap-3">
-          {SectionsData.map((section, index) => (
-            <ComponentCard
-              key={index}
-              componentName={section.sectionName}
-              componentCount={section.componentCount}
-              pagePath={section.sectionPagePath}
-            />
-          ))}{" "}
+          <ComponentCard
+            componentName="Navbars"
+            componentCount={0}
+            pagePath="/buttons"
+            isSection={false}
+            className="border border-zinc-200/60"
+          >
+            <div></div>
+          </ComponentCard>
         </section>
         <div className="flex justify-center mt-10 lg:mt-20">
           <Button label="View all" path="/sections" />
