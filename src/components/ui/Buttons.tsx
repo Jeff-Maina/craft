@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { FC } from "react";
 import { Url } from "url";
@@ -11,9 +12,10 @@ const Button: FC<ButtonProps> = ({ path, label }) => {
   return (
     <Link
       href={path}
-      className="m-auto font-satoshi-medium px-6 border border-zinc-700 py-1 lg:text-lg lg:py-2 lg:px-10 rounded hover:bg-black hover:text-white transition-all duration-150"
+      className="border w-full max-w-sm border-zinc-200/60 lg:border-zinc-200 bg-zinc-50 hover:bg-black hover:text-white flex items-center justify-center h-16 font-satoshi-medium gap-2 lg:text-lg"
     >
       {label}
+      <ArrowRight className="h-[20px] w-[20px]"/>
     </Link>
   );
 };
