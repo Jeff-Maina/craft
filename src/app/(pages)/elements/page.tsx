@@ -61,8 +61,8 @@ const Header = () => {
   const toggleDropDown = () => setDropDownActive(!isDropDownActive);
   const closeDropDown = () => setDropDownActive(false);
   return (
-    <div className="sticky top-4 z-10 font-satoshi-medium max-w-xs">
-      <div className="h-14 lg:h-16 border  divide-x divide-zinc-200/60 border-zinc-200/60 bg-white">
+    <div className="sticky top-4 z-10 font-satoshi-medium md:max-w-xs">
+      <div className={`h-14 lg:h-16 border  divide-x divide-zinc-200/60 ${isDropDownActive ?  "border-zinc-300": "border-zinc-200/60"} transition-all duration-300`}>
         <div className="w-full h-full relative">
           <button
             onClick={toggleDropDown}
