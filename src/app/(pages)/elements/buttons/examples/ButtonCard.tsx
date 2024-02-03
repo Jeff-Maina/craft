@@ -21,9 +21,9 @@ const ButtonCard: FC<ButtonProps> = ({ children, codeBlock }) => {
     codeBlock,
     setModalActive,
   };
-  
+
   return (
-    <article className="w-full aspect-square border bg-zinc-100  flex flex-col justify-between">
+    <article className="w-full aspect-square  bg-zinc-50  flex flex-col justify-between pt-4 pl-4">
       <div>{children}</div>
       <div className="flex justify-end p-4">
         <button onClick={toggleModal} className="font-satoshi-medium">

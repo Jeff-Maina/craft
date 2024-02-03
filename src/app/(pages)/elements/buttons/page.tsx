@@ -12,7 +12,7 @@ const PageOptions: Pageprops = {
 const Buttons = () => {
   return (
     <PageLayout pageOptions={PageOptions}>
-      <section className="w-full h-full grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+      <section className="w-full h-full border-b border-t border-zinc-200/60 lg:border-zinc-200 grid md:grid-cols-2 lg:grid-cols-3 divide-y divide-zinc-200/60 lg:divide-zinc-200">
         {ButtonsList.map((button, index) =><div key={index}>{button}</div> )}
       </section>
     </PageLayout>

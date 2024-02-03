@@ -66,20 +66,14 @@ const PageLayout: FC<ComponentProps> = ({ children, pageOptions }) => {
   return (
     <main className="flex flex-col min-h-screen max-w-7xl lg:border-zinc-300 m-auto gap-10">
       <Breadcrumb breadCrumbProps={breadCrumbProps} />
-      <header className="flex flex-col gap-4 lg:gap-6 px-4 pt-5">
-        <h1 className="font-satoshi-bold text-5xl md:text-6xl lg:text-[6.5rem] selection:bg-black selection:text-white text-[#111] tracking-tighter">
+      <header className="flex flex-col gap-4 lg:gap-6 px-4 ">
+        <h1 className="font-satoshi-bold text-5xl md:text-6xl lg:text-[6.5rem] selection:bg-black selection:text-white text-[#111] tracking-tighter leading-none">
           {page}.
           <sup className="text-4xl md:text-5xl text-zinc-400">
             {componentCount}
           </sup>
         </h1>
-        {/* {!isMainPage && (
-          <p className="font-satoshi-medium text-zinc-500 md:text-lg lg:text-xl">
-            Just copy and paste
-          </p>
-        )} */}
       </header>
-
       <section className="">{children}</section>
     </main>
   );
