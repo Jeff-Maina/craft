@@ -15,7 +15,13 @@ interface ButtonProps {
   index: number;
 }
 
-const ButtonCard: FC<ButtonProps> = ({ children, codeBlock, className,date,index }) => {
+const ButtonCard: FC<ButtonProps> = ({
+  children,
+  codeBlock,
+  className,
+  date,
+  index,
+}) => {
   const [isModalActive, setModalActive] = useState(false);
   // toggle modal;
   const toggleModal = () => setModalActive(!isModalActive);
@@ -28,12 +34,14 @@ const ButtonCard: FC<ButtonProps> = ({ children, codeBlock, className,date,index
 
   return (
     <article
-      className={`w-full aspect-square  bg-zinc-50  flex flex-col justify-between pt-4 ${className} font-satoshi-medium`}
+      className={`w-full aspect-square  flex flex-col justify-between pt-4 ${className} font-satoshi-medium`}
     >
       <div className="p-4">{children}</div>
       <div className="flex justify-between w-full items-center border-t">
         <div className="p-4">
-          <p className="text-zinc-600 text-sm">Untitled 0{index} | {date}</p>
+          <p className="text-zinc-600 text-sm">
+            Untitled 0{index} | {date}
+          </p>
         </div>
         <button
           onClick={toggleModal}

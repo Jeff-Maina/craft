@@ -6,7 +6,7 @@ const Button001 = () => {
     <ButtonCard
       date="03.02.2024"
       index={1}
-      className="md:border border-zinc-200/60"
+      className="md:border border-t border-zinc-200/60 border-r border-l"
       codeBlock={codeblock}
     >
       <button></button>
