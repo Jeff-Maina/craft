@@ -30,8 +30,8 @@ const Faqs: FC = () => {
 
   return (
     <section className="p-6 max-w-3xl m-auto w-full font-satoshi-medium">
-      <h1 className="font-graphik-semibold text-2xl tracking-tight lg:text-4xl">
-        Faqs.
+      <h1 className="text-center font-graphik-semibold text-xl tracking-tight lg:text-4xl">
+        Frequently Asked Questions.
       </h1>
       <br />
       <br />
