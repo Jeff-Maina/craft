@@ -35,23 +35,23 @@ const Faqs: FC = () => {
         {FaqsList.map((faq, index) => {
           const isFaqActive: boolean = index === activeFaqIndex;
           return (
-            <div key={index} className="p-4 min-h-14 border border-zinc-200/60">
+            <div key={index} className="p-4 min-h-14 border border-zinc-200/60 text-sm">
               <button
                 onClick={() => toggleFaq(index)}
                 className="w-full flex items-center justify-between"
               >
                 <p className="text-left text-zinc-800">{faq.question}</p>
                 <div className="min-w-6 flex justify-end">
-                  <ChevronUpIcon className={`h-[18px] w-[18px] ${isFaqActive ? '-rotate-180' : '-rotate-90'} transition-all duration-150`} />
+                  <ChevronUpIcon className={`h-[16px] w-[16px] stroke-zinc-800 ${isFaqActive ? '-rotate-180' : '-rotate-90'} transition-all duration-150`} />
                 </div>
               </button>
               <motion.div
                 variants={FaqVariants}
                 initial="initial"
                 animate={isFaqActive ? "active" : "inactive"}
-                className="text-zinc-600 overflow-hidden"
+                className="text-zinc-500 leading-relaxed overflow-hidden"
               >
-                <p className="pt-4">{faq.answer}</p>
+                <p className="pt-2">{faq.answer}</p>
               </motion.div>
             </div>
           );

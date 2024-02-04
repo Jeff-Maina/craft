@@ -67,7 +67,7 @@ export const FaqsList: Array<faqsProps> = [
     answer: "Simply copy and paste :)",
   },
   {
-    question: "What do I need to install for using the components?",
+    question: "What do I need to install?",
     answer:
       "You need to install Tailwind CSS and Framer Motion (for interactive components).",
   },
@@ -85,7 +85,7 @@ export const FaqsList: Array<faqsProps> = [
       "Yes, each component includes both its JavaScript and TypeScript source code.",
   },
   {
-    question: "Do I need to customize any aspects of the components?",
+    question: "Do I need to customize the components?",
     answer:
       "Yes, the components provide a structure and may require customization of aspects like colors to suit your preferences.",
   },
