@@ -4,7 +4,7 @@ import Faqs from "@/components/Faqs";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-16 lg:gap-20">
+    <main className="flex flex-col gap-12 lg:gap-20">
       <header className="h-[60vh] lg:h-[70vh] flex flex-col items-center justify-center pt-20">
         <p className="text-[8rem] md:text-[11rem] lg:text-[15rem] tracking-tighter font-campton-bold text-center leading-normal">
           craft.
@@ -34,13 +34,13 @@ export default function Home() {
             <div></div>
           </ComponentCard>
         </section>
-        <div className="flex justify-center mt-10 lg:mt-20">
+        <div className="flex justify-center mt-5 lg:mt-20">
           <Button label="View all" path="/elements" />
         </div>
       </section>
       <section className="p-6 max-w-7xl m-auto w-full">
         <h1 className="text-center font-graphik-semibold text-2xl tracking-tight lg:text-4xl">
-          Browse sections
+          Browse sections.
         </h1>
         <br />
         <br />
@@ -55,7 +55,7 @@ export default function Home() {
             <div></div>
           </ComponentCard>
         </section>
-        <div className="flex justify-center mt-10 lg:mt-20">
+        <div className="flex justify-center mt-5 lg:mt-20">
           <Button label="View all" path="/sections" />
         </div>{" "}
       </section>

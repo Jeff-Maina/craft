@@ -45,7 +45,7 @@ const ComponentCard: FC<ComponentProps> = ({
             href={pagePath}
             className="w-full h-full flex items-center justify-center"
           >
-            <ArrowUpRight className="group-hover/button:stroke-white transition-all duration-150" />
+            <ArrowUpRight className="group-hover/button:stroke-white transition-all duration-150 h-[20px] w-[20px]" />
           </Link>
         </div>
       </div>
