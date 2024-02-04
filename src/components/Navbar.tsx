@@ -22,9 +22,9 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`w-full h-16 lg:h-28 border-b border-zinc-200/60 z-20  top-0 bg-white transition-all duration-0`}
+        className={`w-full h-16 lg:h-24 border-b border-zinc-200/60 z-20  top-0 bg-white transition-all duration-0 sticky`}
       >
-        <div className="flex items-center justify-between w-full h-full m-auto max-w-7xl">
+        <div className="flex items-center justify-between w-full h-full m-auto max-w-7xl lg:px-4">
           <div className="flex items-center gap-2">
             <a
               href="/"
