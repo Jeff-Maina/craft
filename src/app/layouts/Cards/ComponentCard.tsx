@@ -32,7 +32,7 @@ const ComponentCard: FC<ComponentProps> = ({
         }  divide-x border-zinc-200/60 lg:border-zinc-200 divide-zinc-200/60 lg:divide-zinc-200 h-16 lg:h-20 xl:h-24 font-satoshi-medium`}
       >
         <div className=" h-full px-4 flex items-center flex-grow lg:px-10">
-          <p className="lg:text-xl xl:text-2xl xl:font-satoshi-bold">
+          <p className="lg:text-xl xl:font-satoshi-bold">
             {" "}
             {componentName}
           </p>

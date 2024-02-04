@@ -37,6 +37,7 @@ export const codeblock = {
   typescript,
 };
 `;
+
 const typescript: string = `const javascript: string = "";
 const typescript: string = "";
 
