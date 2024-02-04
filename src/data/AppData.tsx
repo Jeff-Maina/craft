@@ -10,6 +10,11 @@ interface ElementProps {
   component_count: number;
 }
 
+interface faqsProps {
+  question: string;
+  answer: string;
+}
+
 export const SectionsData: Array<SectionProps> = [
   {
     component_name: "Navbars",
@@ -53,5 +58,35 @@ export const ElementsData: Array<ElementProps> = [
     component_name: "Text",
     component_path: "/elements/text",
     component_count: 0,
+  },
+];
+
+export const FaqsList: Array<faqsProps> = [
+  {
+    question: "How do I use the components in my project?",
+    answer: "Simply copy and paste :)",
+  },
+  {
+    question: "What do I need to install for using the components?",
+    answer:
+      "You need to install Tailwind CSS and Framer Motion (for interactive components).",
+  },
+  {
+    question: "Are the components responsive?",
+    answer: "Yes, they are designed to be responsive.",
+  },
+  {
+    question: "How often are the components updated?",
+    answer: "The components are regularly updated.",
+  },
+  {
+    question: "Can I use the components with TypeScript?",
+    answer:
+      "Yes, each component includes both its JavaScript and TypeScript source code.",
+  },
+  {
+    question: "Do I need to customize any aspects of the components?",
+    answer:
+      "Yes, the components provide a structure and may require customization of aspects like colors to suit your preferences.",
   },
 ];
