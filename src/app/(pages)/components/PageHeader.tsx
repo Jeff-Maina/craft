@@ -63,7 +63,7 @@ const PageHeader: FC<headerProps> = ({ data,category }) => {
   const toggleDropDown = () => setDropDownActive(!isDropDownActive);
   const closeDropDown = () => setDropDownActive(false);
   return (
-    <div className="sticky top-4 z-10 font-satoshi-medium md:max-w-xs">
+    <div className="sticky top-[4.6rem] lg:top-4 z-10 font-satoshi-medium md:max-w-xs">
       <div
         className={`h-14 lg:h-16 border  divide-x divide-zinc-200/60 ${
           isDropDownActive
