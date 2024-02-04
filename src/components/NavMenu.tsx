@@ -78,7 +78,7 @@ const NavMenu: FC<NavProps> = ({ isMenuActive, CloseMenu }) => {
             <header className="flex justify-end border-b border-zinc-200/60">
               <button
                 onClick={CloseMenu}
-                className="size-20 border-l grid place-items-center border-zinc-200/60"
+                className="size-16 border-l grid place-items-center border-zinc-200/60"
               >
                 <CancelSvg className="h-[25px] w-[25px] fill-black" />
               </button>
