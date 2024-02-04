@@ -34,7 +34,7 @@ const Faqs: FC = () => {
         Frequently Asked Questions.
       </h1>
       <br />
-      <br />
+      <br className="hidden md:visible" />
       <div className="flex flex-col gap-2">
         {FaqsList.map((faq, index) => {
           const isFaqActive: boolean = index === activeFaqIndex;

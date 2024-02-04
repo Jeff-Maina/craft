@@ -22,7 +22,7 @@ export default function Home() {
           Browse elements.
         </h1>
         <br />
-        <br />
+        <br className="hidden md:visible" />
         <section className="grid gap-3 md:grid-cols-2 lg:gap-3">
           <ComponentCard
             componentName="buttons"
@@ -43,7 +43,7 @@ export default function Home() {
           Browse sections.
         </h1>
         <br />
-        <br />
+        <br className="hidden md:visible" />
         <section className="grid gap-3 md:grid-cols-2 lg:gap-3">
           <ComponentCard
             componentName="Navbars"
