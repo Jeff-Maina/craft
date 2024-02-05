@@ -38,7 +38,7 @@ const Modal: FC<ModalProps> = ({ children, isModalActive, closeModal }) => {
           initial="initial"
           animate="active"
           exit="inactive"
-          className="fixed top-0 left-0 bg-[#00000061] h-screen w-screen backdrop-blur-sm flex flex-col items-center justify-center z-10"
+          className="fixed top-0 left-0 bg-[#00000061] h-screen w-screen backdrop-blur-sm flex flex-col items-center justify-center z-50"
           onClick={() => {
             closeModal();
             console.log(isModalActive);

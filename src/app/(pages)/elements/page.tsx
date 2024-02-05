@@ -7,7 +7,7 @@ import type { Pageprops } from "@/lib/Interfaces";
 // component imports;
 import PageLayout from "@/app/layouts/PageLayout";
 import ComponentCard from "@/app/layouts/Cards/ComponentCard";
-import PageHeader from "../components/PageHeader";
+import PageHeader from "../(components)/PageHeader";
 
 // ts stuff;
 const PageOptions: Pageprops = {

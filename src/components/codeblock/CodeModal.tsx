@@ -34,13 +34,16 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
   const setTs = () => setActiveLanguage("TS");
   const isJavaScript = activeLanguage === "JS";
   const isTypeScript = activeLanguage === "TS";
-  const activeClass = "bg-[#222] text-white hover:!text-white";
+  const activeClass = "bg-[#222] hover:!bg-[#222] text-white hover:!text-white";
 
   // copying the text to clipboard;
   const [hasCopied, setHasCopied] = useState(false);
-  const buttonSvg = hasCopied ?  <DoneSvg className="h-[20px] w-[20px] stroke-green-500" /> : 
-    <CopySvg className="h-[20px] w-[20px] fill-[#555] hover:!fill-white transition-all duration-150" />
-  
+  const buttonSvg = hasCopied ? (
+    <DoneSvg className="h-[20px] w-[20px] stroke-green-500" />
+  ) : (
+    <CopySvg className="h-[20px] w-[20px] fill-[#555] group-hover/icon:fill-white transition-all duration-150" />
+  );
+
   const currentLanguage = isJavaScript ? javascript : typescript;
   const copySnippet = () => {
     setHasCopied(true);
@@ -53,12 +56,12 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
           e.stopPropagation();
           openModal();
         }}
-        className="w-[90%] h-3/4 bg-black max-w-xl rounded overflow-hidden"
+        className="w-[90%] h-3/4  bg-black max-w-2xl overflow-hidden"
       >
-        <header className="w-full flex items-center  border-b border-[#2a2a2a] font-satoshi-medium text-[#555] justify-between pr-2">
-          <div className="flex items-center text-sm">
+        <header className="w-full flex items-center  border-b border-[#2a2a2a] font-satoshi-medium text-[#555] justify-between">
+          <div className="flex items-center text-sm lg:text-base h-12 border-r border-[#2a2a2a]">
             <button
-              className={`px-4 lg:px-6 py-2 hover:bg-[#222] hover:text-[#888] transition-all duration-150 ${
+              className={`px-6 h-full hover:bg-[#111] hover:text-[#888] transition-all duration-150 ${
                 isJavaScript && activeClass
               }`}
               onClick={setJs}
@@ -67,7 +70,7 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
             </button>
             <button
               onClick={setTs}
-              className={`px-4 lg:px-6 py-2 hover:bg-[#222] hover:text-[#888] transition-all duration-150 ${
+              className={`px-6 h-full hover:bg-[#222] hover:text-[#888] transition-all duration-150 ${
                 isTypeScript && activeClass
               }`}
             >
@@ -76,17 +79,17 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
           </div>
           <button
             onClick={copySnippet}
-            className="h-full aspect-square grid place-items-center p-2"
+            className="h-12 aspect-square grid place-items-center border-l border-[#2a2a2a] hover:bg-[#222] group/icon"
           >
             {buttonSvg}
           </button>
         </header>
-        <div className="p-3 h-full pb-10">
+        <div className="p-3 lg:p-4 h-full pb-10">
           <SyntaxHighlighter
             // showLineNumbers
             language="javascript"
             style={nord}
-            className="codeHighlighter !text-xs h-full selection:bg-yellow-500 selection:text-black"
+            className="codeHighlighter !text-xs md:!text-sm h-full selection:bg-yellow-400 selection:text-black"
           >
             {currentLanguage}
           </SyntaxHighlighter>

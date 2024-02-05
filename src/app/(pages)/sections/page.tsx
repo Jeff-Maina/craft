@@ -3,7 +3,7 @@ import { SectionsData } from "@/data/AppData";
 
 import type { Pageprops } from "@/lib/Interfaces";
 import ComponentCard from "@/app/layouts/Cards/ComponentCard";
-import PageHeader from "../components/PageHeader";
+import PageHeader from "../(components)/PageHeader";
 
 const PageOptions: Pageprops = {
   page: "Sections",
