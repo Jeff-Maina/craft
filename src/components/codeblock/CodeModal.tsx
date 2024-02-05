@@ -1,24 +1,13 @@
+//component imports;
+import Modal from "../Modal";
+import { CopySvg, DoneSvg } from "../Svgs";
+
+// 3rd party libraries;
 import { FC, useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { nord } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
-import Modal from "../Modal";
-import { CopySvg, DoneSvg } from "../Svgs";
-
-type codeBlock = {
-  javascript: string;
-  typescript: string;
-};
-
-type modalProps = {
-  isModalActive: boolean;
-  codeBlock: codeBlock;
-  setModalActive: (value: boolean) => void;
-};
-
-interface ModalProps {
-  modalProps: modalProps;
-}
+import { ModalProps } from "./Interfaces";
 
 const CodeModal: FC<ModalProps> = ({ modalProps }) => {
   const { setModalActive, isModalActive, codeBlock } = modalProps;
@@ -45,10 +34,12 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
   );
 
   const currentLanguage = isJavaScript ? javascript : typescript;
+
   const copySnippet = () => {
     setHasCopied(true);
     setTimeout(() => setHasCopied(false), 2500);
   };
+
   return (
     <Modal isModalActive={isModalActive} closeModal={closeModal}>
       <section
@@ -100,3 +91,5 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
 };
 
 export default CodeModal;
+
+// *
