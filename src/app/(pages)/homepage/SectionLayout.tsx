@@ -1,24 +1,31 @@
-import ComponentCard from "@/app/layouts/Cards/ComponentCard";
+import { FC } from "react";
+
 import Button from "@/components/ui/Buttons";
 
-interface Section
+interface SectionProps {
+  category: string;
+  children: JSX.Element;
+  path: string;
+}
 
-const SectionLayout: FC<SectionProps> = ({ children }) => {
+const SectionLayout: FC<SectionProps> = ({ children, category, path }) => {
   return (
     <section className="p-6 max-w-7xl m-auto w-full">
       <h1 className="text-center font-graphik-semibold text-2xl tracking-tight lg:text-4xl">
-        Browse sections.
+        Browse {category}.
       </h1>
       <br />
       <br className="hidden md:visible" />
-      <section className="grid gap-3 md:grid-cols-2 lg:gap-3">
-        {children}
-      </section>
+      {children}
       <div className="flex justify-center mt-5 lg:mt-20">
-        <Button label="View all" path="/sections" />
+        <Button label="View all" path={path} />
       </div>
     </section>
   );
 };
 
 export default SectionLayout;
+
+
+
+// todo: remove the <br/> s to gap or sth
