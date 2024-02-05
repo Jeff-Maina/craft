@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import NavMenu from "./NavMenu";
 import Link from "next/link";
 import { DarkModeSvg } from "./Svgs";
+import Tooltip from "./Tooltip";
 
 const MenuIcon = () => {
   return (
@@ -18,6 +19,11 @@ const Navbar = () => {
   const [isMenuActive, setMenuActive] = useState(false);
   const OpenMenu = () => setMenuActive(true);
   const CloseMenu = () => setMenuActive(false);
+
+  //tooltip;
+  const [isTooltipActive, setTooltipActive] = useState(false);
+  const showTooltip = () => setTooltipActive(true);
+  const hideTooltip = () => setTooltipActive(false);
 
   return (
     <>
@@ -59,8 +65,13 @@ const Navbar = () => {
             >
               <MenuIcon />
             </button>
-            <button className="h-full aspect-square grid place-items-center p-2 transition-all duration-150 border-l border-r hover:bg-black group ">
+            <button
+              onMouseEnter={showTooltip}
+              onMouseLeave={hideTooltip}
+              className="h-full aspect-square grid place-items-center p-2 transition-all duration-150 border-l border-r hover:bg-black group relative group/tooltip"
+            >
               <DarkModeSvg className="h-[24px] w-[24px] fill-black group-hover:fill-white group-hover:stroke-white stroke-black transition-all duration-150" />
+              <Tooltip label="Coming soon" />
             </button>
           </div>
         </div>
