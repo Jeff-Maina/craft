@@ -8,7 +8,7 @@ const SectionsList = () => {
         <ComponentCard
           componentName="Navbars"
           componentCount={0}
-          pagePath="/navbars"
+          pagePath="/sections/navbars"
           isSection={false}
           className="border border-zinc-200/60 lg:border-zinc-200"
         >

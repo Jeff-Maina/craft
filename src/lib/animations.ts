@@ -19,3 +19,18 @@ export const opacityVariants = {
         }
     }
 }
+
+export const heightVariants = {
+    initial: {
+        height: 0,
+    },
+    active: {
+        height: "auto",
+        transition: {
+            duration: 0.15,
+        },
+    },
+    inactive: {
+        height: 0,
+    },
+}

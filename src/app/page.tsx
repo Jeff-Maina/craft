@@ -1,8 +1,7 @@
 // component imports;
-import Button from "@/components/ui/Buttons";
-import ComponentCard from "./layouts/Cards/ComponentCard";
 import Faqs from "@/components/Faqs";
 import SectionsList from "./(pages)/homepage/SectionsList";
+import ElementList from "./(pages)/homepage/ElementsList";
 
 export default function Home() {
   return (
@@ -19,36 +18,7 @@ export default function Home() {
           .
         </p>
       </header>
-      <section className="p-6 max-w-7xl m-auto w-full">
-        <h1 className="text-center font-graphik-semibold text-2xl tracking-tight lg:text-4xl">
-          Browse elements.
-        </h1>
-        <br />
-        <br className="hidden md:visible" />
-        <section className="grid gap-3 md:grid-cols-2 lg:gap-0">
-          <ComponentCard
-            componentName="Buttons"
-            componentCount={0}
-            pagePath="/elements/buttons"
-            isSection={false}
-            className="border border-zinc-200/60 lg:border-zinc-200"
-          >
-            <div></div>
-          </ComponentCard>
-          <ComponentCard
-            componentName="Accordions"
-            componentCount={0}
-            pagePath="/elements/buttons"
-            isSection={false}
-            className="border md:border-l-0 border-zinc-200/60 lg:border-zinc-200"
-          >
-            <div></div>
-          </ComponentCard>
-        </section>
-        <div className="flex justify-center mt-5 lg:mt-20">
-          <Button label="View all" path="/elements" />
-        </div>
-      </section>
+      <ElementList />
       <SectionsList />
       <Faqs />
     </main>

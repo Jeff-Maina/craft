@@ -2,11 +2,7 @@ import { FC } from "react";
 
 import Button from "@/components/ui/Buttons";
 
-interface SectionProps {
-  category: string;
-  children: JSX.Element;
-  path: string;
-}
+import { SectionProps } from "./Interfaces";
 
 const SectionLayout: FC<SectionProps> = ({ children, category, path }) => {
   return (
@@ -25,7 +21,5 @@ const SectionLayout: FC<SectionProps> = ({ children, category, path }) => {
 };
 
 export default SectionLayout;
-
-
 
 // todo: remove the <br/> s to gap or sth

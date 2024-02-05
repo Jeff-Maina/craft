@@ -8,7 +8,7 @@ const ElementList = () => {
         <ComponentCard
           componentName="Buttons"
           componentCount={0}
-          pagePath="/buttons"
+          pagePath="/elements/buttons"
           isSection={false}
           className="border border-zinc-200/60 lg:border-zinc-200"
         >
