@@ -69,24 +69,24 @@ export const MaskVariants: variants = {
 export const NavMenuVariants: variants = {
     initial: {
         x: "-100%",
-      },
-      active: {
+    },
+    active: {
         x: "0%",
         transition: {
-          x: {
-            duration: 0.3,
-            delay: 0.3,
-            type: "tween",
-          },
+            x: {
+                duration: 0.3,
+                delay: 0.3,
+                type: "tween",
+            },
         },
-      },
-      inactive: {
+    },
+    inactive: {
         x: "-100%",
         transition: {
-          x: {
-            duration: 0.3,
-            type: "tween",
-          },
+            x: {
+                duration: 0.3,
+                type: "tween",
+            },
         },
-      },
+    },
 }
