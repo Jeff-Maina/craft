@@ -47,6 +47,7 @@ const Faqs: FC = () => {
               </button>
               <Motiondiv
                 variants={heightVariants}
+                isAnimatePresence={false}
                 isAnimationActive={isFaqActive}
                 className="overflow-hidden h-0"
               >

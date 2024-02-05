@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { FC } from "react";
 
 type variantsProps = {
@@ -12,6 +12,7 @@ interface Motionprops {
   variants: variantsProps;
   isAnimationActive?: boolean;
   className?: React.ComponentProps<"div">["className"];
+  isAnimatePresence: boolean;
 }
 
 const Motiondiv: FC<Motionprops> = ({
@@ -19,8 +20,23 @@ const Motiondiv: FC<Motionprops> = ({
   variants,
   isAnimationActive,
   className,
+  isAnimatePresence,
 }) => {
-  return (
+  return isAnimatePresence ? (
+    <AnimatePresence mode="wait">
+      {isAnimationActive ? (
+        <motion.div
+          variants={variants}
+          initial={variants.initial}
+          animate={variants.active}
+          exit={variants.inactive}
+          className={className}
+        >
+          {children}
+        </motion.div>
+      ) : null}
+    </AnimatePresence>
+  ) : (
     <motion.div
       variants={variants}
       initial={variants.initial}
@@ -33,3 +49,5 @@ const Motiondiv: FC<Motionprops> = ({
 };
 
 export default Motiondiv;
+
+// hehe

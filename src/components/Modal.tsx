@@ -1,3 +1,4 @@
+import { opacityVariants } from "@/lib/animations";
 import { AnimatePresence, motion } from "framer-motion";
 import { FC } from "react";
 
@@ -7,34 +8,12 @@ interface ModalProps {
   closeModal: () => void;
 }
 
-const ModalVariants = {
-  initial: {
-    opacity: 0,
-  },
-  active: {
-    opacity: 1,
-    transition: {
-      opacity: {
-        duration: 0.3,
-      },
-    },
-  },
-  inactive: {
-    opacity: 0,
-    transition: {
-      opacity: {
-        duration: 0.3,
-      },
-    },
-  },
-};
-
 const Modal: FC<ModalProps> = ({ children, isModalActive, closeModal }) => {
   return (
     <AnimatePresence mode="wait">
       {isModalActive && (
         <motion.section
-          variants={ModalVariants}
+          variants={opacityVariants}
           initial="initial"
           animate="active"
           exit="inactive"
