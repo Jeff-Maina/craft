@@ -71,7 +71,7 @@ const Navbar = () => {
               className="h-full aspect-square grid place-items-center p-2 transition-all duration-150 border-l border-r hover:bg-black group relative group/tooltip"
             >
               <DarkModeSvg className="h-[24px] w-[24px] fill-black group-hover:fill-white group-hover:stroke-white stroke-black transition-all duration-150" />
-              <Tooltip label="Coming soon" />
+              <Tooltip label="Coming soon :)" />
             </button>
           </div>
         </div>
