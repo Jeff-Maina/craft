@@ -23,7 +23,7 @@ type websitePages = {
 export const websitePages: Array<websitePages> = [
   {
     page: "Home",
-    path: "/home",
+    path: "/",
   },
   {
     page: "Elements",
