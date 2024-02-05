@@ -46,7 +46,7 @@ const NavMenu: FC<NavProps> = ({ isMenuActive, CloseMenu }) => {
           <ul className="w-full text-black font-satoshi-bold text-3xl flex flex-col divide-y divide-zinc-200/60 leading-none border-t border-b border-zinc-200/60">
             {websitePages.map((page, index) => {
               return (
-                <Link href={page.path}>
+                <Link href={page.path} key={index}>
                   <li className="p-8">{page.page}.</li>
                 </Link>
               );

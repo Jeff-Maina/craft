@@ -14,7 +14,7 @@ const SectionLayout: FC<SectionProps> = ({ children, category, path }) => {
       <br className="hidden md:visible" />
       {children}
       <div className="flex justify-center mt-5 lg:mt-20">
-        <Button label="View all" path={path} />
+        <Button label="View all" href={path} />
       </div>
     </section>
   );
