@@ -1,61 +1,19 @@
+// /component imports
+import { CancelSvg } from "./Svgs";
+
+// 3rd party library imports
 import { AnimatePresence, motion } from "framer-motion";
 import { FC } from "react";
-import { CancelSvg } from "./Svgs";
+
+// animation variants
+import { MaskVariants, NavMenuVariants } from "@/lib/animations";
+import { websitePages } from "@/data/AppData";
+import Link from "next/link";
 
 interface NavProps {
   isMenuActive: boolean;
   CloseMenu: any;
 }
-
-const MenuVariants = {
-  initial: {
-    x: "-100%",
-  },
-  active: {
-    x: "0%",
-    transition: {
-      x: {
-        duration: 0.3,
-        delay: 0.3,
-        type: "tween",
-      },
-    },
-  },
-  inactive: {
-    x: "-100%",
-    transition: {
-      x: {
-        duration: 0.3,
-        type: "tween",
-      },
-    },
-  },
-};
-
-const MaskVariants = {
-  initial: {
-    opacity: 0,
-  },
-  active: {
-    opacity: 1,
-    transition: {
-      opacity: {
-        duration: 0.3,
-        type: "tween",
-      },
-    },
-  },
-  inactive: {
-    opacity: 0,
-    transition: {
-      opacity: {
-        duration: 0.3,
-        type: "tween",
-        delay: 0.3,
-      },
-    },
-  },
-};
 
 const NavMenu: FC<NavProps> = ({ isMenuActive, CloseMenu }) => {
   return (
@@ -69,7 +27,7 @@ const NavMenu: FC<NavProps> = ({ isMenuActive, CloseMenu }) => {
           className="w-screen h-screen top-0 left-0 fixed bg-[#00000079] backdrop-blur-sm z-50"
         >
           <motion.div
-            variants={MenuVariants}
+            variants={NavMenuVariants}
             initial="initial"
             animate="active"
             exit="inactive"
@@ -88,10 +46,13 @@ const NavMenu: FC<NavProps> = ({ isMenuActive, CloseMenu }) => {
             </div>
             <div className="">
               <ul className="w-full text-black font-satoshi-bold text-3xl flex flex-col divide-y divide-zinc-200/60 leading-none border-t border-b border-zinc-200/60">
-                <li className="p-8">Components.</li>
-                <li className="p-8">Sections.</li>
-                <li className="p-8">Elements.</li>
-                <li className="p-8">Pages.</li>
+                {websitePages.map((page, index) => {
+                  return (
+                    <Link href={page.path}>
+                      <li className="p-8">{page.page}.</li>
+                    </Link>
+                  );
+                })}
               </ul>
             </div>
             <footer className="absolute bottom-0 border-t border-zinc-200/60 w-full grid grid-cols-2 divide-x divide-zinc-200/60 text-zinc-400">
@@ -110,3 +71,6 @@ const NavMenu: FC<NavProps> = ({ isMenuActive, CloseMenu }) => {
 };
 
 export default NavMenu;
+
+
+// *

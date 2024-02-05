@@ -1,8 +1,10 @@
 "use client";
-
-import React, { useState, useEffect } from "react";
-import NavMenu from "./NavMenu";
+// 3rd party imports
+import React, { useState } from "react";
 import Link from "next/link";
+
+// component imports
+import NavMenu from "./NavMenu";
 import { DarkModeSvg } from "./Svgs";
 import Tooltip from "./Tooltip";
 
@@ -16,14 +18,11 @@ const MenuIcon = () => {
 };
 
 const Navbar = () => {
+  // Openin and closing menu logic.
   const [isMenuActive, setMenuActive] = useState(false);
   const OpenMenu = () => setMenuActive(true);
   const CloseMenu = () => setMenuActive(false);
 
-  //tooltip;
-  const [isTooltipActive, setTooltipActive] = useState(false);
-  const showTooltip = () => setTooltipActive(true);
-  const hideTooltip = () => setTooltipActive(false);
 
   return (
     <>
@@ -37,7 +36,6 @@ const Navbar = () => {
               className="font-campton-bold lg:text-2xl rounded-lg text-black pl-4 lg:pl-0 leading-none"
             >
               CRAFT.
-              {/* Craft. */}
             </a>
           </div>
           <div className=" items-center flex flex-row-reverse md:flex-row h-full">
@@ -58,7 +56,7 @@ const Navbar = () => {
                   Sections
                 </Link>
               </li>
-            </ul>{" "}
+            </ul>
             <button
               onClick={OpenMenu}
               className="h-full aspect-square flex items-center justify-center md:hidden"
@@ -66,8 +64,6 @@ const Navbar = () => {
               <MenuIcon />
             </button>
             <button
-              onMouseEnter={showTooltip}
-              onMouseLeave={hideTooltip}
               className="h-full aspect-square grid place-items-center p-2 transition-all duration-150 border-l border-r hover:bg-black group relative group/tooltip"
             >
               <DarkModeSvg className="h-[24px] w-[24px] fill-black group-hover:fill-white group-hover:stroke-white stroke-black transition-all duration-150" />

@@ -1,19 +1,39 @@
-interface SectionProps {
+type SectionProps = {
   component_name: string;
   component_path: string;
   component_count: number;
-}
+};
 
-interface ElementProps {
+type ElementProps = {
   component_name: string;
   component_path: string;
   component_count: number;
-}
+};
 
-interface faqsProps {
+type faqsProps = {
   question: string;
   answer: string;
-}
+};
+
+type websitePages = {
+  page: string;
+  path: string;
+};
+
+export const websitePages: Array<websitePages> = [
+  {
+    page: "Home",
+    path: "/home",
+  },
+  {
+    page: "Elements",
+    path: "/elements",
+  },
+  {
+    page: "Sections",
+    path: "/sections",
+  },
+];
 
 export const SectionsData: Array<SectionProps> = [
   {

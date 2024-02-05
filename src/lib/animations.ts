@@ -1,4 +1,10 @@
-export const opacityVariants = {
+type variants = {
+    initial: Object,
+    active: Object,
+    inactive: Object
+}
+
+export const opacityVariants: variants = {
     initial: {
         opacity: 0
     },
@@ -20,7 +26,7 @@ export const opacityVariants = {
     }
 }
 
-export const heightVariants = {
+export const heightVariants: variants = {
     initial: {
         height: 0,
     },
@@ -33,4 +39,54 @@ export const heightVariants = {
     inactive: {
         height: 0,
     },
+}
+
+export const MaskVariants: variants = {
+    initial: {
+        opacity: 0,
+    },
+    active: {
+        opacity: 1,
+        transition: {
+            opacity: {
+                duration: 0.3,
+                type: "tween",
+            },
+        },
+    },
+    inactive: {
+        opacity: 0,
+        transition: {
+            opacity: {
+                duration: 0.3,
+                type: "tween",
+                delay: 0.3,
+            },
+        },
+    },
+}
+
+export const NavMenuVariants: variants = {
+    initial: {
+        x: "-100%",
+      },
+      active: {
+        x: "0%",
+        transition: {
+          x: {
+            duration: 0.3,
+            delay: 0.3,
+            type: "tween",
+          },
+        },
+      },
+      inactive: {
+        x: "-100%",
+        transition: {
+          x: {
+            duration: 0.3,
+            type: "tween",
+          },
+        },
+      },
 }
