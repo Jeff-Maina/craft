@@ -32,33 +32,6 @@ const Elements = () => {
           >
             <div></div>
           </ComponentCard>
-          <ComponentCard
-            componentName="Tabs"
-            componentCount={0}
-            isSection={false}
-            pagePath="/elements/tabs"
-            className="md:!border-b border-zinc-200/60 lg:border-zinc-200"
-          >
-            <div></div>
-          </ComponentCard>
-          <ComponentCard
-            componentName="Links"
-            componentCount={0}
-            isSection={false}
-            pagePath="/elements/links"
-            className="md:border-r border-zinc-200/60 lg:border-zinc-200"
-          >
-            <div></div>
-          </ComponentCard>
-          <ComponentCard
-            componentName="Text"
-            componentCount={0}
-            isSection={false}
-            pagePath="/elements/text"
-            className=""
-          >
-            <div></div>
-          </ComponentCard>
         </div>
       </section>
     </PageLayout>
