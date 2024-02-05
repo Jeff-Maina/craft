@@ -1,27 +1,13 @@
 "use client";
-
-import { opacityVariants } from "@/lib/animations";
+// 3rd party libraries;
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft } from "lucide-react";
-import Link from "next/link";
 import { FC, useState } from "react";
+import Link from "next/link";
 
-interface dropdownprops {
-  isDropDownActive: boolean;
-  closeDropDown: () => void;
-  data: data[];
-}
-
-type data = {
-  component_name: string;
-  component_count: number;
-  component_path: string;
-};
-
-interface headerProps {
-  data: data[];
-  category: string;
-}
+//
+import { headerProps, dropdownprops } from "./interfaces";
+import { opacityVariants } from "@/lib/animations";
 
 // components;
 const Dropdown: FC<dropdownprops> = ({
@@ -58,18 +44,18 @@ const Dropdown: FC<dropdownprops> = ({
   );
 };
 
-const PageHeader: FC<headerProps> = ({ data,category }) => {
+const PageHeader: FC<headerProps> = ({ data, category }) => {
   const [isDropDownActive, setDropDownActive] = useState(false);
-  const toggleDropDown = () => setDropDownActive(!isDropDownActive);
-  const closeDropDown = () => setDropDownActive(false);
+  const toggleDropDown: () => void = () => setDropDownActive(!isDropDownActive);
+  const closeDropDown: () => void = () => setDropDownActive(false);
+
+  const dropDownClass = isDropDownActive
+    ? "border-zinc-300 lg:border-zinc-400"
+    : "border-zinc-200/60 lg:border-zinc-200";
   return (
     <div className="sticky top-[4.6rem] lg:top-4 z-10 font-satoshi-medium md:max-w-xs">
       <div
-        className={`h-14 lg:h-16 border  divide-x divide-zinc-200/60 ${
-          isDropDownActive
-            ? "border-zinc-300 lg:border-zinc-400"
-            : "border-zinc-200/60 lg:border-zinc-200"
-        } transition-all duration-300`}
+        className={`h-14 lg:h-16 border  divide-x divide-zinc-200/60 ${dropDownClass} transition-all duration-300`}
       >
         <div className="w-full h-full relative">
           <button
