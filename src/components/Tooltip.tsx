@@ -1,6 +1,4 @@
 "use client";
-
-import { AnimatePresence, motion } from "framer-motion";
 import { FC } from "react";
 
 interface TooltipProps {
@@ -16,3 +14,6 @@ const Tooltip: FC<TooltipProps> = ({ label }) => {
 };
 
 export default Tooltip;
+
+
+// *
