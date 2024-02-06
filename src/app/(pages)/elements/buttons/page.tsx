@@ -14,7 +14,7 @@ const Buttons = () => {
     <PageLayout pageOptions={PageOptions}>
       <section className="section_layout">
         {ButtonsList.map((button, index) => (
-          <div key={index} className="">
+          <div key={index}>
             {button}
           </div>
         ))}

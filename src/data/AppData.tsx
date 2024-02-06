@@ -63,7 +63,7 @@ export const ElementsData: Array<ElementProps> = [
   {
     component_name: "Links",
     component_path: "links",
-    component_count: 0,
+    component_count: 1,
     component_example: (
       <p className="lg:text-xl leading-none hover:underline">
         Link

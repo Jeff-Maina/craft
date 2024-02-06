@@ -20,11 +20,7 @@ const typescript: string =
 `import { ArrowRight } from "lucide-react";
 import { FC } from React;
 
-interface Buttonprops {
-  //list props here if present;
-}
-
-const Button:FC<ButtonProps> = ({props}) => {
+const Button:FC = (}) => {
   return (
     <button className="h-12 px-4 pr-7 rounded-full bg-[#2a2a2a] flex items-center justify-center gap-2 group/button outline-blue-500 active:bg-black">
       <div className="relative size-5 rounded-full overflow-hidden">

@@ -4,7 +4,7 @@ import { Linklist } from "./Linkslist";
 
 const PageOptions: Pageprops = {
   page: "Links",
-  componentCount: 0,
+  componentCount: 1,
   category: "Elements",
 };
 const Links = () => {
