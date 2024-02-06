@@ -34,13 +34,13 @@ const ButtonCard: FC<ButtonProps> = ({
 
   return (
     <article
-      className={`w-full aspect-square  flex flex-col justify-between pt-4 ${className} font-satoshi-medium group/card relative`}
+      className={`w-full aspect-square  flex flex-col justify-between pt-4 ${className} font-satoshi-medium group/card`}
     >
-      <div className="p-4 h-full w-full flex flex-col items-center justify-center">{children}</div>
-      <div className="flex justify-end w-full items-center h-[15%] absolute bottom-0">
+      <div className="p-4 w-full h-[85%] flex items-center justify-center">{children}</div>
+      <div className="flex justify-end w-full items-center h-[15%]">
         <button
           onClick={toggleModal}
-          className="font-satoshi-medium h-full aspect-square grid place-items-center"
+          className="font-satoshi-medium h-full aspect-square grid place-items-center" 
         >
           <Code className="h-[18px] w-[18px] md:stroke-zinc-300 group-hover/card:stroke-zinc-800 transition-all duration-150" />
         </button>
