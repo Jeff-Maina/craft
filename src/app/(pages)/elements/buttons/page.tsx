@@ -1,7 +1,7 @@
 "use client";
 import PageLayout from "@/app/layouts/PageLayout";
 import type { Pageprops } from "@/lib/Interfaces";
-import { ButtonsList } from "./data/ButtonsList";
+import { ButtonsList } from "./ButtonsList";
 
 const PageOptions: Pageprops = {
   page: "Buttons",
