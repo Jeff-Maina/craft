@@ -14,6 +14,7 @@ const Dropdown: FC<dropdownprops> = ({
   isDropDownActive,
   closeDropDown,
   data,
+  category,
 }) => {
   return (
     <AnimatePresence mode="wait">
@@ -27,7 +28,7 @@ const Dropdown: FC<dropdownprops> = ({
         >
           {data.map(({ component_name, component_path }, index) => {
             return (
-              <Link href={component_path} className="w-full">
+              <Link href={`/${category}/${component_path}`} className="w-full">
                 <div
                   className="p-4 lg:p-6 text-sm md:text-base lg:text-lg hover:bg-black transition-all duration-150 hover:text-white pl-8 text-start w-full"
                   key={index}
@@ -72,6 +73,7 @@ const PageHeader: FC<headerProps> = ({ data, category }) => {
           <Dropdown
             isDropDownActive={isDropDownActive}
             closeDropDown={closeDropDown}
+            category={category}
             data={data}
           />
         </div>

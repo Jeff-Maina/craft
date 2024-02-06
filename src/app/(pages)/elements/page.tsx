@@ -20,7 +20,7 @@ const Elements = () => {
   return (
     <PageLayout pageOptions={PageOptions}>
       <section className="px-4">
-        <PageHeader category="Elements" data={ElementsData} />
+        <PageHeader category="elements" data={ElementsData} />
         <br />
         <div className="grid w-full md:grid-cols-2 gap-2">
           {ElementsData.map((element, index) => (
@@ -30,7 +30,7 @@ const Elements = () => {
               isSection={false}
               pagePath={`/elements/${element.component_path}`}
             >
-              <div></div>
+              <div className="w-full h-full flex items-center justify-center">{element.component_example}</div>
             </ComponentCard>
           ))}
         </div>

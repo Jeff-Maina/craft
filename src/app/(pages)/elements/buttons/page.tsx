@@ -5,21 +5,19 @@ import { ButtonsList } from "./data/ButtonsList";
 
 const PageOptions: Pageprops = {
   page: "Buttons",
-  componentCount: 1,
+  componentCount: 2,
   category: "Elements",
 };
 
 const Buttons = () => {
   return (
     <PageLayout pageOptions={PageOptions}>
-      <section className="px-4">
-        <section className=" w-full h-full  grid md:grid-cols-2 gap-2 lg:grid-cols-3 divide-y md:divide-y-0 divide-zinc-200/60 lg:divide-zinc-200">
-          {ButtonsList.map((button, index) => (
-            <div key={index} className="">
-              {button}
-            </div>
-          ))}
-        </section>
+      <section className="section_layout">
+        {ButtonsList.map((button, index) => (
+          <div key={index} className="">
+            {button}
+          </div>
+        ))}
       </section>
     </PageLayout>
   );

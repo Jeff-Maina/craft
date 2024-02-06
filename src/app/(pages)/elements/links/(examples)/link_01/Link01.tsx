@@ -1,7 +1,7 @@
 import ElementLayout from "../../../ElementLayout";
 import { codeblock } from "./codeblock";
 
-const Link001 = () => {
+const Link01 = () => {
   return (
     <ElementLayout codeBlock={codeblock}>
       <p></p>
@@ -9,4 +9,4 @@ const Link001 = () => {
   );
 };
 
-export default Link001;
+export default Link01;

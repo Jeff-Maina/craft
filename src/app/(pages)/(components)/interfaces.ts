@@ -2,6 +2,7 @@ interface dropdownprops {
     isDropDownActive: boolean;
     closeDropDown: () => void;
     data: data[];
+    category: string;
 }
 
 type data = {

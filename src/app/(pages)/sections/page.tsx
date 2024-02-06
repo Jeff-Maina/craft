@@ -17,7 +17,7 @@ const Sections = () => {
   return (
     <PageLayout pageOptions={PageOptions}>
       <section className="px-4">
-        <PageHeader category="Sections" data={SectionsData} />
+        <PageHeader category="sections" data={SectionsData} />
         <br />
         <div className="grid w-full gap-2">
           {SectionsData.map((element, index) => (

@@ -1,3 +1,5 @@
+"use client";
+
 import { FC, useState } from "react";
 import CodeModal from "@/components/codeblock/CodeModal";
 import { Code } from "lucide-react";
