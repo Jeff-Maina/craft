@@ -64,7 +64,7 @@ const PageLayout: FC<ComponentProps> = ({ children, pageOptions }) => {
   };
 
   return (
-    <main className="flex flex-col min-h-screen max-w-7xl lg:border-zinc-300 m-auto gap-5 md:gap-10 lg:pt-10 lg:gap-5">
+    <main className="flex flex-col min-h-screen max-w-7xl lg:border-zinc-300 m-auto gap-10 lg:pt-10 lg:gap-5">
       <Breadcrumb breadCrumbProps={breadCrumbProps} />
       <header className="flex flex-col gap-4 lg:gap-6 px-4 mt-5">
         <h1 className="font-satoshi-bold text-5xl md:text-6xl lg:text-[6.5rem] text-[#111] tracking-tighter leading-none">
