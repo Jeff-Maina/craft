@@ -50,7 +50,7 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
         className="w-[90%] h-auto transition-all duration-200 max-h-3/4  bg-black max-w-3xl overflow-hidden"
       >
         <header className="w-full flex items-center  border-b border-[#2a2a2a] font-satoshi-medium text-[#555] justify-between">
-          <div className="flex items-center text-sm lg:text-base h-12 border-r border-[#2a2a2a]">
+          <div className="flex items-center text-sm lg:text-base h-8 md:h-12 border-r border-[#2a2a2a]">
             <button
               className={`px-6 h-full hover:bg-[#111] hover:text-[#888] transition-all duration-150 ${
                 isJavaScript && activeClass
@@ -70,12 +70,12 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
           </div>
           <button
             onClick={copySnippet}
-            className="h-12 aspect-square grid place-items-center border-l border-[#2a2a2a] hover:bg-[#222] group/icon"
+            className="h-8 md:h-12 aspect-square grid place-items-center border-l border-[#2a2a2a] hover:bg-[#222] group/icon"
           >
             {buttonSvg}
           </button>
         </header>
-        <div className="p-3 lg:p-4 h-full pb-10">
+        <div className="p-3 lg:p-4 h-full !pb-0 md:pb-10">
           <SyntaxHighlighter
             wrapLines={true} 
             language="javascript" 
