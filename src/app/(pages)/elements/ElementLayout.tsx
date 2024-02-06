@@ -28,7 +28,7 @@ const ElementLayout: FC<ButtonProps> = ({ children, codeBlock, className }) => {
 
   return (
     <article
-      className={`w-full aspect-square  flex flex-col justify-between pt-4 ${className} font-satoshi-medium group/card relative border border-zinc-200/60 md:border-zinc-200 hover:border-zinc-300 transition-all duration-200`}
+      className={`w-full h-64 md:h-auto md:aspect-square  flex flex-col justify-between pt-4 ${className} font-satoshi-medium group/card relative bg-zinc-100/80 border-zinc-200/60 md:border-zinc-200 hover:lg:border-zinc-300 transition-all duration-200`}
     >
       <div className="p-4 w-full h-full flex items-center justify-center">
         {children}
