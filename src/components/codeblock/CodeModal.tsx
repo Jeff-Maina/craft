@@ -1,6 +1,5 @@
 //component imports;
 import Modal from "../Modal";
-import { CopySvg, DoneSvg } from "../Svgs";
 
 // 3rd party libraries;
 import { FC, useState } from "react";
@@ -8,6 +7,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { nord } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 import { ModalProps } from "./Interfaces";
+import { Copy, Check } from "lucide-react";
 
 const CodeModal: FC<ModalProps> = ({ modalProps }) => {
   const { setModalActive, isModalActive, codeBlock } = modalProps;
@@ -28,15 +28,21 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
   // copying the text to clipboard;
   const [hasCopied, setHasCopied] = useState(false);
   const buttonSvg = hasCopied ? (
-    <DoneSvg className="h-[20px] w-[20px] stroke-green-500" />
+    <Check className="h-[18px] md:h-[20px] w-[18px] md:w-[20px] stroke-green-500" />
   ) : (
-    <CopySvg className="h-[20px] w-[20px] fill-[#555] group-hover/icon:fill-white transition-all duration-150" />
+    <Copy className="md:h-[20px] md:w-[20px] h-[18px] w-[18px] stroke-[#555] group-hover/icon:stroke-white transition-all duration-150" />
   );
+  
 
   const currentLanguage = isJavaScript ? javascript : typescript;
 
   const copySnippet = () => {
+    const copyText = isJavaScript ? javascript : typescript;
+
     setHasCopied(true);
+
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText);
     setTimeout(() => setHasCopied(false), 2500);
   };
 
@@ -47,7 +53,7 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
           e.stopPropagation();
           openModal();
         }}
-        className="w-[90%] transition-all duration-200 max-h-3/4  bg-black max-w-3xl overflow-hidden"
+        className="w-[90%] transition-all duration-200 max-h-3/4  bg-black max-w-3xl overflow-hidden shadow-2xl"
       >
         <header className="w-full flex items-center  border-b border-[#1a1a1a] font-satoshi-medium text-[#555] justify-between">
           <div className="flex items-center text-sm lg:text-base h-12 border-r border-[#1a1a1a]">
@@ -75,12 +81,14 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
             {buttonSvg}
           </button>
         </header>
-        <div className="p-3 lg:p-4 h-full !pb-0 md:pb-10">
+        <div className="p-3 lg:p-4 h-full !pb-5 md:pb-10">
           <SyntaxHighlighter
-            wrapLines={true} 
-            language="javascript" 
+            wrapLines={true}
+            language="javascript"
             style={nord}
-            className="codeHighlighter !text-xs md:!text-sm lg:!text-base h-full selection:bg-yellow-400 selection:text-black"
+            // useInlineStyles={false}
+
+            className="codeHighlighter !text-base h-full selection:bg-yellow-400 selection:text-black"
           >
             {currentLanguage}
           </SyntaxHighlighter>

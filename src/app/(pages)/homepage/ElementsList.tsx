@@ -7,7 +7,7 @@ const ElementList = () => {
       <section className="grid gap-3 md:grid-cols-2 lg:gap-3">
         <ComponentCard
           componentName="Buttons"
-          componentCount={0}
+          componentCount={3}
           pagePath="/elements/buttons"
           isSection={false}
           className="border border-zinc-200/60 lg:border-zinc-200"

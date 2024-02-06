@@ -60,7 +60,7 @@ export const MaskVariants: variants = {
             opacity: {
                 duration: 0.3,
                 type: "tween",
-                delay: 0.3,
+                delay: 0.2,
             },
         },
     },
@@ -90,3 +90,35 @@ export const NavMenuVariants: variants = {
         },
     },
 }
+
+export const ModalVariants: variants = {
+    initial: {
+        y: "5%",
+        opacity: 0,
+    },
+    active: {
+        y: "0%",
+        opacity: 1,
+        transition: {
+            y: {
+                duration: 0.3,
+            },
+            opacity: {
+                duration: 0.3,
+            },
+        }
+    },
+    inactive: {
+        y: "5%",
+        opacity: 0,
+        transition: {
+            y: {
+                duration: 0.3,
+            },
+            opacity: {
+                duration: 0.3,
+            },
+        }
+    }
+}
+

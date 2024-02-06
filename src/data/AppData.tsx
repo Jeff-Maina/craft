@@ -1,14 +1,14 @@
-type SectionProps = {
+interface SectionProps {
   component_name: string;
   component_path: string;
   component_count: number;
-};
+}
 
-type ElementProps = {
+interface ElementProps {
   component_name: string;
   component_path: string;
   component_count: number;
-};
+}
 
 type faqsProps = {
   question: string;
@@ -38,7 +38,12 @@ export const websitePages: Array<websitePages> = [
 export const SectionsData: Array<SectionProps> = [
   {
     component_name: "Navbars",
-    component_path: "/sections/navbars",
+    component_path: "navbars",
+    component_count: 0,
+  },
+  {
+    component_name: "Faqs",
+    component_path: "navbars",
     component_count: 0,
   },
 ];
@@ -46,9 +51,14 @@ export const SectionsData: Array<SectionProps> = [
 export const ElementsData: Array<ElementProps> = [
   {
     component_name: "Buttons",
-    component_path: "/elements/buttons",
+    component_path: "buttons",
+    component_count: 3,
+  },
+  {
+    component_name: "Accordion",
+    component_path: "accordions",
     component_count: 0,
-  }
+  },
 ];
 
 export const FaqsList: Array<faqsProps> = [

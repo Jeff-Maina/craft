@@ -19,16 +19,19 @@ const Sections = () => {
       <section className="px-4">
         <PageHeader category="Sections" data={SectionsData} />
         <br />
-        <div className="grid w-full  border  border-zinc-200/60 lg:border-zinc-200 divide-y divide-zinc-200/60 lg:divide-zinc-200">
-          <ComponentCard
-            componentName="Navbars"
-            componentCount={0}
-            isSection={true}
-            pagePath="/sections/navbars"
-            className="xl:h-[80vh]"
-          >
-            <div></div>
-          </ComponentCard>
+        <div className="grid w-full gap-2">
+          {SectionsData.map((element, index) => (
+            <ComponentCard
+              key={index}
+              componentName={element.component_name}
+              componentCount={element.component_count}
+              isSection={true}
+              pagePath={`/sections/${element.component_path}`}
+              className="xl:h-[80vh]"
+            >
+              <div></div>
+            </ComponentCard>
+          ))}
         </div>
       </section>
     </PageLayout>

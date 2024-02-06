@@ -1,13 +1,13 @@
 "use client";
 
 // types and data;
-import { ElementsData } from "@/data/AppData";
 import type { Pageprops } from "@/lib/Interfaces";
 
 // component imports;
 import PageLayout from "@/app/layouts/PageLayout";
 import ComponentCard from "@/app/layouts/Cards/ComponentCard";
 import PageHeader from "../(components)/PageHeader";
+import { ElementsData } from "@/data/AppData";
 
 // ts stuff;
 const PageOptions: Pageprops = {
@@ -22,16 +22,17 @@ const Elements = () => {
       <section className="px-4">
         <PageHeader category="Elements" data={ElementsData} />
         <br />
-        <div className="grid w-full md:grid-cols-2  border  border-zinc-200/60 lg:border-zinc-200 divide-y md:divide-y-0 divide-zinc-200/60 lg:divide-zinc-200">
-          <ComponentCard
-            componentName="Buttons"
-            componentCount={0}
-            isSection={false}
-            pagePath="/elements/buttons"
-            className="md:border-r  border-zinc-200/60 lg:border-zinc-200"
-          >
-            <div></div>
-          </ComponentCard>
+        <div className="grid w-full md:grid-cols-2 gap-2">
+          {ElementsData.map((element, index) => (
+            <ComponentCard
+              componentName={element.component_name}
+              componentCount={element.component_count}
+              isSection={false}
+              pagePath={`/elements/${element.component_path}`}
+            >
+              <div></div>
+            </ComponentCard>
+          ))}
         </div>
       </section>
     </PageLayout>

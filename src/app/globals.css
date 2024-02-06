@@ -28,15 +28,19 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  @apply selection:bg-zinc-300 selection:text-zinc-800;
+}
+
 body::-webkit-scrollbar {
   display: none !important;
 }
 
 .codeHighlighter {
   background-color: transparent !important;
+  color: #d4d4d4;
 }
 
 .codeHighlighter::-webkit-scrollbar {
   background-color: transparent;
-  
 }

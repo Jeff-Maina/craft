@@ -1,5 +1,5 @@
 const javascript: string = 
-`<button className="relative px-8 py-3 group/button">
+`<button className="relative px-8 py-3 group/button outline-blue-500">
   <span className="uppercase tracking-tight font-satoshi-bold text-white group-hover/button:text-black transition-colors duration-300">
     confirm
   </span>
@@ -8,7 +8,7 @@ const javascript: string =
 </button>`;
 
 const typescript: string = 
-`<button className="relative px-8 py-3 group/button">
+`<button className="relative px-8 py-3 group/button outline-blue-500">
   <span className="uppercase tracking-tight font-satoshi-bold text-white group-hover/button:text-black transition-colors duration-300">
     confirm
   </span>
@@ -20,3 +20,4 @@ export const codeblock = {
   javascript,
   typescript,
 };
+
