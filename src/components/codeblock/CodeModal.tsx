@@ -47,7 +47,7 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
           e.stopPropagation();
           openModal();
         }}
-        className="w-[90%] transition-all duration-200 h-3/4  bg-black max-w-3xl overflow-hidden"
+        className="w-[90%] transition-all duration-200 max-h-3/4  bg-black max-w-3xl overflow-hidden"
       >
         <header className="w-full flex items-center  border-b border-[#1a1a1a] font-satoshi-medium text-[#555] justify-between">
           <div className="flex items-center text-sm lg:text-base h-8 md:h-12 border-r border-[#1a1a1a]">
