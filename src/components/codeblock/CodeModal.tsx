@@ -81,14 +81,14 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
           </button>
         </header>
         <div className="pr-2 pb-2 pt-2">
-          <div className="p-3 lg:p-4 h-full max-w-full !pb-5 md:pb-10 max-h-[80vh] !overflow-x-scroll code_box">
+          <div className="p-3 lg:p-4 h-full max-w-full !pb-0 md:pb-10 max-h-[80vh] !overflow-x-scroll code_box">
             <SyntaxHighlighter
               wrapLines={true}
               language="javascript"
               style={nord}
               // useInlineStyles={false}
 
-              className="codeHighlighter !text-base h-full selection:bg-yellow-400 selection:text-black "
+              className="codeHighlighter !text-sm md:!text-base h-full selection:bg-yellow-400 selection:text-black "
             >
               {currentLanguage}
             </SyntaxHighlighter>
