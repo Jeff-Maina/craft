@@ -35,9 +35,9 @@ const Button004 = () => {
   return (
     <ElementLayout codeBlock={codeblock}>
       <button
-        onMouseEnter={hoverButton}
+        onMouseOver={hoverButton}
         onMouseLeave={unHoverButton}
-        className="border border-black bg-white leading-none p-5 px-10 rounded-full group/button active:bg-black outline-blue-500 relative isolate overflow-hidden"
+        className="border border-black bg-white leading-none p-5 px-10 rounded-full group/button outline-blue-500 relative isolate overflow-hidden"
       >
         <span className="relative lg:text-lg text-black group-hover/button:text-white transition-colors duration-300"> Join us today</span>
 
