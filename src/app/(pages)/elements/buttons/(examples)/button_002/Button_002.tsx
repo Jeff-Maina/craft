@@ -2,7 +2,6 @@ import { ArrowRight } from "lucide-react";
 import { codeblock } from "./codeblock";
 import ElementLayout from "../../../ElementLayout";
 
-
 const Button002 = () => {
   return (
     <ElementLayout codeBlock={codeblock}>

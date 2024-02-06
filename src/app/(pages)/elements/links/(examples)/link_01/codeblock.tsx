@@ -1,6 +1,6 @@
 const javascript: string = `import { ArrowRight } from "lucide-react";
 
-const ArrowRightSvg =  <ArrowRight className="h-[14px] md:h-[16px] w-[14px] md:w-[16px] stroke-white" />;
+const ArrowRightSvg =  () => <ArrowRight className="h-[14px] md:h-[16px] w-[14px] md:w-[16px] stroke-white" />;
 
 const Link = () => {
  return (
@@ -26,7 +26,7 @@ export default Link;
 const typescript: string = `import { ArrowRight } from "lucide-react";
 import { FC } from "React"
 
-const ArrowRightSvg =  <ArrowRight className="h-[14px] md:h-[16px] w-[14px] md:w-[16px] stroke-white" />;
+const ArrowRightSvg = () => <ArrowRight className="h-[14px] md:h-[16px] w-[14px] md:w-[16px] stroke-white" />;
 
 const Link:FC = () => {
  return (
