@@ -1,15 +1,52 @@
-import { ArrowUpRight } from "lucide-react";
+"use client";
 import { codeblock } from "./codeblock";
 import ElementLayout from "../../../ElementLayout";
+import { useState } from "react";
+import Motiondiv from "@/components/Motiondiv";
+import { AnimatePresence, motion } from "framer-motion";
+
+const ButtonVariants = {
+  initial: {
+    y: "20%",
+  },
+  active: {
+    y: "-50%",
+    transition: {
+      y: {
+        duration: 0.3,
+      },
+    },
+  },
+  inactive: {
+    y: "-120%",
+    transition: {
+      y: {
+        duration: 0.3,
+      },
+    },
+  },
+};
 
 const Button004 = () => {
+  const [isButtonHovered, setButtonHovered] = useState(false);
+  const hoverButton: () => void = () => setButtonHovered(true);
+  const unHoverButton: () => void = () => setButtonHovered(false);
+
   return (
     <ElementLayout codeBlock={codeblock}>
-      <button className="bg-[#2a2a2a] text-white leading-none p-2 rounded-full flex items-center gap-3 justify-center pl-6 lg:pl-8 group/button active:bg-black outline-blue-500">
-        <span className="lg:text-lg">Start project today</span>
-        <div className="size-8 md:size-12 scale-[20%] group-hover/button:scale-100 group-focus/button:scale-100 grid place-items-center rounded-full bg-white transition-all duration-300">
-          <ArrowUpRight className="h-[20px] w-[20px] stroke-black opacity-0 group-hover/button:opacity-100 group-focus/button:opacity-100 group-active/button:translate-x-1 group-active/button:-translate-y-1 transition-all duration-300" />
-        </div>
+      <button
+        onMouseEnter={hoverButton}
+        onMouseLeave={unHoverButton}
+        className="border border-black bg-white leading-none p-5 px-10 rounded-full group/button active:bg-black outline-blue-500 relative isolate overflow-hidden"
+      >
+        <span className="relative lg:text-lg text-black group-hover/button:text-white transition-colors duration-300"> Join us today</span>
+
+        <Motiondiv
+          isAnimatePresence={true}
+          isAnimationActive={isButtonHovered}
+          variants={ButtonVariants}
+          className="absolute bg-[#2a2a2a] size-52 rounded-full -z-10 top-2/4 left-0 pointer-events-none"
+        ></Motiondiv>
       </button>
     </ElementLayout>
   );
@@ -17,5 +54,5 @@ const Button004 = () => {
 
 export default Button004;
 
-
-// 
+// feb 6 21:21
+// feb 6 22:28

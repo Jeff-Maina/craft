@@ -8,7 +8,7 @@ type variantsProps = {
 };
 
 interface Motionprops {
-  children: JSX.Element;
+  children?: JSX.Element;
   variants: variantsProps;
   isAnimationActive?: boolean;
   className?: React.ComponentProps<"div">["className"];

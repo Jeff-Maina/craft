@@ -45,6 +45,23 @@ body::-webkit-scrollbar {
   background-color: transparent;
 }
 
+.code_box::-webkit-scrollbar {
+  background-color: transparent;
+  width: 5px;
+}
+.code_box::-webkit-scrollbar-corner {
+  background-color: #0000;
+}
+.code_box::-webkit-scrollbar-thumb {
+  background-color: #0000;
+  width: 5px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.code_box:hover::-webkit-scrollbar-thumb {
+  background-color: white;
+}
+
 /* layouts */
 .section_layout {
   @apply w-full h-full grid md:grid-cols-2 gap-2 lg:grid-cols-3 px-4;

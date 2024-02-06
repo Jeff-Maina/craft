@@ -32,7 +32,6 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
   ) : (
     <Copy className="md:h-[20px] md:w-[20px] h-[18px] w-[18px] stroke-[#555] group-hover/icon:stroke-white transition-all duration-150" />
   );
-  
 
   const currentLanguage = isJavaScript ? javascript : typescript;
 
@@ -53,7 +52,7 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
           e.stopPropagation();
           openModal();
         }}
-        className="w-[90%] transition-all duration-200 max-h-3/4  bg-black max-w-3xl overflow-hidden shadow-2xl"
+        className="w-[90%] transition-all duration-200 bg-black max-w-3xl shadow-2xl"
       >
         <header className="w-full flex items-center  border-b border-[#1a1a1a] font-satoshi-medium text-[#555] justify-between">
           <div className="flex items-center text-sm lg:text-base h-12 border-r border-[#1a1a1a]">
@@ -81,17 +80,19 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
             {buttonSvg}
           </button>
         </header>
-        <div className="p-3 lg:p-4 h-full !pb-5 md:pb-10">
-          <SyntaxHighlighter
-            wrapLines={true}
-            language="javascript"
-            style={nord}
-            // useInlineStyles={false}
+        <div className="pr-2 pb-2 pt-2">
+          <div className="p-3 lg:p-4 h-full max-w-full !pb-5 md:pb-10 max-h-[80vh] !overflow-x-scroll code_box">
+            <SyntaxHighlighter
+              wrapLines={true}
+              language="javascript"
+              style={nord}
+              // useInlineStyles={false}
 
-            className="codeHighlighter !text-base h-full selection:bg-yellow-400 selection:text-black"
-          >
-            {currentLanguage}
-          </SyntaxHighlighter>
+              className="codeHighlighter !text-base h-full selection:bg-yellow-400 selection:text-black "
+            >
+              {currentLanguage}
+            </SyntaxHighlighter>
+          </div>
         </div>
       </section>
     </Modal>
