@@ -47,7 +47,7 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
           e.stopPropagation();
           openModal();
         }}
-        className="w-[90%] h-3/4  bg-black max-w-2xl overflow-hidden"
+        className="w-[90%] h-auto transition-all duration-200 max-h-3/4  bg-black max-w-3xl overflow-hidden"
       >
         <header className="w-full flex items-center  border-b border-[#2a2a2a] font-satoshi-medium text-[#555] justify-between">
           <div className="flex items-center text-sm lg:text-base h-12 border-r border-[#2a2a2a]">
@@ -77,10 +77,10 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
         </header>
         <div className="p-3 lg:p-4 h-full pb-10">
           <SyntaxHighlighter
-            // showLineNumbers
-            language="javascript"
+            wrapLines={true} 
+            language="javascript" 
             style={nord}
-            className="codeHighlighter !text-xs md:!text-sm h-full selection:bg-yellow-400 selection:text-black"
+            className="codeHighlighter !text-xs md:!text-sm lg:!text-base h-full selection:bg-yellow-400 selection:text-black"
           >
             {currentLanguage}
           </SyntaxHighlighter>
