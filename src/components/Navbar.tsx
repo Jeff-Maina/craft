@@ -23,11 +23,10 @@ const Navbar = () => {
   const OpenMenu = () => setMenuActive(true);
   const CloseMenu = () => setMenuActive(false);
 
-
   return (
     <>
       <nav
-        className={`w-full h-16 lg:h-20 border-b border-zinc-200/60 z-20  top-0 bg-white transition-all duration-0 sticky lg:relative`}
+        className={`w-full h-16 lg:h-20 border-b border-zinc-200/60 z-20  top-0 bg-white transition-all duration-0 lg:sticky`}
       >
         <div className="flex items-center justify-between w-full h-full m-auto max-w-7xl lg:px-4">
           <div className="flex items-center gap-2">
@@ -63,9 +62,7 @@ const Navbar = () => {
             >
               <MenuIcon />
             </button>
-            <button
-              className="h-full aspect-square grid place-items-center p-2 transition-all duration-150 border-l border-r hover:bg-black group relative group/tooltip"
-            >
+            <button className="h-full aspect-square grid place-items-center p-2 transition-all duration-150 border-l border-r hover:bg-black group relative group/tooltip">
               <DarkModeSvg className="h-[24px] w-[24px] fill-black group-hover:fill-white group-hover:stroke-white stroke-black transition-all duration-150" />
               <Tooltip label="Coming soon :)" />
             </button>
