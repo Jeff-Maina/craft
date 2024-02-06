@@ -15,7 +15,7 @@ const ComponentCard: FC<ComponentProps> = ({
     <Link href={pagePath}>
       <div
         className={`group/component_card h-80  w-full flex ${
-          !isSection ? "lg:h-96 xl:h-[30rem]" : "lg:h-96 xl:h-[27rem]"
+          !isSection ? "lg:h-96 xl:h-[30rem]" : "lg:h-96 xl:h-[29rem]"
         } ${className} font-satoshi-medium border border-zinc-200/60 hover:border-zinc-400 md:border-zinc-200 transition-all duration-200 relative`}
       >
         <div className="h-full w-full">{children}</div>

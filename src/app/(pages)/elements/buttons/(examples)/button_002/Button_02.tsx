@@ -1,14 +1,11 @@
 import { ArrowRight } from "lucide-react";
-import ButtonCard from "../../ButtonLayout";
 import { codeblock } from "./codeblock";
+import ElementLayout from "../../../ElementLayout";
+
 
 const Button002 = () => {
   return (
-    <ButtonCard
-      date="06.02.2024"
-      index={2}
-      codeBlock={codeblock}
-    >
+    <ElementLayout codeBlock={codeblock}>
       <button className="h-12 px-4 pr-7 rounded-full bg-[#2a2a2a] flex items-center justify-center gap-2 group/button outline-blue-500 active:bg-black">
         <div className="relative size-5 rounded-full overflow-hidden">
           <div className="size-5 rounded-full bg-white scale-50 group-hover/button:scale-100 transition-all duration-300 overflow-hidden relative"></div>
@@ -16,7 +13,7 @@ const Button002 = () => {
         </div>
         <span className="text-white">Hover me</span>
       </button>
-    </ButtonCard>
+    </ElementLayout>
   );
 };
 

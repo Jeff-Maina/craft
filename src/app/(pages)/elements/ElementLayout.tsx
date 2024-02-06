@@ -11,17 +11,9 @@ interface ButtonProps {
   children: JSX.Element;
   codeBlock: codeBlock;
   className?: string;
-  date: string;
-  index: number;
 }
 
-const ButtonCard: FC<ButtonProps> = ({
-  children,
-  codeBlock,
-  className,
-  date,
-  index,
-}) => {
+const ElementLayout: FC<ButtonProps> = ({ children, codeBlock, className }) => {
   const [isModalActive, setModalActive] = useState(false);
   // toggle modal;
   const toggleModal = () => setModalActive(!isModalActive);
@@ -36,11 +28,13 @@ const ButtonCard: FC<ButtonProps> = ({
     <article
       className={`w-full aspect-square  flex flex-col justify-between pt-4 ${className} font-satoshi-medium group/card relative border border-zinc-200/60 md:border-zinc-200 hover:border-zinc-400 transition-all duration-200`}
     >
-      <div className="p-4 w-full h-full flex items-center justify-center">{children}</div>
+      <div className="p-4 w-full h-full flex items-center justify-center">
+        {children}
+      </div>
       <div className="flex justify-end w-full items-center h-[15%] absolute bottom-0 left-0">
         <button
           onClick={toggleModal}
-          className="font-satoshi-medium h-full aspect-square grid place-items-center" 
+          className="font-satoshi-medium h-full aspect-square grid place-items-center"
         >
           <Code className="h-[18px] w-[18px] md:stroke-zinc-300 group-hover/card:stroke-zinc-800 transition-all duration-150" />
         </button>
@@ -50,4 +44,4 @@ const ButtonCard: FC<ButtonProps> = ({
   );
 };
 
-export default ButtonCard;
+export default ElementLayout;
