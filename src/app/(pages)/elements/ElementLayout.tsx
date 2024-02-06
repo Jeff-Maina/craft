@@ -38,7 +38,7 @@ const ElementLayout: FC<ButtonProps> = ({ children, codeBlock, className }) => {
           onClick={toggleModal}
           className="font-satoshi-medium h-full aspect-square grid place-items-center"
         >
-          <Code className="h-[18px] w-[18px] md:stroke-zinc-300 group-hover/card:stroke-zinc-800 transition-all duration-150" />
+          <Code className="h-[18px] stroke-zinc-500 w-[18px] md:stroke-zinc-300 group-hover/card:stroke-zinc-800 transition-all duration-150" />
         </button>
       </div>
       <CodeModal modalProps={modalProps} />

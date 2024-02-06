@@ -29,7 +29,7 @@ const Breadcrumb: FC<BreadcrumbProps> = ({ breadCrumbProps }) => {
   return (
     <>
       {!isMainPage && (
-        <div className="px-4 border-b border-zinc-200/60 lg:border-none sticky top-0 backdrop-blur-lg bg-[#ffffffcd] z-[5]">
+        <div className="px-4 border-b border-zinc-200/60 lg:border-none sticky top-0 backdrop-blur-lg bg-[#ffffff46] z-[5]">
           <div className="font-satoshi-medium flex items-center gap-1 md:text-lg lg:text-xl py-5 lg:py-6">
             <Link href={`/${path}`} className="text-zinc-500 hover:text-zinc-900 transition-all duration-150">
               {category}
