@@ -35,7 +35,7 @@ const Button = () => {
     <button
       onMouseEnter={hoverButton}
       onMouseLeave={unHoverButton}
-      className="bg-black text-white leading-none p-5 px-10 rounded-full group/button active:bg-black outline-blue-500 relative isolate overflow-hidden"
+      className="bg-black text-white leading-none p-5 px-10 rounded-full group/button active:scale-105 outline-blue-500 relative isolate overflow-hidden transition-all duration-300"
      >
       <span className="relative lg:text-lg text-black group-hover/button:text-white transition-colors duration-300"> Join us today</span>
     
@@ -93,7 +93,7 @@ const Button:FC = () => {
     <button
       onMouseEnter={hoverButton}
       onMouseLeave={unHoverButton}
-      className="bg-black text-white leading-none p-5 px-10 rounded-full group/button active:bg-black outline-blue-500 relative isolate overflow-hidden"
+      className="bg-black text-white leading-none p-5 px-10 rounded-full group/button active:scale-105 outline-blue-500 relative isolate overflow-hidden transition-all duration-300"
      >
       <span className="relative lg:text-lg text-black group-hover/button:text-white transition-colors duration-300"> Join us today</span>
 
