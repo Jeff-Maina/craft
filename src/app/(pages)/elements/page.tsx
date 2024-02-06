@@ -28,7 +28,7 @@ const Elements = () => {
             componentCount={0}
             isSection={false}
             pagePath="/elements/buttons"
-            className="md:border-r md:border-b border-zinc-200/60 lg:border-zinc-200"
+            className="md:border-r  border-zinc-200/60 lg:border-zinc-200"
           >
             <div></div>
           </ComponentCard>

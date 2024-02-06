@@ -1,5 +1,5 @@
 // component imports;
-import Faqs from "@/components/Faqs";
+import Faqs from "@/app/(pages)/homepage/Faqs";
 import SectionsList from "./(pages)/homepage/SectionsList";
 import ElementList from "./(pages)/homepage/ElementsList";
 

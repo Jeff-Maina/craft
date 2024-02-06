@@ -31,7 +31,7 @@ const Breadcrumb: FC<BreadcrumbProps> = ({ breadCrumbProps }) => {
       {!isMainPage && (
         <div className="px-4 border-b border-zinc-200/60 lg:border-none sticky top-0 backdrop-blur-lg bg-[#ffffffcd] z-[5]">
           <div className="font-satoshi-medium flex items-center gap-1 md:text-lg lg:text-xl py-5 lg:py-6">
-            <Link href={`/${path}`} className="text-zinc-500">
+            <Link href={`/${path}`} className="text-zinc-500 hover:text-zinc-900 transition-all duration-150">
               {category}
             </Link>{" "}
             <p>{!isMainPage && <ChevronRight className="h-[15px]" />}</p>
@@ -64,7 +64,7 @@ const PageLayout: FC<ComponentProps> = ({ children, pageOptions }) => {
   };
 
   return (
-    <main className="flex flex-col min-h-screen max-w-7xl lg:border-zinc-300 m-auto gap-10">
+    <main className="flex flex-col min-h-screen max-w-7xl lg:border-zinc-300 m-auto gap-10 lg:pt-10 lg:gap-5">
       <Breadcrumb breadCrumbProps={breadCrumbProps} />
       <header className="flex flex-col gap-4 lg:gap-6 px-4 ">
         <h1 className="font-satoshi-bold text-5xl md:text-6xl lg:text-[6.5rem] selection:bg-black selection:text-white text-[#111] tracking-tighter leading-none">
@@ -74,7 +74,7 @@ const PageLayout: FC<ComponentProps> = ({ children, pageOptions }) => {
           </sup>
         </h1>
       </header>
-      <section className="">{children}</section>
+      <section className="lg:mt-10">{children}</section>
     </main>
   );
 };

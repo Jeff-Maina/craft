@@ -1,4 +1,4 @@
-import ButtonCard from "../ButtonCard";
+import ButtonCard from "../../ButtonLayout";
 import { codeblock } from "./codeblock";
 
 const Button001 = () => {
@@ -6,7 +6,7 @@ const Button001 = () => {
     <ButtonCard
       date="03.02.2024"
       index={1}
-      className="md:border border-t border-zinc-200/60 border-r border-l"
+      className=" border-t border-zinc-200/60 md:border-r-zinc-200 border-r border-l"
       codeBlock={codeblock}
     >
       <button></button>

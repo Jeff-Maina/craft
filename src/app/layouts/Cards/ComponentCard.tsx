@@ -23,9 +23,9 @@ const ComponentCard: FC<ComponentProps> = ({
     <div
       className={`h-80 lg:h-96 xl:h-[30rem] w-full flex ${
         !isSection ? "flex-col" : "flex-col-reverse"
-      } justify-end ${className} `}
+      } justify-end ${className} font-satoshi-medium`}
     >
-      <div>{children}</div>
+      <div className="h-3/4">{children}</div>
       <div
         className={`w-full flex items-center justify-end ${
           !isSection ? "border-t" : "border-b"
