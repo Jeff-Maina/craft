@@ -4,13 +4,13 @@ import { ArrowRight } from "lucide-react";
 import ElementLayout from "../../../ElementLayout";
 import { codeblock } from "./codeblock";
 import { FC, useState } from "react";
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 
-const MotionVariants = (index: number) => ({
+const MotionVariants: Variants = {
   initial: {
     y: "0%",
   },
-  hovered: {
+  hovered: (index: number) => ({
     y: "-100%",
     transition: {
       y: {
@@ -18,8 +18,8 @@ const MotionVariants = (index: number) => ({
         delay: index * 0.05,
       },
     },
-  },
-  unhovered: {
+  }),
+  unhovered: (index: number) => ({
     y: "0%",
     transition: {
       y: {
@@ -27,8 +27,8 @@ const MotionVariants = (index: number) => ({
         delay: index * 0.05,
       },
     },
-  },
-});
+  }),
+};
 
 const Link004: FC = () => {
   const [isLinkHovered, setIsLinkHovered] = useState(false);
@@ -41,7 +41,8 @@ const Link004: FC = () => {
     return (
       <div className="">
         <motion.p
-          variants={MotionVariants(index)}
+          custom={index}
+          variants={MotionVariants}
           initial="initial"
           animate={isLinkHovered ? "hovered" : "unhovered"}
           key={index}
