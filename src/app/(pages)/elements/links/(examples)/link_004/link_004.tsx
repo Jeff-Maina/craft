@@ -14,7 +14,7 @@ const MotionVariants = (index: number) => ({
     y: "-100%",
     transition: {
       y: {
-        duration: 0.3,
+        duration: 0.2,
         delay: index * 0.05,
       },
     },
@@ -23,7 +23,7 @@ const MotionVariants = (index: number) => ({
     y: "0%",
     transition: {
       y: {
-        duration: 0.3,
+        duration: 0.2,
         delay: index * 0.05,
       },
     },
@@ -73,4 +73,4 @@ const Link004: FC = () => {
 export default Link004;
 
 // feb 8 22:21
-// feb 6 1:46
+// feb 6 23:29
