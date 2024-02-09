@@ -3,7 +3,7 @@ import ElementLayout from "../../../ElementLayout";
 import { codeblock } from "./codeblock";
 import { FC } from "react";
 
-const ArrowSvg = () => (
+const ArrowSvg:FC = () => (
   <ArrowRight className="h-[14px] md:h-[16px] w-[14px] md:w-[16px] stroke-white" />
 );
 

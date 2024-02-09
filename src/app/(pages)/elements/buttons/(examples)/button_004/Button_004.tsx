@@ -3,7 +3,6 @@ import { codeblock } from "./codeblock";
 import ElementLayout from "../../../ElementLayout";
 import { useState } from "react";
 import Motiondiv from "@/components/Motiondiv";
-import { AnimatePresence, motion } from "framer-motion";
 
 const ButtonVariants = {
   initial: {

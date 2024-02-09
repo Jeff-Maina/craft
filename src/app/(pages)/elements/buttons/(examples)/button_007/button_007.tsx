@@ -1,10 +1,11 @@
+import { AnimatePresence, motion, Variants } from "framer-motion";
+import { useState, FC } from "react";
+
 import { ArrowRight } from "lucide-react";
 import ElementLayout from "../../../ElementLayout";
 import { codeblock } from "./codeblock";
-import Motiondiv from "@/components/Motiondiv";
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-const motionVariants = {
+
+const motionVariants: Variants = {
   initial: {
     x: "-10%",
   },
@@ -22,7 +23,7 @@ const motionVariants = {
   },
 };
 
-const Button007 = () => {
+const Button007: FC = () => {
   const [isLinkHovered, setLinkHovered] = useState(false);
   const hoverLink: () => void = () => setLinkHovered(true);
   const unhoverLink: () => void = () => setLinkHovered(false);
@@ -33,7 +34,7 @@ const Button007 = () => {
         onMouseLeave={unhoverLink}
         className="group/button relative overflow-hidden isolate rounded-full"
       >
-        <div className="flex items-center gap-5 p-1 md:p-2 rounded-full pl-5 lg:pl-7 pointer-events-none">
+        <div className="flex items-center gap-5 p-1 md:p-2 rounded-full pl-5 md:pl-5 lg:pl-7 pointer-events-none">
           <span className="lg:text-xl group-hover/button:text-white transition-all duration-300">
             Discover our services
           </span>
