@@ -3,7 +3,6 @@
 import { useState } from "react";
 import ElementLayout from "../../../ElementLayout";
 import { codeblock } from "./codeblock";
-import { AnimatePresence, motion } from "framer-motion";
 import Motiondiv from "@/components/Motiondiv";
 
 const motionVariants = {

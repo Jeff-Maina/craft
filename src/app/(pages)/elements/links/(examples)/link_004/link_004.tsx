@@ -1,6 +1,5 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
 import ElementLayout from "../../../ElementLayout";
 import { codeblock } from "./codeblock";
 import { FC, useState } from "react";

@@ -1,7 +1,5 @@
 const javascript: string = 
-`"use client";
-
-import {  useState } from "react";
+`import {  useState } from "react";
 import {  motion } from "framer-motion";
 
 const MotionVariants = {
@@ -35,11 +33,11 @@ const Link = () => {
   const hoverLink = () => setIsLinkHovered(true);
   const unhoverLink = () => setIsLinkHovered(false);
 
-  const wordArray = Array.from("services");
+  const wordArray = Array.from("services"); 
 
   const WordElement = wordArray.map((char, index) => {
     return (
-      <div className="">
+      <div>
         <motion.p
           key={index}
           custom={index}
@@ -111,7 +109,7 @@ const Link: FC = () => {
 
   const WordElement = wordArray.map((char, index) => {
     return (
-      <div className="">
+      <div>
         <motion.p
           key={index}
           custom={index}
