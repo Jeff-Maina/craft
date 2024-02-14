@@ -80,7 +80,7 @@ export const FaqsList: Array<faqsProps> = [
   {
     question: "What do I need to install?",
     answer:
-      "You need to install Tailwind CSS and Framer Motion (for interactive components).",
+      "You need to install Tailwind CSS and Framer Motion/GSAP (for interactive components).",
   },
   {
     question: "Are the components responsive?",
