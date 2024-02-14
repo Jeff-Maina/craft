@@ -54,7 +54,7 @@ const PageHeader: FC<headerProps> = ({ data, category }) => {
     ? "border-zinc-300 lg:border-zinc-400"
     : "border-zinc-200/60 lg:border-zinc-200";
   return (
-    <div className="sticky top-[4.6rem] lg:top-4 z-10 font-satoshi-medium md:max-w-xs">
+    <div className="sticky top-4 z-10 font-satoshi-medium md:max-w-xs">
       <div
         className={`h-14 lg:h-16 border  divide-x divide-zinc-200/60 ${dropDownClass} transition-all duration-300`}
       >
