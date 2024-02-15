@@ -10,6 +10,7 @@ import Link009 from "./(examples)/link_009/link_009";
 import Link010 from "./(examples)/link_010/link_010";
 import Link011 from "./(examples)/link_011/link_011";
 import Link012 from "./(examples)/link_012/link_012";
+import Link013 from "./(examples)/link_013/link_013";
 
 type LinkProps = JSX.Element;
 
@@ -26,4 +27,5 @@ export const Linklist: Array<LinkProps> = [
   <Link010 />,
   <Link011 />,
   <Link012 />,
+  <Link013 />,
 ];
