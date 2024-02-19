@@ -79,9 +79,9 @@ const Link011 = () => {
   const hoverlink: () => void = () => setLinkHovered(true);
   const unhoverlink: () => void = () => setLinkHovered(false);
 
-  const circleRef = useRef(null);
+  const circleRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseMove = ({ clientX, clientY }) => {
+  const handleMouseMove = ({ clientX, clientY }: MouseEvent) => {
     const moveContainerY = gsap.quickTo(circleRef.current, "top", {
       duration: 0.8,
       ease: "power3",
@@ -90,7 +90,9 @@ const Link011 = () => {
       duration: 0.8,
       ease: "power3",
     });
-    let { top, left } = circleRef.current?.getBoundingClientRect();
+    const circle = circleRef.current;
+    if (!circle) return;
+    let { top, left } = circle.getBoundingClientRect();
 
     moveContainerX(clientX - left);
     moveContainerY(clientY - top + 30);
