@@ -7,7 +7,7 @@ import TableOfContent from "../TableofContents";
 
 const PageOptions: Pageprops = {
   page: "Buttons",
-  componentCount: 2,
+  componentCount: 9,
   category: "Elements",
 };
 

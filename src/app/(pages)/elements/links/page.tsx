@@ -6,7 +6,7 @@ import TableOfContent from "../TableofContents";
 
 const PageOptions: Pageprops = {
   page: "Links",
-  componentCount: 2,
+  componentCount: 13,
   category: "Elements",
 };
 const Links = () => {

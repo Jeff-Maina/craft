@@ -53,7 +53,7 @@ export const ElementsData: Array<ElementProps> = [
   {
     component_name: "Buttons",
     component_path: "buttons",
-    component_count: 2,
+    component_count: 9,
     component_example: (
       <button className="bg-[#2a2a2a] hover:bg-[#3a3a3a] transition-all duration-150 text-white rounded md:rounded-lg py-3  md:text-lg px-6 md:px-10 leading-none">
         button
@@ -63,23 +63,13 @@ export const ElementsData: Array<ElementProps> = [
   {
     component_name: "Links",
     component_path: "links",
-    component_count: 2,
+    component_count: 13,
     component_example: (
       <p className="lg:text-xl leading-none hover:underline">
         Link
       </p>
     ),
-  },
-  {
-    component_name: "Tabs",
-    component_path: "tabs",
-    component_count: 2,
-    component_example: (
-      <p className="lg:text-xl leading-none hover:underline">
-        Link
-      </p>
-    ),
-  },
+  }
 ];
 
 export const FaqsList: Array<faqsProps> = [
