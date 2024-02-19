@@ -37,16 +37,16 @@ export const websitePages: Array<websitePages> = [
 ];
 
 export const SectionsData: Array<SectionProps> = [
-  {
-    component_name: "Navbars",
-    component_path: "navbars",
-    component_count: 0,
-  },
-  {
-    component_name: "Faqs",
-    component_path: "navbars",
-    component_count: 0,
-  },
+  // {
+  //   component_name: "Navbars",
+  //   component_path: "navbars",
+  //   component_count: 0,
+  // },
+  // {
+  //   component_name: "Faqs",
+  //   component_path: "navbars",
+  //   component_count: 0,
+  // },
 ];
 
 export const ElementsData: Array<ElementProps> = [
