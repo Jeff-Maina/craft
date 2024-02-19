@@ -67,8 +67,6 @@ const PageLayout: FC<ComponentProps> = ({ children, pageOptions }) => {
     page,
   };
 
-  const gridClass = isMainPage ? "" : "lg:grid grid-cols-8";
-
   return (
     <main className="flex flex-col min-h-screen max-w-7xl lg:border-zinc-300 m-auto gap-10 lg:pt-10 lg:gap-5">
       <Breadcrumb breadCrumbProps={breadCrumbProps} />
@@ -77,32 +75,8 @@ const PageLayout: FC<ComponentProps> = ({ children, pageOptions }) => {
           {page}.<sup className="text-4xl text-zinc-400">{componentCount}</sup>
         </h1>
       </header>
-      <section className={`lg:mt-4 ${gridClass}`}>
-        <section className="col-span-7">{children}</section>
-        {!isMainPage && (
-          <section className="col-span-1 hidden lg:block font-satoshi-medium items-center">
-            <div className="w-full border border-zinc-200/60 md:border-zinc-200 sticky top-4 py-4">
-              <header>
-                <p className="px-4 text-sm text-[#3a3a3a] pb-2">Categories</p>
-              </header>
-              <div>
-                {}
-                <div className="px-4 py-2 hover:pl-6 cursor-pointer text-sm md:text-base lg:text-lg transition-all duration-300 text-start w-full flex items-center gap-1">
-                  <ChevronRight className="h-[12px] w-[12px]" />
-                  <p>Buttons</p>
-                </div>
-                <div className="px-4 py-2 hover:pl-6 cursor-pointer text-sm md:text-base lg:text-lg transition-all duration-300 text-start w-full flex items-center gap-1">
-                  <ChevronRight className="h-[12px] w-[12px]" />
-                  <p>Tabs</p>
-                </div>
-                <div className="px-4 py-2 hover:pl-6 cursor-pointer text-sm md:text-base lg:text-lg transition-all duration-300 text-start w-full flex items-center gap-1">
-                  <ChevronRight className="h-[12px] w-[12px]" />
-                  <p>Links</p>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
+      <section className={`lg:mt-4`}>
+        <section className="">{children}</section>
       </section>
     </main>
   );

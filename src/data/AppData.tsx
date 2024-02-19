@@ -70,6 +70,16 @@ export const ElementsData: Array<ElementProps> = [
       </p>
     ),
   },
+  {
+    component_name: "Tabs",
+    component_path: "tabs",
+    component_count: 2,
+    component_example: (
+      <p className="lg:text-xl leading-none hover:underline">
+        Link
+      </p>
+    ),
+  },
 ];
 
 export const FaqsList: Array<faqsProps> = [
