@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import ElementLayout from "../../../ElementLayout";
 import { codeblock } from "./codeblock";
-import { useRef, useState } from "react";
+import { MouseEventHandler, MouseEvent, useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { gsap } from "gsap";
 
@@ -81,7 +81,10 @@ const Link011 = () => {
 
   const circleRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseMove = ({ clientX, clientY }: MouseEvent) => {
+  const handleMouseMove: MouseEventHandler = ({
+    clientX,
+    clientY,
+  }: MouseEvent<HTMLButtonElement>) => {
     const moveContainerY = gsap.quickTo(circleRef.current, "top", {
       duration: 0.8,
       ease: "power3",

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import ElementLayout from "../../../ElementLayout";
 import { codeblock } from "./codeblock";
-import { MouseEventHandler, useRef, useState } from "react";
+import { MouseEvent, MouseEventHandler, useRef, useState } from "react";
 import { PlayIcon } from "lucide-react";
 import { gsap } from "gsap";
 
@@ -145,7 +145,10 @@ const Link012 = () => {
   const unhoverlink: () => void = () => setLinkHovered(false);
   const iconRef = useRef<HTMLDivElement>(null);
 
-  const moveIcon = ({ clientX, clientY }: MouseEvent) => {
+  const moveIcon: MouseEventHandler = ({
+    clientX,
+    clientY,
+  }: MouseEvent<HTMLButtonElement>) => {
     const moveContainerY = gsap.quickTo(iconRef.current, "top", {
       duration: 0.4,
       ease: "power3",
@@ -171,7 +174,7 @@ const Link012 = () => {
         className="font-satoshi-medium lg:text-4xl relative"
         onMouseEnter={hoverLink}
         onMouseLeave={unhoverlink}
-        onMouseMove={moveIcon}
+        onMouseMove={(e) => moveIcon(e)}
       >
         <div className="relative overflow-hidden">
           <motion.p
