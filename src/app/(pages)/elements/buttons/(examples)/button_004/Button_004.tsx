@@ -38,7 +38,7 @@ const Button004 = () => {
         onMouseLeave={unHoverButton}
         className="border border-black bg-white leading-none p-5 px-10 rounded-full group/button active:scale-105 outline-blue-500 relative isolate overflow-hidden transition-all duration-300"
       >
-        <span className="relative lg:text-lg text-black group-hover/button:text-white transition-colors duration-300"> Join us today</span>
+        <span className="relative md:text-lg text-white mix-blend-difference transition-colors duration-300"> Join us today</span>
 
         <Motiondiv
           isAnimatePresence={true}

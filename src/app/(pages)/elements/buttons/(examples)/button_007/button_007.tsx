@@ -32,17 +32,15 @@ const Button007: FC = () => {
       <button
         onMouseEnter={hoverLink}
         onMouseLeave={unhoverLink}
-        className="group/button relative overflow-hidden isolate rounded-full"
+        className="group/button relative overflow-hidden isolate rounded-full flex items-center gap-5 p-1 md:p-2 pl-5 md:pl-5 lg:pl-7 text-white bg-white"
       >
-        <div className="flex items-center gap-5 p-1 md:p-2 rounded-full pl-5 md:pl-5 lg:pl-7 pointer-events-none">
-          <span className="lg:text-xl group-hover/button:text-white transition-all duration-300">
-            Discover our services
-          </span>
-          <div className="size-10 lg:size-16 rounded-full border border-black bg-white grid place-items-center">
-            <div className="relative overflow-hidden">
-              <ArrowRight className="h-[18px] w-[18px] md:h-[24px] md:w-[24px] group-hover/button:translate-x-full transition-all duration-500" />
-              <ArrowRight className="absolute inset-0 h-[18px] w-[18px] md:h-[24px] md:w-[24px] -translate-x-full group-hover/button:translate-x-0 transition-all duration-500" />
-            </div>
+        <span className="md:text-xl transition-all duration-300 relative z-10 mix-blend-difference">
+          Discover our services
+        </span>
+        <div className="size-10 lg:size-16 rounded-full border border-black bg-white grid place-items-center relative z-10">
+          <div className="relative overflow-hidden bg-white">
+            <ArrowRight className="h-[18px] stroke-black w-[18px] md:h-[20px] md:w-[20px] group-hover/button:translate-x-full transition-all duration-500" />
+            <ArrowRight className="absolute stroke-black inset-0 h-[18px] w-[18px] md:h-[20px] md:w-[20px] -translate-x-full group-hover/button:translate-x-0 transition-all duration-500" />
           </div>
         </div>
 
@@ -53,7 +51,7 @@ const Button007: FC = () => {
               initial="initial"
               animate="active"
               exit="inactive"
-              className="absolute h-full w-full top-0 right-full rounded-full bg-black -z-[10]"
+              className="absolute h-full w-full top-0 right-full rounded-full bg-black z-[5]"
             ></motion.div>
           ) : null}
         </AnimatePresence>
