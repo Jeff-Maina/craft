@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import ElementLayout from "../../../ElementLayout";
 import { codeblock } from "./codeblock";
-import { useRef, useState } from "react";
+import { MouseEventHandler, useRef, useState } from "react";
 import { PlayIcon } from "lucide-react";
 import { gsap } from "gsap";
 
@@ -143,9 +143,9 @@ const Link012 = () => {
   const [isLinkHovered, setLinkHovered] = useState(false);
   const hoverLink: () => void = () => setLinkHovered(true);
   const unhoverlink: () => void = () => setLinkHovered(false);
-  const iconRef = useRef(null);
+  const iconRef = useRef<HTMLDivElement>(null);
 
-  const moveIcon = ({ clientX, clientY }) => {
+  const moveIcon = ({ clientX, clientY }: MouseEvent) => {
     const moveContainerY = gsap.quickTo(iconRef.current, "top", {
       duration: 0.4,
       ease: "power3",
@@ -154,10 +154,14 @@ const Link012 = () => {
       duration: 0.4,
       ease: "power3",
     });
-    let { top, left, width } = iconRef.current?.getBoundingClientRect();
+
+    const icon = iconRef.current;
+    if (!icon) return;
+
+    let { top, left, width } = icon.getBoundingClientRect();
 
     moveContainerX(clientX - left + width);
-    moveContainerY(clientY - top );
+    moveContainerY(clientY - top);
   };
 
   return (

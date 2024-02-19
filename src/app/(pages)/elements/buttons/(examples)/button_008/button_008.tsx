@@ -6,7 +6,7 @@ import { codeblock } from "./codeblock";
 import { gsap } from "gsap";
 
 const Button008 = () => {
-  const buttonRef = useRef(null);
+  const buttonRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const xTo = gsap.quickTo(buttonRef.current, "x", {
@@ -18,10 +18,13 @@ const Button008 = () => {
       ease: "elastic.out(1,0.3)",
     });
 
-    buttonRef.current?.addEventListener("mousemove", (e) => {
+    const button = buttonRef.current;
+
+    if (!button) return;
+
+    button.addEventListener("mousemove", (e) => {
       const { clientX, clientY } = e;
-      const { top, left, height, width } =
-        buttonRef.current.getBoundingClientRect();
+      const { top, left, height, width } = button.getBoundingClientRect();
       const x = clientX - (left + width / 2);
       const y = clientY - (top + height / 2);
 
@@ -29,7 +32,7 @@ const Button008 = () => {
       yTo(y * 0.7);
     });
 
-    buttonRef.current?.addEventListener("mouseleave", () => {
+    button.addEventListener("mouseleave", () => {
       xTo(0);
       yTo(0);
     });
