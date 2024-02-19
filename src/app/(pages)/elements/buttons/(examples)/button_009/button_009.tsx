@@ -1,15 +1,20 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { MouseEvent, MouseEventHandler, useRef } from "react";
 import ElementLayout from "../../../ElementLayout";
 import { codeblock } from "./codeblock";
-import { AnimatePresence, motion, useAnimate } from "framer-motion";
+import { useAnimate } from "framer-motion";
+
+interface BubbleElement extends HTMLElement {
+  className: string;
+  style: CSSStyleDeclaration;
+}
 
 const Button009 = () => {
-  const buttonRef = useRef(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const [scope, animate] = useAnimate();
 
-  const animateBubble = async (el) => {
+  const animateBubble = async (el: BubbleElement) => {
     animate(
       el,
       {
@@ -22,23 +27,20 @@ const Button009 = () => {
     );
   };
 
-  const addBubbles = ({ clientX, clientY }) => {
+  const elementStyle =
+    "size-8 absolute bg-[#7a7a7a] rounded-full opacity-[0.6] z-[5]";
+
+  const addBubbles: MouseEventHandler = ({ clientX, clientY }: MouseEvent) => {
     const parent = buttonRef.current;
+    if (!parent) return;
+    const { top, left } = parent.getBoundingClientRect();
+
     const bubble = document.createElement("div");
-    bubble.style.height = "30px";
-    bubble.style.width = "30px";
-    bubble.style.position = "absolute";
-    bubble.style.backgroundColor = "#7a7a7a";
-    bubble.style.borderRadius = "50%";
-    bubble.style.opacity = "0.6";
-    bubble.style.zIndex = "4";
-    // Positions;
-    const { top, left, width, height } = parent.getBoundingClientRect();
+    bubble.className = elementStyle;
 
-    const x = clientX - (left + 15);
-    const y = clientY - (top + 15);
-
-    console.log(x, y);
+    // used 16 coz those are the bubbles dimensions / 2
+    const x = clientX - (left + 16);
+    const y = clientY - (top + 16);
 
     bubble.style.left = x + "px";
     bubble.style.top = y + "px";
@@ -47,7 +49,7 @@ const Button009 = () => {
     animateBubble(bubble);
 
     setTimeout(() => {
-      // parent.removeChild(bubble);
+      parent.removeChild(bubble);
     }, 1100);
   };
 
