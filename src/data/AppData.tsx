@@ -65,11 +65,19 @@ export const ElementsData: Array<ElementProps> = [
     component_path: "links",
     component_count: 13,
     component_example: (
-      <p className="lg:text-xl leading-none hover:underline">
-        Link
-      </p>
+      <p className="lg:text-xl leading-none hover:underline">Link</p>
     ),
-  }
+  },
+  {
+    component_name: "Cursors",
+    component_path: "cursors",
+    component_count: 0,
+    component_example: (
+      <div className="size-14 border border-black rounded-full grid place-items-center">
+        <div className="size-2 bg-black rounded-full"></div>
+      </div>
+    ),
+  },
 ];
 
 export const FaqsList: Array<faqsProps> = [
