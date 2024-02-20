@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import Button from "@/components/ui/Buttons";
+import Button from "@/components/ui/Button";
 
 import { SectionProps } from "./Interfaces";
 
