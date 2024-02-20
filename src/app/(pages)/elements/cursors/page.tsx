@@ -7,7 +7,7 @@ import TableOfContent from "../TableofContents";
 
 const PageOptions: Pageprops = {
   page: "Cursors",
-  componentCount: 0,
+  componentCount: 3,
   category: "Elements",
 };
 
@@ -19,7 +19,7 @@ const Buttons = () => {
         <section className="col-span-2 hidden lg:block font-satoshi-medium items-center">
           <TableOfContent data={ElementsData} />
         </section>
-        <section className="grid w-full gap-2 col-span-8">
+        <section className="grid w-full gap-2 lg:gap-4 col-span-8">
           {CursorsList.map((button, index) => (
             <div key={index}>{button}</div>
           ))}

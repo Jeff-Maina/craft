@@ -45,16 +45,15 @@ const Cursor001: FC = () => {
     }, 1100);
   };
 
-  const handleMouseMove = ({ clientX, clientY, target }: MouseEvent) => {
+  const handleMouseMove = ({ clientX, clientY }: MouseEvent) => {
     const container = containerRef.current;
     if (!container) return;
-    const { top, left, height, width } = container.getBoundingClientRect();
+    const { top, left } = container.getBoundingClientRect();
     const x = clientX - left;
     const y = clientY - top;
 
     const xDiff = Math.abs(position.x - x);
     const yDiff = Math.abs(position.y - y);
-    console.log(xDiff, yDiff);
     if (xDiff >= 20 || yDiff >= 20) {
       addElements(x, y);
     } else return;

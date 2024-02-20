@@ -71,7 +71,7 @@ export const ElementsData: Array<ElementProps> = [
   {
     component_name: "Cursors",
     component_path: "cursors",
-    component_count: 0,
+    component_count: 2,
     component_example: (
       <div className="size-14 border border-black rounded-full grid place-items-center">
         <div className="size-2 bg-black rounded-full"></div>
