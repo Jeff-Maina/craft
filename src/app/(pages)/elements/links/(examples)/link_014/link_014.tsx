@@ -140,6 +140,7 @@ const Link014 = () => {
         >
           {images.map((image, index) => (
             <img
+              key={index}
               src={image.imagePath}
               className={`absolute inset-0 w-full h-full object-cover ${
                 activeImage === image.album ? "opacity-100" : "opacity-0"

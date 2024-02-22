@@ -2,6 +2,7 @@ interface SectionProps {
   component_name: string;
   component_path: string;
   component_count: number;
+  component_example: JSX.Element;
 }
 
 interface ElementProps {
@@ -37,11 +38,21 @@ export const websitePages: Array<websitePages> = [
 ];
 
 export const SectionsData: Array<SectionProps> = [
-  // {
-  //   component_name: "Navbars",
-  //   component_path: "navbars",
-  //   component_count: 0,
-  // },
+  {
+    component_name: "Navbars",
+    component_path: "navbars",
+    component_count: 1,
+    component_example: (
+      <div>
+        <ul className="flex items-center gap-2 lg:text-2xl lg:gap-5">
+          <li className="hover:underline">Home</li>
+          <li className="hover:underline">About</li>
+          <li className="hover:underline">Services</li>
+          <li className="hover:underline">Contact</li>
+        </ul>
+      </div>
+    ),
+  },
   // {
   //   component_name: "Faqs",
   //   component_path: "navbars",

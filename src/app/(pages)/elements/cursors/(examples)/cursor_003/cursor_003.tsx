@@ -28,7 +28,9 @@ const ArrowVariants = {
     x: 0,
     y: 0,
     transition: {
-      opacity: 0,
+      opacity: { duration: 0 },
+      x: { duration: 0 },
+      y: { duration: 0 },
     },
   },
 };
@@ -50,7 +52,10 @@ const Cursor003 = () => {
 
   return (
     <ElementLayout codeBlock={codeblock} className="!pt-0">
-      <div ref={ref} className="h-full w-full grid place-items-center relative overflow-hidden">
+      <div
+        ref={ref}
+        className="h-full w-full grid place-items-center relative overflow-hidden"
+      >
         <motion.div
           initial={{
             width: "8px",

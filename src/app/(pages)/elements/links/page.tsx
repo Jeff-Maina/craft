@@ -2,7 +2,7 @@ import PageLayout from "@/app/layouts/PageLayout";
 import type { Pageprops } from "@/lib/Interfaces";
 import { Linklist } from "./Linkslist";
 import { ElementsData } from "@/data/AppData";
-import TableOfContent from "../TableofContents";
+import TableOfContent from "../../(components)/TableofContents";
 
 const PageOptions: Pageprops = {
   page: "Links",

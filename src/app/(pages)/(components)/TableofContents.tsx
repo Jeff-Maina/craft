@@ -1,6 +1,7 @@
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { FC } from "react";
+
 type data = {
   component_name: string;
   component_path: string;

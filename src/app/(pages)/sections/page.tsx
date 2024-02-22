@@ -29,7 +29,7 @@ const Sections = () => {
               pagePath={`/sections/${element.component_path}`}
               className="xl:h-[80vh]"
             >
-              <div></div>
+              <div className="w-full h-full flex items-center justify-center">{element.component_example}</div>
             </ComponentCard>
           ))}
         </div>
