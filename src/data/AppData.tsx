@@ -1,3 +1,9 @@
+import { ButtonCount } from "@/app/(pages)/elements/buttons/ButtonsList";
+import { CursorCount } from "@/app/(pages)/elements/cursors/CursorsList";
+import { LinksCount } from "@/app/(pages)/elements/links/Linkslist";
+import { NavbarCount } from "@/app/(pages)/sections/navbars/NavbarList";
+import { NavmenuCount } from "@/app/(pages)/sections/navmenus/NavMenusList";
+
 interface SectionProps {
   component_name: string;
   component_path: string;
@@ -41,7 +47,7 @@ export const SectionsData: Array<SectionProps> = [
   {
     component_name: "Navbars",
     component_path: "navbars",
-    component_count: 1,
+    component_count: NavbarCount,
     component_example: (
       <div>
         <ul className="flex items-center gap-2 lg:text-xl lg:gap-5">
@@ -56,7 +62,7 @@ export const SectionsData: Array<SectionProps> = [
   {
     component_name: "Navmenus",
     component_path: "navmenus",
-    component_count: 1,
+    component_count: NavmenuCount,
     component_example: (
       <div>
         <ul className="flex flex-col lg:text-lg:gap-5 border border-zinc-200 divide-y divide-zinc-200 w-52">
@@ -82,7 +88,7 @@ export const ElementsData: Array<ElementProps> = [
   {
     component_name: "Buttons",
     component_path: "buttons",
-    component_count: 9,
+    component_count: ButtonCount,
     component_example: (
       <button className="bg-[#2a2a2a] hover:bg-[#3a3a3a] transition-all duration-150 text-white rounded md:rounded-lg py-3  md:text-lg px-6 md:px-10 leading-none">
         button
@@ -92,7 +98,7 @@ export const ElementsData: Array<ElementProps> = [
   {
     component_name: "Links",
     component_path: "links",
-    component_count: 13,
+    component_count: LinksCount,
     component_example: (
       <p className="lg:text-xl leading-none hover:underline">Link</p>
     ),
@@ -100,7 +106,7 @@ export const ElementsData: Array<ElementProps> = [
   {
     component_name: "Cursors",
     component_path: "cursors",
-    component_count: 2,
+    component_count: CursorCount,
     component_example: (
       <div className="size-14 border border-black rounded-full grid place-items-center">
         <div className="size-2 bg-black rounded-full"></div>

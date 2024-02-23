@@ -1,17 +1,17 @@
 "use client";
 import PageLayout from "@/app/layouts/PageLayout";
 import type { Pageprops } from "@/lib/Interfaces";
-import { CursorsList } from "./CursorsList";
+import { FinishedCursors, CursorCount } from "./CursorsList";
 import { ElementsData } from "@/data/AppData";
 import TableOfContent from "../../(components)/TableofContents";
 
 const PageOptions: Pageprops = {
   page: "Cursors",
-  componentCount: 3,
+  componentCount: CursorCount,
   category: "Elements",
 };
 
-const Buttons = () => {
+const Cursors = () => {
   return (
     <PageLayout pageOptions={PageOptions}>
       <section className="section_layout lg:grid lg:grid-cols-10 lg:gap-4">
@@ -19,8 +19,8 @@ const Buttons = () => {
           <TableOfContent data={ElementsData} />
         </section>
         <section className="lg:grid w-full gap-2 lg:gap-4 col-span-8 hidden">
-          {CursorsList.map((button, index) => (
-            <div key={index}>{button}</div>
+          {FinishedCursors.map((cursor, index) => (
+            <div key={index}>{cursor.component}</div>
           ))}
         </section>
         <section className="lg:hidden">
@@ -35,4 +35,4 @@ const Buttons = () => {
   );
 };
 
-export default Buttons;
+export default Cursors;

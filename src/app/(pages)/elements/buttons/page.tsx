@@ -1,13 +1,13 @@
 "use client";
 import PageLayout from "@/app/layouts/PageLayout";
 import type { Pageprops } from "@/lib/Interfaces";
-import { ButtonsList } from "./ButtonsList";
+import { FinishedButtons, ButtonCount } from "./ButtonsList";
 import { ElementsData } from "@/data/AppData";
 import TableOfContent from "../../(components)/TableofContents";
 
 const PageOptions: Pageprops = {
   page: "Buttons",
-  componentCount: 9,
+  componentCount: ButtonCount,
   category: "Elements",
 };
 
@@ -20,8 +20,8 @@ const Buttons = () => {
           <TableOfContent data={ElementsData} />
         </section>
         <section className="grid md:grid-cols-2 gap-2 lg:col-span-8">
-          {ButtonsList.map((button, index) => (
-            <div key={index}>{button}</div>
+          {FinishedButtons.map((button, index) => (
+            <div key={index}>{button.component}</div>
           ))}
         </section>
       </section>

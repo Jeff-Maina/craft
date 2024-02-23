@@ -2,11 +2,12 @@ import PageLayout from "@/app/layouts/PageLayout";
 import { SectionsData } from "@/data/AppData";
 import type { Pageprops } from "@/lib/Interfaces";
 import TableOfContent from "../../(components)/TableofContents";
-import { NavbarList } from "./NavbarList";
+import { FinishedNavbars,NavbarCount } from "./NavbarList";
+
 
 const PageOptions: Pageprops = {
   page: "Navbars",
-  componentCount: 1,
+  componentCount: NavbarCount,
   category: "Sections",
 };
 
@@ -18,8 +19,8 @@ const Navbars = () => {
           <TableOfContent data={SectionsData} />
         </section>
         <section className="lg:grid w-full gap-2 lg:gap-4 col-span-8">
-          {NavbarList.map((navbar, index) => (
-            <div key={index}>{navbar}</div>
+          {FinishedNavbars.map((navbar, index) => (
+            <div key={index}>{navbar.component}</div>
           ))}
         </section>
       </section>

@@ -1,14 +1,16 @@
 import PageLayout from "@/app/layouts/PageLayout";
 import type { Pageprops } from "@/lib/Interfaces";
-import { Linklist } from "./Linkslist";
+import { FinishedLinks, LinksCount } from "./Linkslist";
 import { ElementsData } from "@/data/AppData";
 import TableOfContent from "../../(components)/TableofContents";
 
 const PageOptions: Pageprops = {
   page: "Links",
-  componentCount: 13,
+  componentCount: LinksCount,
   category: "Elements",
 };
+
+
 const Links = () => {
   return (
     <PageLayout pageOptions={PageOptions}>
@@ -17,8 +19,8 @@ const Links = () => {
           <TableOfContent data={ElementsData} />
         </section>
         <section className="grid md:grid-cols-2 gap-2 lg:col-span-8">
-          {Linklist.map((link, index) => (
-            <div key={index}>{link}</div>
+          {FinishedLinks.map((link, index) => (
+            <div key={index}>{link.component}</div>
           ))}
         </section>
       </section>

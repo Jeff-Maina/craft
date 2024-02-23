@@ -5,7 +5,7 @@ import TableOfContent from "@/app/(pages)/(components)/TableofContents";
 //  Data
 import { SectionsData } from "@/data/AppData";
 import type { Pageprops } from "@/lib/Interfaces";
-import { NavMenusList } from "./NavMenusList";
+import { FinishedNavMenus, NavmenuCount } from "./NavMenusList";
 
 // 3rd party libraries
 import { ArrowUpRight } from "lucide-react";
@@ -13,7 +13,7 @@ import Link from "next/link";
 
 const PageOptions: Pageprops = {
   page: "Navmenus",
-  componentCount: 1,
+  componentCount: NavmenuCount,
   category: "Sections",
 };
 
@@ -25,7 +25,7 @@ const NavMenus = () => {
           <TableOfContent data={SectionsData} />
         </section>
         <section className="lg:grid w-full gap-2 lg:gap-4 col-span-8 grid md:grid-cols-2">
-          {NavMenusList.map((navbar, index) => (
+          {FinishedNavMenus.map((navbar, index) => (
             <Link href={navbar.pageLink}>
               <div
                 key={index}

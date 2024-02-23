@@ -9,17 +9,21 @@ import Button008 from "./(examples)/button_008/button_008";
 import Button009 from "./(examples)/button_009/button_009";
 import Button011 from "./(examples)/button_011/button_011";
 
-type Button = JSX.Element;
+type Button = { component: JSX.Element; draft: boolean };
 
 export const ButtonsList: Array<Button> = [
-  <Button001 />,
-  <Button002 />,
-  <Button003 />,
-  <Button004 />,
-  <Button005 />,
-  <Button006 />,
-  <Button007 />,
-  <Button008 />,
-  <Button009 />,
-  <Button011 />,
+  { component: <Button001 />, draft: false },
+  { component: <Button002 />, draft: false },
+  { component: <Button003 />, draft: false },
+  { component: <Button004 />, draft: false },
+  { component: <Button005 />, draft: false },
+  { component: <Button006 />, draft: false },
+  { component: <Button007 />, draft: false },
+  { component: <Button008 />, draft: false },
+  { component: <Button009 />, draft: false },
+  { component: <Button011 />, draft: true },
 ];
+
+export const FinishedButtons = ButtonsList.filter((button) => button.draft === false);
+
+export const ButtonCount = FinishedButtons.length;
