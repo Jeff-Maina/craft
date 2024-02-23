@@ -44,7 +44,7 @@ export const SectionsData: Array<SectionProps> = [
     component_count: 1,
     component_example: (
       <div>
-        <ul className="flex items-center gap-2 lg:text-2xl lg:gap-5">
+        <ul className="flex items-center gap-2 lg:text-xl lg:gap-5">
           <li className="hover:underline">Home</li>
           <li className="hover:underline">About</li>
           <li className="hover:underline">Services</li>
@@ -53,11 +53,29 @@ export const SectionsData: Array<SectionProps> = [
       </div>
     ),
   },
-  // {
-  //   component_name: "Faqs",
-  //   component_path: "navbars",
-  //   component_count: 0,
-  // },
+  {
+    component_name: "Navmenus",
+    component_path: "navmenus",
+    component_count: 1,
+    component_example: (
+      <div>
+        <ul className="flex flex-col lg:text-lg:gap-5 border border-zinc-200 divide-y divide-zinc-200 w-52">
+          <li className="p-3 pl-6 hover:bg-zinc-100 transition-all duration-300">
+            Home
+          </li>
+          <li className="p-3 pl-6 hover:bg-zinc-100 transition-all duration-300">
+            About
+          </li>
+          <li className="p-3 pl-6 hover:bg-zinc-100 transition-all duration-300">
+            Services
+          </li>
+          <li className="p-3 pl-6 hover:bg-zinc-100 transition-all duration-300">
+            Contact
+          </li>
+        </ul>
+      </div>
+    ),
+  },
 ];
 
 export const ElementsData: Array<ElementProps> = [

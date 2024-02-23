@@ -31,7 +31,7 @@ const Faqs: FC = () => {
           return (
             <div
               key={index}
-              className={`p-4 lg:p-6 min-h-14 border ${faqClass} text-sm md:text-lg lg:text-xl transition-all duration-150`}
+              className={`p-4 lg:p-6 min-h-14 border ${faqClass} text-sm md:text-lg  transition-all duration-150`}
             >
               <button
                 onClick={() => toggleFaq(index)}

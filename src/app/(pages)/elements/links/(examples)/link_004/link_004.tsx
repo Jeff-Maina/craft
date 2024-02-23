@@ -38,7 +38,7 @@ const Link004: FC = () => {
 
   const WordElement = wordArray.map((char, index) => {
     return (
-      <div className="">
+      <div key={index} className="">
         <motion.p
           custom={index}
           variants={MotionVariants}

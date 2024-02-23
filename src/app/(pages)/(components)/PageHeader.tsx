@@ -28,10 +28,10 @@ const Dropdown: FC<dropdownprops> = ({
         >
           {data.map(({ component_name, component_path }, index) => {
             return (
-              <Link href={`/${category}/${component_path}`} className="w-full">
+              <Link key={index} href={`/${category}/${component_path}`} className="w-full">
                 <div
                   className="p-4 lg:p-6 text-sm md:text-base lg:text-lg hover:bg-black transition-all duration-150 hover:text-white pl-8 text-start w-full"
-                  key={index}
+                 
                   onClick={closeDropDown}
                 >
                   {component_name}

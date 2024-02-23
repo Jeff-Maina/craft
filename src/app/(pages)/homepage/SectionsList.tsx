@@ -15,12 +15,9 @@ const SectionsList = () => {
             isSection={true}
             className="border border-zinc-200/60 lg:border-zinc-200"
           >
-            <div></div>
+            <div className="w-full h-full grid place-items-center">{section.component_example}</div>
           </ComponentCard>
         ))}
-        <div className="grid place-items-center w-full h-96 xl:h-[30rem] border border-zinc-200">
-          <p className="font-satoshi-medium text-sm xl:text-3xl text-zinc-400">Coming soon :)</p>
-        </div>
       </section>
     </SectionLayout>
   );

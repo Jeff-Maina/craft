@@ -7,6 +7,7 @@ import Link from "next/link";
 import NavMenu from "./NavMenu";
 import { DarkModeSvg } from "./Svgs";
 import Tooltip from "./Tooltip";
+import { usePathname } from "next/navigation";
 
 const MenuIcon = () => {
   return (
@@ -23,7 +24,10 @@ const Navbar = () => {
   const OpenMenu = () => setMenuActive(true);
   const CloseMenu = () => setMenuActive(false);
 
-  return (
+  const path = usePathname();
+  const isNavMenusPage = path.includes("navmenus/nav");
+  console.log(path)
+  return isNavMenusPage ? null : (
     <>
       <nav
         className={`w-full h-16 lg:h-20 border-b border-zinc-200/60 z-20  top-0 bg-white transition-all duration-0`}

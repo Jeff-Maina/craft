@@ -25,12 +25,15 @@ const Elements = () => {
         <div className="grid w-full md:grid-cols-2 gap-2">
           {ElementsData.map((element, index) => (
             <ComponentCard
+              key={index}
               componentName={element.component_name}
               componentCount={element.component_count}
               isSection={false}
               pagePath={`/elements/${element.component_path}`}
             >
-              <div className="w-full h-full flex items-center justify-center">{element.component_example}</div>
+              <div className="w-full h-full flex items-center justify-center">
+                {element.component_example}
+              </div>
             </ComponentCard>
           ))}
         </div>

@@ -80,7 +80,7 @@ const DropdownItem: FC<dropdownitem> = ({ link, index, closeDropDown }) => {
           borderColor: link.border,
           color: link.border,
         }}
-        className={`flex items-center py-[10px]  p-3 w-full gap-3 text-zinc-500 rounded-[0.7rem] text-base border border-white cursor-pointer hover:font-medium`}
+        className={`flex items-center py-[10px]  p-3 w-full gap-3 text-zinc-500 rounded-[0.7rem] text-xs md:text-base border border-white cursor-pointer hover:font-medium`}
       >
         {link.icon}
         {link.label}
@@ -97,8 +97,8 @@ const DropDown: FC<dropdown> = ({ isDropDownActive, closeDropDown }) => {
       animate={isDropDownActive ? "active" : "inactive"}
       className="w-full rounded-b-3xl relative overflow-hidden grid grid-cols-2"
     >
-      <div className="w-full h-full flex flex-col items-center pb-5 pt-5 gap-4">
-        <h1 className="text-xl tracking-tight">What we do</h1>
+      <div className="w-full h-full flex flex-col items-center py-3 md:py-5 gap-2  md:gap-4">
+        <h1 className="text-base md:text-xl tracking-tight">What we do</h1>
         <ul className="w-[70%] flex flex-col gap-1">
           {whatWeDo.map((link, index) => (
             <DropdownItem
@@ -110,8 +110,8 @@ const DropDown: FC<dropdown> = ({ isDropDownActive, closeDropDown }) => {
           ))}
         </ul>
       </div>
-      <div className="w-full h-full flex flex-col items-center  pt-5 pb-5 gap-4">
-        <h1 className="text-xl tracking-tight">Industries</h1>
+      <div className="w-full h-full flex flex-col items-center py-3 md:py-5 gap-2  md:gap-4">
+        <h1 className="text-base md:text-xl tracking-tight">Industries</h1>
         <ul className="w-[70%] flex flex-col gap-1">
           {industries.map((link, index) => (
             <DropdownItem
@@ -168,7 +168,6 @@ const NavLinks: FC<navlink> = ({
   toggleDropDown,
   activeColor,
 }) => {
-  
   const [hoverTabIndex, setHoverTabIndex] = useState<Number>(0);
   const [activeTabIndex, setActiveTabIndex] = useState<Number>(0);
   const [lastHoveredItem, setlastHoveredItem] = useState<Number>(0);
@@ -212,11 +211,11 @@ const NavLinks: FC<navlink> = ({
             style={{
               color: isTabActive ? `hsl(${link.color})` : "#000",
             }}
-            className="p-[6px] px-4 cursor-pointer relative transition-colors duration-200"
+            className="py-[4px] pb-[5px] md:py-[6px] md:pb-[6px] px-3 md:px-4 cursor-pointer relative transition-colors duration-200"
           >
             {index === hoverTabIndex && <GhostTab activeColor={activeColor} />}
             {index === activeTabIndex && <IndicatorTab />}
-            <span className="relative z-10 leading-0 text-sm">
+            <span className="relative z-10 text-xs md:text-sm">
               {link.label}
             </span>
           </li>
@@ -236,7 +235,7 @@ const Navbar001 = () => {
   const closeDropDown = () => setIsDropDownActive(false);
 
   return (
-    <ElementLayout codeBlock={codeblock} className="!pt-0">
+    <ElementLayout codeBlock={codeblock} className="!pt-0 h-[28rem] border-none !rounded-3xl overflow-hidden">
       <div
         style={{
           backgroundColor: `hsl(${activeColor},30%)`,
