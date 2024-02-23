@@ -7,6 +7,7 @@ import Button005 from "./(examples)/button_005/button_005";
 import Button007 from "./(examples)/button_007/button_007";
 import Button008 from "./(examples)/button_008/button_008";
 import Button009 from "./(examples)/button_009/button_009";
+import Button011 from "./(examples)/button_011/button_011";
 
 type Button = JSX.Element;
 
@@ -20,4 +21,5 @@ export const ButtonsList: Array<Button> = [
   <Button007 />,
   <Button008 />,
   <Button009 />,
+  <Button011 />,
 ];
