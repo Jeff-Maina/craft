@@ -14,4 +14,4 @@ export const FinishedCursors = CursorsList.filter(
   (cursor) => cursor.draft === false
 );
 
-export const CursorCount = CursorsList.length;
+export const CursorCount = FinishedCursors.length;

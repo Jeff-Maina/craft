@@ -34,4 +34,4 @@ export const Linklist: Array<LinkProps> = [
 
 export const FinishedLinks = Linklist.filter((link) => link.draft === false);
 
-export const LinksCount = Linklist.length;
+export const LinksCount = FinishedLinks.length;

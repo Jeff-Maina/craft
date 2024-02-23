@@ -18,4 +18,4 @@ export const FinishedNavMenus = NavMenusList.filter(
   (menu) => menu.draft === false
 );
 
-export const NavmenuCount = NavMenusList.length;
+export const NavmenuCount = FinishedNavMenus.length;

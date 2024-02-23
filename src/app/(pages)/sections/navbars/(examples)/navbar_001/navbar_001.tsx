@@ -235,7 +235,7 @@ const Navbar001 = () => {
   const closeDropDown = () => setIsDropDownActive(false);
 
   return (
-    <ElementLayout codeBlock={codeblock} className="!pt-0 h-[28rem] border-none !rounded-3xl overflow-hidden">
+    <ElementLayout codeBlock={codeblock} className="!pt-0 !h-[26rem] lg:!h-auto border-none !rounded-3xl overflow-hidden">
       <div
         style={{
           backgroundColor: `hsl(${activeColor},30%)`,
@@ -270,3 +270,8 @@ const Navbar001 = () => {
 };
 
 export default Navbar001;
+
+
+
+// !bugs...
+// when i reduce the number of navlinks the dropdown items get weirdly small

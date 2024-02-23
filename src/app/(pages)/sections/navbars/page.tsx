@@ -18,7 +18,7 @@ const Navbars = () => {
         <section className="col-span-2 hidden lg:block font-satoshi-medium items-center">
           <TableOfContent data={SectionsData} />
         </section>
-        <section className="lg:grid w-full gap-2 lg:gap-4 col-span-8">
+        <section className="grid w-full gap-4 col-span-8">
           {FinishedNavbars.map((navbar, index) => (
             <div key={index}>{navbar.component}</div>
           ))}

@@ -4,8 +4,8 @@ import { SectionsData } from "@/data/AppData";
 
 const SectionsList = () => {
   return (
-    <SectionLayout category="sections" path="/">
-      <section className="grid gap-2 lg:gap-4">
+    <SectionLayout category="sections" path="/sections">
+      <section className="grid gap-2 md:grid-cols-2 ">
         {SectionsData.map((section, index) => (
           <ComponentCard
             key={index}

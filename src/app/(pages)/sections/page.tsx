@@ -19,7 +19,7 @@ const Sections = () => {
       <section className="px-4">
         <PageHeader category="sections" data={SectionsData} />
         <br />
-        <div className="grid w-full gap-2">
+        <div className="grid w-full md:grid-cols-2 gap-2">
           {SectionsData.map((element, index) => (
             <ComponentCard
               key={index}
@@ -27,9 +27,10 @@ const Sections = () => {
               componentCount={element.component_count}
               isSection={true}
               pagePath={`/sections/${element.component_path}`}
-              className="xl:h-[80vh]"
             >
-              <div className="w-full h-full flex items-center justify-center">{element.component_example}</div>
+              <div className="w-full h-full flex items-center justify-center">
+                {element.component_example}
+              </div>
             </ComponentCard>
           ))}
         </div>
