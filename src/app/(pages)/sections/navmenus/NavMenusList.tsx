@@ -12,12 +12,4 @@ export const NavMenusList: Array<navMenu> = [
     gif: "",
     pageLink: "/sections/navmenus/navmenu_001",
   },
-  {
-    gif: "",
-    pageLink: `/sections/navmenus/navmenu_001`,
-  },
-  {
-    gif: "",
-    pageLink: `/sections/navmenus/navmenu_001`,
-  },
 ];

@@ -2,12 +2,12 @@
 // 3rd party imports
 import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 // component imports
 import NavMenu from "./NavMenu";
 import { DarkModeSvg } from "./Svgs";
 import Tooltip from "./Tooltip";
-import { usePathname } from "next/navigation";
 
 const MenuIcon = () => {
   return (
@@ -26,7 +26,7 @@ const Navbar = () => {
 
   const path = usePathname();
   const isNavMenusPage = path.includes("navmenus/nav");
-  console.log(path)
+  console.log(path);
   return isNavMenusPage ? null : (
     <>
       <nav
