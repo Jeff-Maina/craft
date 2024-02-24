@@ -50,8 +50,8 @@ const MenuVariants: Variants = {
 const linkVariants: (index: number) => Variants = (index: number) => ({
   initial: {
     opacity: 0,
-    y: "250%",
-    x: "-5%",
+    y: "300%",
+    x: "-10%",
     rotate: "30deg",
   },
   active: {
@@ -83,8 +83,8 @@ const linkVariants: (index: number) => Variants = (index: number) => ({
   },
   inactive: {
     opacity: 0,
-    y: "250%",
-    x: "-5%",
+    y: "300%",
+    x: "-10%",
     rotate: "30deg",
     transition: {
       opacity: {
@@ -230,9 +230,9 @@ const Menu: FC<MenuProps> = ({ isMenuActive, closeMenu }) => {
                 </motion.div>
               </div>
             </nav>
-            <div className=" h-[85%] md:h-[60%] border-black flex flex-col md:flex-row-reverse justify-end md:items-end lg:justify-between gap-32 md:gap-16 w-full">
+            <div className=" h-[85%] md:h-[60%] border-black flex flex-col md:flex-row-reverse justify-end md:items-end lg:justify-between gap-40 md:gap-16 w-full">
               <div className="md:max-w-4xl lg:flex items-center w-full lg:h-full lg:gap-20 xl:gap-32">
-                <motion.div className="p-6 md:p-0 flex flex-col gap-10 md:gap-6 text-2xl md:text-lg md:w-full">
+                <motion.div className="pb-6 md:p-0 md:pb-0 flex flex-col gap-10 md:gap-6 text-2xl md:text-lg md:w-full">
                   {Links.map((link, index) => (
                     <motion.div
                       custom={index}
@@ -241,7 +241,7 @@ const Menu: FC<MenuProps> = ({ isMenuActive, closeMenu }) => {
                       animate="active"
                       exit="inactive"
                       key={index}
-                      className="origin-left md:text-zinc-500 cursor-pointer group/link max-w-md flex items-center lg:gap-20 xl:gap-32 relative"
+                      className="origin-left text-zinc-500 cursor-pointer group/link max-w-md flex items-center lg:gap-20 xl:gap-32 relative"
                     >
                       <div className="hidden xl:block overflow-hidden">
                         <MoveRight strokeWidth={1} className="-translate-x-full opacity-0 group-hover/link:translate-x-0 group-hover/link:opacity-[1] transition-all duration-700" />
