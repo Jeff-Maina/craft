@@ -186,8 +186,8 @@ const closeLabelVariants = {
 // Data
 
 const Links: Array<link> = [
-  "Home",
-  "Consitutional banking",
+  "Institutional Banking",
+  "Consitutional Banking",
   "Mortgage Banking",
   "About",
   "Contact",
@@ -204,7 +204,7 @@ const Menu: FC<MenuProps> = ({ isMenuActive, closeMenu }) => {
           exit="inactive"
           className="fixed top-0 right-0 h-screen md:h-3/4 w-screen md:w-[85%] max-w-[98rem] z-10 bg-white grid place-items-center p-10 md:p-20"
         >
-          <div className="h-full w-full flex flex-col md:gap-20">
+          <div className="h-full w-full flex flex-col md:gap-20 justify-between">
             <nav className="flex justify-end h-[15%] items-start">
               <div className="relative max-h-max">
                 <motion.div
@@ -230,7 +230,7 @@ const Menu: FC<MenuProps> = ({ isMenuActive, closeMenu }) => {
                 </motion.div>
               </div>
             </nav>
-            <div className=" h-[85%] md:h-[60%] border-black flex flex-col md:flex-row-reverse justify-end md:items-end lg:justify-between gap-32 md:gap-16 w-full">
+            <div className=" h-3/4 md:h-[60%] border-black flex flex-col md:flex-row-reverse justify-between md:items-end lg:justify-between  md:gap-16 w-full">
               <div className="md:max-w-4xl lg:flex items-center w-full lg:h-full lg:gap-20 xl:gap-32">
                 <motion.div className="pb-6 md:p-0 md:pb-0 flex flex-col gap-10 md:gap-6 text-xl md:text-lg md:w-full">
                   {Links.map((link, index) => (
