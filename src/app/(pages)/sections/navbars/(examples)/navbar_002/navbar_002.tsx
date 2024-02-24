@@ -135,7 +135,7 @@ const Navbar002: FC = () => {
             variants={!isXlScreen ? heightVariants : widthVariants}
             initial="initial"
             animate={isMenuActive ? "active" : "inactive"}
-            className={`overflow-hidden ${isXlScreen && "max-w-fit"} w-full`}
+            className={`overflow-hidden ${isXlScreen ? "max-w-fit" : "w-full"}`}
           >
             <motion.ul
               variants={opacityVariants}
