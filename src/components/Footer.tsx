@@ -1,5 +1,10 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 const Footer = () => {
-  return (
+  const path = usePathname();
+  const isNavMenusPage = path.includes("navmenus/nav");
+  return isNavMenusPage ? null : (
     <footer className="font-satoshi-medium text-sm text-black/50 md:text-lg m-auto mt-10 lg:mt-20 flex items-center justify-between leading-none p-4 px-6 max-w-7xl">
       <p className="">© 2024 Craft</p>
       <p>

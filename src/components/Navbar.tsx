@@ -26,7 +26,6 @@ const Navbar = () => {
 
   const path = usePathname();
   const isNavMenusPage = path.includes("navmenus/nav");
-  console.log(path);
   return isNavMenusPage ? null : (
     <>
       <nav
