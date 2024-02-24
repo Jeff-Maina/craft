@@ -50,7 +50,7 @@ export const SectionsData: Array<SectionProps> = [
     component_count: NavbarCount,
     component_example: (
       <div>
-        <ul className="flex items-center gap-2 lg:text-xl lg:gap-5">
+        <ul className="flex items-center gap-2 text-xs lg:text-xl lg:gap-5">
           <li className="hover:underline">Home</li>
           <li className="hover:underline">About</li>
           <li className="hover:underline">Services</li>
@@ -65,7 +65,7 @@ export const SectionsData: Array<SectionProps> = [
     component_count: NavmenuCount,
     component_example: (
       <div>
-        <ul className="flex flex-col lg:text-lg:gap-5 border border-zinc-200 divide-y divide-zinc-200 w-52">
+        <ul className="flex flex-col text-xs md:text-sm text-[#2a2a2a] lg:text-lg border border-zinc-200 divide-y divide-zinc-200 w-52">
           <li className="p-3 pl-6 hover:bg-zinc-100 transition-all duration-300">
             Home
           </li>
