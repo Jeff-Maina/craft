@@ -230,9 +230,9 @@ const Menu: FC<MenuProps> = ({ isMenuActive, closeMenu }) => {
                 </motion.div>
               </div>
             </nav>
-            <div className=" h-[85%] md:h-[60%] border-black flex flex-col md:flex-row-reverse justify-end md:items-end lg:justify-between gap-40 md:gap-16 w-full">
+            <div className=" h-[85%] md:h-[60%] border-black flex flex-col md:flex-row-reverse justify-end md:items-end lg:justify-between gap-32 md:gap-16 w-full">
               <div className="md:max-w-4xl lg:flex items-center w-full lg:h-full lg:gap-20 xl:gap-32">
-                <motion.div className="pb-6 md:p-0 md:pb-0 flex flex-col gap-10 md:gap-6 text-2xl md:text-lg md:w-full">
+                <motion.div className="pb-6 md:p-0 md:pb-0 flex flex-col gap-10 md:gap-6 text-xl md:text-lg md:w-full">
                   {Links.map((link, index) => (
                     <motion.div
                       custom={index}
