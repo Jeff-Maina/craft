@@ -23,7 +23,10 @@ type link = {
   nestedLinks: Array<string>;
 };
 
-// Variants
+interface MaskProps {
+  isMenuActive: boolean;
+  closeMenu: () => void;
+}
 
 // Data
 
@@ -56,6 +59,7 @@ const Links: Array<link> = [
   { link: "Contact", nestedLinks: [] },
 ];
 
+// Mini Components;
 const Menu: FC<MenuProps> = ({ isMenuActive, closeMenu }) => {
   const [hoveredLinkIndex, sethoveredLinkIndex] = useState(100);
 
@@ -67,7 +71,7 @@ const Menu: FC<MenuProps> = ({ isMenuActive, closeMenu }) => {
           initial="initial"
           animate="active"
           exit="inactive"
-          className="fixed top-0 right-0 h-screen md:h-3/4 w-screen md:w-[85%] max-w-[98rem] z-10 bg-white grid place-items-center p-10 md:p-20"
+          className="fixed top-0 right-0 h-screen md:h-3/4 w-screen md:w-[85%] max-w-[98rem] z-20 bg-white grid place-items-center p-10 md:p-20"
         >
           <div className="h-full w-full flex flex-col md:gap-20 justify-between">
             <nav className="flex justify-end h-[15%] items-start">
@@ -111,7 +115,7 @@ const Menu: FC<MenuProps> = ({ isMenuActive, closeMenu }) => {
                         animate="active"
                         exit="inactive"
                         key={index}
-                        className="origin-left cursor-pointer max-w-md relative pb-5 md:pb-10 transition-colors duration-500"
+                        className="origin-left cursor-pointer max-w-md relative pb-5 md:pb-6 transition-colors duration-500 group/link xl:text-xl trascking-tight"
                       >
                         <div
                           onMouseEnter={() => sethoveredLinkIndex(index)}
@@ -120,10 +124,10 @@ const Menu: FC<MenuProps> = ({ isMenuActive, closeMenu }) => {
                           <div className="hidden xl:block overflow-hidden">
                             <MoveRight
                               strokeWidth={0.7}
-                              className="-translate-x-full opacity-0 group-hover/span:translate-x-0 group-hover/span:opacity-[1] transition-all duration-700"
+                              className="-translate-x-full opacity-0 group-hover/link:translate-x-0 group-hover/link:opacity-[1] transition-all duration-700"
                             />
                           </div>
-                          <p className="text-zinc-500 group-hover/span:text-black transition-all duration-500 max-w-fit">
+                          <p className="text-zinc-500 group-hover/link:text-black transition-all duration-500 max-w-fit">
                             {link.link}
                           </p>
                         </div>
@@ -143,7 +147,7 @@ const Menu: FC<MenuProps> = ({ isMenuActive, closeMenu }) => {
                                 isHovered ? "!z-[100]" : "!-z-10"
                               } min-h-fit`}
                             >
-                              <div className="flex flex-col gap-4 w-64">
+                              <div className="flex flex-col gap-4 xl:gap-6 w-64">
                                 {link.nestedLinks.map((l, index) => (
                                   <motion.p
                                     key={index}
@@ -152,7 +156,7 @@ const Menu: FC<MenuProps> = ({ isMenuActive, closeMenu }) => {
                                     initial="initial"
                                     animate="active"
                                     exit="inactive"
-                                    className="text-xs text-zinc-500 hover:text-black transition-colors duration-500"
+                                    className="text-xs xl:text-[13px] text-zinc-500 hover:text-black transition-colors duration-500"
                                   >
                                     {l}
                                   </motion.p>
@@ -185,8 +189,37 @@ const Menu: FC<MenuProps> = ({ isMenuActive, closeMenu }) => {
   );
 };
 
+const Mask: FC<MaskProps> = ({ isMenuActive, closeMenu }) => {
+  return (
+    <AnimatePresence mode="wait">
+      {isMenuActive ? (
+        <motion.section
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          exit={{
+            opacity: 0,
+          }}
+          transition={{
+            opacity: {
+              duration: 0.8,
+              delay: 0.4,
+            },
+          }}
+          onClick={closeMenu}
+          className="h-full w-full fixed inset-0 bg-[#00000088] z-10 backdrop-blur-sm"
+        ></motion.section>
+      ) : null}
+    </AnimatePresence>
+  );
+};
+
 const NavMenu002 = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
+
   const closeMenu = () => setIsMenuActive(false);
   const openMenu = () => setIsMenuActive(true);
 
@@ -217,6 +250,7 @@ const NavMenu002 = () => {
         </motion.div>
       </nav>
       <Menu isMenuActive={isMenuActive} closeMenu={closeMenu} />
+      <Mask isMenuActive={isMenuActive} closeMenu={closeMenu} />
     </section>
   );
 };
