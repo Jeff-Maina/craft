@@ -1,199 +1,64 @@
 "use client";
 
-import { AnimatePresence, Variants, motion } from "framer-motion";
-import { ArrowBigRight, MoveRight } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { MoveRight } from "lucide-react";
 import Link from "next/link";
 import { useState, FC } from "react";
+import {
+  MenuVariants,
+  linkVariants,
+  buttonVariants,
+  closeButtonVariants,
+  closeLabelVariants,
+  nestedMenuVariants,
+  nestedLinkVariants,
+} from "./variants";
 
 interface MenuProps {
   isMenuActive: boolean;
   closeMenu: () => void;
 }
-type link = string;
+type link = {
+  link: string;
+  nestedLinks: Array<string>;
+};
 
 // Variants
-const MenuVariants: Variants = {
-  initial: {
-    opacity: 0,
-    y: "-100%",
-  },
-  active: {
-    opacity: 1,
-    y: "0%",
-    transition: {
-      opacity: {
-        duration: 1.3,
-      },
-      y: {
-        duration: 1.1,
-        ease: [0.9, 0.04, 0.08, 0.99],
-      },
-    },
-  },
-  inactive: {
-    opacity: 0,
-    y: "-100%",
-    transition: {
-      opacity: {
-        duration: 1,
-        delay: 0.5,
-      },
-      y: {
-        duration: 1.1,
-        delay: 0.5,
-        ease: [0.9, 0.04, 0.08, 0.99],
-      },
-    },
-  },
-};
-
-const linkVariants: (index: number) => Variants = (index: number) => ({
-  initial: {
-    opacity: 0,
-    y: "300%",
-    x: "-10%",
-    rotate: "30deg",
-  },
-  active: {
-    opacity: 1,
-    y: "0%",
-    x: "0%",
-    rotate: "0deg",
-    transition: {
-      opacity: {
-        duration: 0.5,
-        delay: 0.8 + index * 0.05,
-      },
-      y: {
-        duration: 0.6,
-        delay: 0.8 + index * 0.05,
-        ease: "easeOut",
-      },
-      x: {
-        duration: 0.6,
-        delay: 0.8 + index * 0.05,
-        ease: "easeOut",
-      },
-      rotate: {
-        duration: 0.5,
-        delay: 0.8 + index * 0.05,
-        ease: "easeOut",
-      },
-    },
-  },
-  inactive: {
-    opacity: 0,
-    y: "300%",
-    x: "-10%",
-    rotate: "30deg",
-    transition: {
-      opacity: {
-        duration: 0.3,
-        delay: 0.4 - index * 0.1,
-      },
-      y: {
-        duration: 0.5,
-        delay: 0.4 - index * 0.1,
-        ease: "easeIn",
-      },
-      x: {
-        duration: 0.5,
-        delay: 0.4 - index * 0.1,
-        ease: "easeIn",
-      },
-      rotate: {
-        duration: 0.4,
-        delay: 0.4 - index * 0.1,
-        ease: "easeIn",
-      },
-    },
-  },
-});
-
-const buttonVariants = {
-  initial: {
-    opacity: 0,
-  },
-  active: {
-    opacity: 1,
-    transition: {
-      duration: 0.4,
-      delay: 1.4,
-    },
-  },
-  inactive: {
-    opacity: 0,
-    transition: {
-      duration: 0.4,
-    },
-  },
-};
-
-const closeButtonVariants = {
-  initial: {
-    opacity: 0,
-  },
-  active: {
-    opacity: 1,
-    transition: {
-      duration: 0.4,
-      delay: 1,
-    },
-  },
-  inactive: {
-    opacity: 0,
-    transition: {
-      duration: 0.4,
-    },
-  },
-};
-
-const closeLabelVariants = {
-  initial: {
-    opacity: 0,
-    x: "-100%",
-  },
-  active: {
-    opacity: 1,
-    x: "0%",
-    transition: {
-      x: {
-        duration: 1,
-        delay: 1,
-      },
-      opacity: {
-        duration: 0.5,
-        delay: 1,
-      },
-    },
-  },
-  inactive: {
-    opacity: 0,
-    x: "-100%",
-    transition: {
-      x: {
-        duration: 1,
-        delay: 0,
-      },
-      opacity: {
-        duration: 0.5,
-        delay: 0,
-      },
-    },
-  },
-};
 
 // Data
 
 const Links: Array<link> = [
-  "Institutional Banking",
-  "Consitutional Banking",
-  "Mortgage Banking",
-  "About",
-  "Contact",
+  {
+    link: "Institutional Banking",
+    nestedLinks: [
+      "Financial Institutions",
+      "Treasury Management",
+      "Tithe Services",
+    ],
+  },
+  {
+    link: "Consitutional Banking",
+    nestedLinks: [
+      "Commercial Lending",
+      "Commercial Real Estate Lending",
+      "Financial Institutions",
+    ],
+  },
+  {
+    link: "Mortgage Banking",
+    nestedLinks: [
+      "Wholesale and Correspondent Lending",
+      "Warehouse Lending",
+      "Become a Client",
+    ],
+  },
+  { link: "About", nestedLinks: [] },
+  { link: "Contact", nestedLinks: [] },
 ];
 
 const Menu: FC<MenuProps> = ({ isMenuActive, closeMenu }) => {
+  const [hoveredLinkIndex, sethoveredLinkIndex] = useState(100);
+
   return (
     <AnimatePresence mode="wait">
       {isMenuActive ? (
@@ -213,7 +78,7 @@ const Menu: FC<MenuProps> = ({ isMenuActive, closeMenu }) => {
                   animate="active"
                   exit="inactive"
                   onClick={closeMenu}
-                  className="absolute right-[200%] top-2/4 -translate-y-2/4 text-[8px] lg text-zinc-500 uppercase z-20 tracking-[0.3rem] hidden md:block"
+                  className="absolute right-[200%] top-2/4 text-[8px] text-zinc-500 uppercase z-20 tracking-[0.3rem] hidden md:block"
                 >
                   close
                 </motion.div>
@@ -223,38 +88,85 @@ const Menu: FC<MenuProps> = ({ isMenuActive, closeMenu }) => {
                   animate="active"
                   exit="inactive"
                   onClick={closeMenu}
-                  className="size-7 relative"
+                  className="size-7 relative cursor-pointer"
                 >
                   <div className="h-[1px] bg-zinc-600 w-[39px] absolute left-0 top-0 origin-left -translate-y-2/4 rotate-45"></div>
                   <div className="h-[1px] bg-zinc-600 w-[39px] absolute left-0 bottom-0 -translate-y-2/4 origin-left -rotate-45"></div>
                 </motion.div>
               </div>
             </nav>
-            <div className=" h-3/4 md:h-[60%] border-black flex flex-col md:flex-row-reverse justify-between md:items-end lg:justify-between  md:gap-16 w-full">
-              <div className="md:max-w-4xl lg:flex items-center w-full lg:h-full lg:gap-20 xl:gap-32">
-                <motion.div className="pb-6 md:p-0 md:pb-0 flex flex-col gap-10 md:gap-6 text-xl md:text-lg md:w-full">
-                  {Links.map((link, index) => (
-                    <motion.div
-                      custom={index}
-                      variants={linkVariants(index)}
-                      initial="initial"
-                      animate="active"
-                      exit="inactive"
-                      key={index}
-                      className="origin-left text-zinc-500 cursor-pointer group/link max-w-md flex items-center lg:gap-20 xl:gap-32 relative"
-                    >
-                      <div className="hidden xl:block overflow-hidden">
-                        <MoveRight strokeWidth={1} className="-translate-x-full opacity-0 group-hover/link:translate-x-0 group-hover/link:opacity-[1] transition-all duration-700" />
-                      </div>
-                      {link}
-                      <div className="absolute top-0 left-full size-32 bg-green-400 hidden xl:block">
-
-                      </div>
-                    </motion.div>
-                  ))}
+            <div className=" h-3/4 md:h-[60%] flex flex-col md:flex-row-reverse justify-between md:items-end lg:justify-between  md:gap-16 w-full">
+              <div
+                className="md:max-w-4xl lg:flex items-center w-full lg:h-full lg:gap-20 xl:gap-32"
+                onMouseLeave={() => sethoveredLinkIndex(100)}
+              >
+                <motion.div className="pb-6 md:p-0 md:pb-0 flex flex-col  text-xl md:text-lg md:w-full">
+                  {Links.map((link, index) => {
+                    const isHovered = index === hoveredLinkIndex;
+                    return (
+                      <motion.div
+                        custom={index}
+                        variants={linkVariants(index)}
+                        initial="initial"
+                        animate="active"
+                        exit="inactive"
+                        key={index}
+                        className="origin-left cursor-pointer max-w-md relative pb-5 md:pb-10 transition-colors duration-500"
+                      >
+                        <div
+                          onMouseEnter={() => sethoveredLinkIndex(index)}
+                          className="flex items-center lg:gap-20 xl:gap-32 group/span z-50 relative"
+                        >
+                          <div className="hidden xl:block overflow-hidden">
+                            <MoveRight
+                              strokeWidth={0.7}
+                              className="-translate-x-full opacity-0 group-hover/span:translate-x-0 group-hover/span:opacity-[1] transition-all duration-700"
+                            />
+                          </div>
+                          <p className="text-zinc-500 group-hover/span:text-black transition-all duration-500 max-w-fit">
+                            {link.link}
+                          </p>
+                        </div>
+                        <AnimatePresence mode="wait">
+                          {isHovered ? (
+                            <motion.div
+                              variants={nestedMenuVariants}
+                              initial="initial"
+                              animate="active"
+                              exit="inactive"
+                              onMouseLeave={() => {
+                                if (isHovered) {
+                                  sethoveredLinkIndex(100);
+                                }
+                              }}
+                              className={`absolute inset-0 left-full min-w-fit hidden xl:block ${
+                                isHovered ? "!z-[100]" : "!-z-10"
+                              } min-h-fit`}
+                            >
+                              <div className="flex flex-col gap-4 w-64">
+                                {link.nestedLinks.map((l, index) => (
+                                  <motion.p
+                                    key={index}
+                                    custom={index}
+                                    variants={nestedLinkVariants(index)}
+                                    initial="initial"
+                                    animate="active"
+                                    exit="inactive"
+                                    className="text-xs text-zinc-500 hover:text-black transition-colors duration-500"
+                                  >
+                                    {l}
+                                  </motion.p>
+                                ))}
+                              </div>
+                            </motion.div>
+                          ) : null}
+                        </AnimatePresence>
+                      </motion.div>
+                    );
+                  })}
                 </motion.div>
               </div>
-              <div className="w-full md:max-w-fit md:h-full flex items-start md:items-end">
+              <div className="w-full md:max-w-fit md:h-full flex items-start md:items-end xl:pb-8">
                 <motion.button
                   variants={buttonVariants}
                   initial="initial"
@@ -280,7 +192,7 @@ const NavMenu002 = () => {
 
   return (
     <section className="w-full h-screen font-graphik-regular bg-black">
-      <nav className="p-10 flex items-center justify-between">
+      <nav className="p-10 flex items-center justify-between xl:p-20">
         <Link href="/" className="underline text-white">
           back
         </Link>
@@ -297,7 +209,7 @@ const NavMenu002 = () => {
               delay: isMenuActive ? 0 : 1,
             },
           }}
-          className="flex flex-col gap-[14px] size-10 items-end justify-center relative"
+          className="flex flex-col gap-[14px] size-10 items-end justify-center relative cursor-pointer"
           onClick={openMenu}
         >
           <div className="h-[1px] w-2/4 bg-white"></div>
