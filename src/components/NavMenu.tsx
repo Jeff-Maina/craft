@@ -22,7 +22,7 @@ const NavMenu: FC<NavProps> = ({ isMenuActive, CloseMenu }) => {
       variants={MaskVariants}
       isAnimatePresence={true}
       isAnimationActive={isMenuActive}
-      className="w-screen h-screen top-0 left-0 fixed bg-[#00000079] backdrop-blur-sm z-50"
+      className="w-screen h-screen top-0 left-0 fixed bg-[#00000079] backdrop-blur-sm z-[999]"
     >
       <motion.div
         variants={NavMenuVariants}

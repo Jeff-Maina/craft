@@ -15,21 +15,27 @@ const Modal: FC<ModalProps> = ({ children, isModalActive, closeModal }) => {
       isAnimatePresence={true}
       isAnimationActive={isModalActive}
       variants={MaskVariants}
-      className="fixed inset-0 bg-[#00000061] h-[100dvb] overflow-hidden w-full backdrop-blur-xl flex flex-col items-center justify-center z-50"
+      className="fixed inset-0 bg-[#00000038] h-[100dvb] overflow-hidden w-full flex flex-col items-center justify-center z-50"
     >
-      <motion.section
+      {/* <motion.section
         variants={ModalVariants}
         initial="initial"
         animate="active"
         exit="inactive"
         onClick={() => {
           closeModal();
-          console.log(isModalActive);
         }}
         className="h-full w-full flex items-center justify-center"
+      > */}
+      <div
+        onClick={() => {
+          closeModal();
+        }}
+        className="w-full h-full relative flex items-center py-5"
       >
         {children}
-      </motion.section>
+      </div>
+      {/* </motion.section> */}
     </Motiondiv>
   );
 };
