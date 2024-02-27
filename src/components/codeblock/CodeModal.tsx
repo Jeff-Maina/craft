@@ -129,6 +129,32 @@ const MaskVariants = {
   },
 };
 
+const ModalVariants = {
+  initial: {
+    x: "100%",
+  },
+  active: {
+    x: "0%",
+    transition: {
+      x: {
+        type: "tween",
+        duration: 0.4,
+        ease: "easeOut",
+      },
+    },
+  },
+  inactive: {
+    x: "100%",
+    transition: {
+      x: {
+        type: "tween",
+        duration: 0.4,
+        ease: "easeOut",
+      },
+    },
+  },
+};
+
 const CodeModal: FC<ModalProps> = ({ modalProps }) => {
   const { setModalActive, isModalActive, codeBlock } = modalProps;
   const { typescript, javascript } = codeBlock;
@@ -168,32 +194,21 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
   return (
     <AnimatePresence mode="wait">
       {isModalActive ? (
-        <section className="fixed inset-0 h-screen w-full  z-[999] flex items-center">
+        <section className="fixed inset-0 h-screen w-full z-[999] flex items-center ">
           <motion.section
             onClick={closeModal}
             variants={MaskVariants}
             initial="initial"
             animate="active"
-            exit="inac"
+            exit="inactive"
             className="absolute top-0 left-0 w-full h-screen bg-[#00000041]"
           ></motion.section>
           <motion.section
-            initial={{
-              x: "100%",
-            }}
-            animate={{
-              x: isModalActive ? "0%" : "100%",
-            }}
-            transition={{
-              x: {
-                duration: 0.3,
-              },
-            }}
-            onClick={(e) => {
-              e.stopPropagation();
-              openModal();
-            }}
-            className="w-full max-w-xl rounded-[0.5rem] transition-all duration-200 bg-white h-[95%] shadow-xl absolute right-6 z-[50]"
+            variants={ModalVariants}
+            initial="initial"
+            animate="active"
+            exit="inactive"
+            className="w-full max-w-xl rounded-[0.5rem]  bg-white h-[95%] shadow-xl absolute z-[50] right-6"
           ></motion.section>
         </section>
       ) : null}
