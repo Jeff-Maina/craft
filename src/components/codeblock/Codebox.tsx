@@ -17,8 +17,8 @@ const Codebox: FC<CodeboxProps> = ({ codeBlock, closeModal }) => {
 
   // active codeblock state;
   const [activeLanguage, setActiveLanguage] = useState("JS");
-  const setJs = () => setActiveLanguage("JS");
-  const setTs = () => setActiveLanguage("TS");
+  const setLanguage = (language: string) => setActiveLanguage(language);
+
   const isJavaScript = activeLanguage === "JS";
   const isTypeScript = activeLanguage === "TS";
 
@@ -45,11 +45,31 @@ const Codebox: FC<CodeboxProps> = ({ codeBlock, closeModal }) => {
   // dragging logic
 
   return (
-    <section className=" w-full h-full lg:px-4">
-  
-      <section className="w-full  max-h-3/4 rounded-[0.5rem] border">
+    <section className=" w-full h-full lg:px-4 flex flex-col gap-6 md:gap-4">
+      <div className="flex items-center gap-2 text-sm">
+        <button
+          className={`${
+            isJavaScript ? "text-black" : "text-zinc-400 hover:text-zinc-600"
+          } transition-all duration-200`}
+          onClick={() => setLanguage("JS")}
+        >
+          javascript
+        </button>
+        <div>/</div>
+        <button
+          className={`${
+            isTypeScript ? "text-black" : "text-zinc-400 hover:text-zinc-600"
+          } transition-all duration-200`}
+          onClick={() => setLanguage("TS")}
+        >
+          typescript
+        </button>
+      </div>
+      <section className="w-full h-auto rounded-[0.5rem] border">
         <div className="px-4 py-2 border-b flex items-center justify-between">
-          <span className="text-sm">button.jsx</span>
+          <span className="text-xs text-zinc-600 md:text-sm">
+            component.{isTypeScript ? "tsx" : "jsx"}
+          </span>
           <button>{buttonSvg}</button>
         </div>
         <div className="w-full max-h-full h-auto p-2">
@@ -58,7 +78,7 @@ const Codebox: FC<CodeboxProps> = ({ codeBlock, closeModal }) => {
             style={solarizedLight}
             showLineNumbers={true}
             customStyle={customStyle}
-            className="codebox !bg-transparent"
+            className="codebox !bg-transparent h-full max-h-[50vh]"
           >
             {currentLanguage}
           </SyntaxHighlighter>

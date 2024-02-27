@@ -50,17 +50,18 @@ body::-webkit-scrollbar {
 .codebox::-webkit-scrollbar {
   background-color: transparent;
   height: 6px;
+  width: 6px !important;
 }
 .codebox::-webkit-scrollbar-thumb {
   background-color: transparent;
   border-radius: 10px;
-  transition: all 0.2s ease;
+  transition: all 1s ease;
 }
 
 .codebox:hover::-webkit-scrollbar-thumb {
   background-color: #d6d6d6;
 }
 
-.react-syntax-highlighter-line-number{
+.react-syntax-highlighter-line-number {
   margin-right: 5px !important;
 }

@@ -23,7 +23,6 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
     controls.start(event.nativeEvent);
   };
 
-
   return (
     <AnimatePresence mode="wait">
       {isModalActive ? (
@@ -42,12 +41,15 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
             dragControls={controls}
             dragListener={false}
             dragMomentum={false}
+            whileDrag={{
+              opacity: 0.9,
+            }}
             initial="initial"
             animate="active"
             exit="inactive"
-            className="p-4  flex flex-col gap-4 md:w-full w-[95%] md:rounded-[0.5rem] max-w-xl lg:max-w-2xl   bg-white h-full md:h-[95%] shadow-xl absolute z-[50] right-0 md:right-6"
+            className="p-6 md:p-4 flex flex-col gap-6 md:gap-4 md:w-full w-[95%] md:rounded-[0.5rem] max-w-xl lg:max-w-2xl   bg-white h-full md:h-[95%] shadow-xl absolute z-[50] right-0 md:right-6"
           >
-            <div className="flex justify-between items-center pr-4">
+            <div className="flex justify-between items-center md:pr-4">
               <div
                 onPointerDown={startDrag}
                 className="hidden lg:block cursor-grab active:cursor-grabbing  p-4"
