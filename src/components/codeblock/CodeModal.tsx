@@ -33,7 +33,7 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
             initial="initial"
             animate="active"
             exit="inactive"
-            className="absolute top-0 left-0 w-full h-screen bg-[#0000002d]"
+            className="absolute top-0 left-0 w-full h-screen bg-[#0000002d] backdrop-blur-sm md:backdrop-blur-none"
           ></motion.section>
           <motion.section
             variants={ModalVariants}
