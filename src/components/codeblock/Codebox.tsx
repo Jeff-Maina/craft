@@ -6,7 +6,7 @@ import { FC, useState } from "react";
 
 const customStyle = {
   lineHeight: "1.8",
-  fontSize: "0.8rem",
+  // fontSize: "0.8rem",
   borderRadius: "5px",
   backgroundColor: "#fff",
   // padding: "20px 10px",
@@ -25,12 +25,9 @@ const Codebox: FC<CodeboxProps> = ({ codeBlock, closeModal }) => {
   // copying the text to clipboard;
   const [hasCopied, setHasCopied] = useState(false);
   const buttonSvg = hasCopied ? (
-    <Check size={16} className="stroke-green-500" />
+    <Check className="h-[14px] md:h-[16px] stroke-green-500" />
   ) : (
-    <Copy
-      size={16}
-      className="stroke-[#555] group-hover/icon:stroke-white transition-all duration-150"
-    />
+    <Copy className="h-[14px] md:h-[16px] stroke-[#555] group-hover/icon:stroke-white transition-all duration-150" />
   );
 
   const currentLanguage = isJavaScript ? javascript : typescript;
@@ -66,7 +63,7 @@ const Codebox: FC<CodeboxProps> = ({ codeBlock, closeModal }) => {
         </button>
       </div>
       <section className="w-full h-auto rounded-[0.5rem] border">
-        <div className="px-4 py-2 border-b flex items-center justify-between">
+        <div className="px-2 md:px-4 py-2 border-b flex items-center justify-between">
           <span className="text-xs text-zinc-600 md:text-sm">
             component.{isTypeScript ? "tsx" : "jsx"}
           </span>
@@ -78,7 +75,7 @@ const Codebox: FC<CodeboxProps> = ({ codeBlock, closeModal }) => {
             style={solarizedLight}
             showLineNumbers={true}
             customStyle={customStyle}
-            className="codebox !bg-transparent h-full max-h-[50vh]"
+            className="codebox !bg-transparent h-full max-h-[50vh] text-[0.7rem] md:text-[0.8rem]"
           >
             {currentLanguage}
           </SyntaxHighlighter>
