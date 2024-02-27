@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import ElementLayout from "../../../ElementLayout";
-import { useCursorPosition } from "../../lib/useCursorPosition";
+import { useCursorPosition } from "../../../../../../utils/hooks/useCursorPosition";
 import { codeblock } from "./codeblock";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Play } from "lucide-react";

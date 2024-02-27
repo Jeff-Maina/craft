@@ -79,6 +79,7 @@ const config = {
         "graphik-semibold": "Graphik Semibold",
         "satoshi-medium": "Satoshi Medium",
         "satoshi-bold": "Satoshi Bold",
+        "fira": "Fira Code"
       }
     },
   },

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+
 @font-face {
   font-family: "Satoshi Bold";
   src: url("/fonts/SatoshiBold.otf");
@@ -36,33 +38,29 @@ body::-webkit-scrollbar {
   display: none !important;
 }
 
-.codeHighlighter {
-  background-color: transparent !important;
-  color: #d4d4d4;
-}
-
-.codeHighlighter::-webkit-scrollbar {
-  background-color: transparent;
-}
-
-.code_box::-webkit-scrollbar {
-  background-color: transparent;
-  width: 5px;
-}
-.code_box::-webkit-scrollbar-corner {
-  background-color: #0000;
-}
-.code_box::-webkit-scrollbar-thumb {
-  background-color: #0000;
-  width: 5px;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-}
-.code_box:hover::-webkit-scrollbar-thumb {
-  background-color: white;
-}
-
 /* layouts */
 .section_layout {
   @apply w-full h-full gap-2 px-4;
+}
+
+/* ! codeblock */
+.codebox {
+  padding: 0px;
+}
+.codebox::-webkit-scrollbar {
+  background-color: transparent;
+  height: 6px;
+}
+.codebox::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.codebox:hover::-webkit-scrollbar-thumb {
+  background-color: #d6d6d6;
+}
+
+.react-syntax-highlighter-line-number{
+  margin-right: 5px !important;
 }

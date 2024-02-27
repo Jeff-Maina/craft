@@ -13,6 +13,12 @@ interface ModalProps {
     modalProps: modalProps;
 }
 
+interface CodeboxProps {
+    codeBlock: { javascript: string, typescript: string };
+    closeModal: () => void
+}
+
 export type {
     ModalProps,
+    CodeboxProps
 }
