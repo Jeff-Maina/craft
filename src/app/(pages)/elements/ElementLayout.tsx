@@ -16,11 +16,12 @@ const ElementLayout: FC<ButtonProps> = ({
 }) => {
   const [isModalActive, setModalActive] = useState(false);
   const toggleModal = () => setModalActive(!isModalActive);
-
+  const closeModal = () => setModalActive(false);
+  
   const modalProps = {
     isModalActive,
+    closeModal,
     tabs,
-    setModalActive,
     dependencies,
   };
 

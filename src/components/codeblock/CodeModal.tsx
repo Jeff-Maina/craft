@@ -25,11 +25,8 @@ const Mask: FC<MaskProps> = ({ closeModal }) => {
 };
 
 const CodeModal: FC<ModalProps> = ({ modalProps }) => {
-  const { setModalActive, isModalActive, tabs, dependencies } = modalProps;
-
-  // toggle modal functions;
-  const closeModal = () => setModalActive(false);
-
+  const { closeModal, isModalActive, tabs, dependencies } = modalProps;
+  
   const screensize = useScreenSize();
   const isLargeScreen = screensize.width > 1024;
 

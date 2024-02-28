@@ -1,8 +1,8 @@
 type tabProps = {
     javascript: string;
     typescript: string;
-    label: string;
-    dateCreated: string;
+    label?: string;
+    dateCreated?: string;
 };
 
 type dependency = {
@@ -12,8 +12,8 @@ type dependency = {
 
 type modalProps = {
     isModalActive: boolean;
-    tabs: Array<tabProps>;
-    setModalActive: (value: boolean) => void;
+    tabs: tabProps[];
+    closeModal: () => void;
     dependencies?: Array<dependency>;
 };
 
