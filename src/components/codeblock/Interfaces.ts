@@ -14,7 +14,7 @@ type modalProps = {
     isModalActive: boolean;
     tabs: tabProps[];
     closeModal: () => void;
-    dependencies?: Array<dependency>;
+    dependencies: Array<dependency>;
 };
 
 interface ModalProps {
@@ -42,7 +42,7 @@ interface dependecyObj {
 }
 
 interface dependeciesProps {
-    dependencies?: Array<dependencyType>;
+    dependencies: Array<dependencyType>;
 }
 
 

@@ -15,7 +15,7 @@ interface ButtonProps {
     children: JSX.Element;
     tabs: Array<tabProps>;
     className?: string;
-    dependencies?: Array<dependency>;
+    dependencies: Array<dependency>;
 }
 
 export type {
