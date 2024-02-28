@@ -18,9 +18,11 @@ const Dependencycard: FC<dependecyObj> = ({ dependency }) => {
   const svg = isCopied ? <Check size={14} /> : <Copy size={14} />;
 
   return (
-    <li className="flex items-center gap-3 relative max-w-fit isolate group/dependency">
-      <ArrowRight size={14} />
-      <p className="min-w-32">{label}</p>
+    <li className="flex flex-col md:flex-row md:items-center gap-3 relative max-w-fit isolate group/dependency">
+      <div className="flex items-center gap-3">
+        <ArrowRight size={14} />
+        <p className="min-w-32">{label}</p>
+      </div>
       <div
         onClick={copyCommand}
         className="flex relative items-center max-w-fit  gap-4 px-4 py-2 text-xs bg-zinc-100 border border-white rounded-[0.3rem] text-zinc-600 hover:text-black hover:border-zinc-400 hover:bg-zinc-200 transition-all duration-300 cursor-pointer"
@@ -40,7 +42,7 @@ const Dependencies: FC<dependeciesProps> = ({ dependencies }) => {
   return (
     <>
       {dependenciesCount > 0 ? (
-        <ul className="list-disc list-inside flex flex-col gap-2">
+        <ul className="list-disc list-inside flex flex-col gap-2 ">
           {dependencies.map((dependecy, index) => (
             <Dependencycard key={index} dependency={dependecy} />
           ))}

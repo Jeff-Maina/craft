@@ -1,7 +1,7 @@
 // 3rd party libraries;
 import { FC, useState } from "react";
 import { AnimatePresence, motion, useDragControls } from "framer-motion";
-import { X } from "lucide-react";
+import { ChevronRight, X } from "lucide-react";
 
 // component imports;
 import Codebox from "./Codedisplay";
@@ -55,7 +55,7 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
             initial="initial"
             animate="active"
             exit="inactive"
-            className="p-6  lg:p-4 flex flex-col gap-6 lg:gap-4 md:w-full w-[95%] md:rounded-[0.5rem] max-w-xl lg:max-w-2xl   bg-white h-full md:h-[95%] shadow-xl absolute z-[50] right-0 md:right-6"
+            className="p-6 !pb-8  lg:p-4 flex flex-col gap-6 lg:gap-4 w-full  md:rounded-[0.5rem] max-w-xl lg:max-w-2xl   bg-white h-full md:h-[95%] shadow-xl absolute z-[50] right-0 md:right-6"
           >
             <div className="flex justify-between items-center lg:pr-4 relative">
               <div
@@ -65,11 +65,12 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
                 <small className="select-none">[ drag ]</small>
               </div>
               <button className="ml-auto" onClick={closeModal}>
-                <X size={18} />
+                {/* <X size={18} /> */}
+                <ChevronRight size={24} />
               </button>
-              <div className="w-full h-10 bg-gradient-to-b from-white via-[#ffffffc4] to-transparent absolute pointer-events-none top-3/4"></div>
+              <div className="w-full h-10 bg-gradient-to-b from-white via-[#ffffffc4] to-transparent absolute pointer-events-none top-3/4 hidden lg:block"></div>
             </div>
-            <section className="flex flex-col gap-6 lg:gap-4 overflow-y-scroll custom_scrollbar pt-4 lg:pt-0">
+            <section className="flex flex-col gap-6 lg:gap-4 overflow-y-scroll no_scrollbar md:pt-4 lg:pt-0">
               <Codebox tabs={tabs} updateDate={updateDate} />
               <div className="lg:p-4">
                 <div className="text-sm grid gap-4">

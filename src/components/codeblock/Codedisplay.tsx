@@ -73,7 +73,7 @@ const Tab: FC<tabType> = ({
 
         <button onClick={copySnippet}>{buttonSvg}</button>
       </div>
-      <div className="w-full max-h-full h-auto p-2">
+      <div className="w-full max-h-full h-auto md:p-2">
         <SyntaxHighlighter
           language="javascript"
           style={solarizedLight}
@@ -101,8 +101,8 @@ const Codebox: FC<CodeboxProps> = ({ tabs, updateDate }) => {
   const isTypeScript = activeLanguage === "TS";
 
   return (
-    <section className=" w-full lg:px-4 flex flex-col gap-6 md:gap-4">
-      <div className="flex items-center gap-2 md:gap-4 text-sm">
+    <section className=" w-full lg:px-4 flex flex-col md:gap-4">
+      <div className="flex items-center gap-2 md:gap-4 text-sm sticky top-0 left-0 w-full backdrop-blur bg-[#ffffff46] pb-4 z-10">
         <button
           className={`${
             isJavaScript ? "text-black" : "text-zinc-400 hover:text-zinc-600"
