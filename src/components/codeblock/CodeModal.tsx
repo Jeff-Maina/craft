@@ -70,7 +70,7 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
               </button>
               <div className="w-full h-10 bg-gradient-to-b from-white via-[#ffffffc4] to-transparent absolute top-3/4"></div>
             </div>
-            <section className="flex flex-col gap-6 md:gap-4 overflow-y-scroll no_scrollbar_container">
+            <section className="flex flex-col gap-6 md:gap-4 overflow-y-scroll custom_scrollbar">
               <Codebox tabs={tabs} closeModal={closeModal} />
               <div className="p-4">
                 <div className="text-sm grid gap-4">

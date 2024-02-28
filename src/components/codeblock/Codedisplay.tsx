@@ -44,7 +44,7 @@ const Tab: FC<tabType> = ({
     setTimeout(() => setHasCopied(false), 2500);
   };
 
-  const LabelsList = tabLabels.map((label, index) => {
+  const LabelsList = tabLabels.map((label, index, array) => {
     const isTabActive = index === activeTabIndex;
     return (
       <button
@@ -52,8 +52,8 @@ const Tab: FC<tabType> = ({
         className="text-xs text-zinc-600 md:text-sm py-2 px-4 relative max-w-fit"
       >
         {label}.{isJavaScript ? "jsx" : "tsx"}
-        {isTabActive && (
-          <div className="h-[1px] absolute bottom-0 w-full left-0 max-w-full bg-black"></div>
+        {isTabActive && array.length > 1 && (
+          <div className="h-[1px] absolute bottom-0 w-full left-0 max-w-full bg-zinc-400"></div>
         )}
       </button>
     );
@@ -62,7 +62,7 @@ const Tab: FC<tabType> = ({
   return (
     <section className="w-full h-auto rounded-[0.5rem] border">
       <div className="border-b flex items-center justify-between pr-2">
-        <div className="h-full  max-w-sm flex items-center divide-x border-r">
+        <div className="h-full max-w-[19rem] md:max-w-lg flex items-center divide-x border-r overflow-x-scroll no_scrollbar">
           {LabelsList}
         </div>
 

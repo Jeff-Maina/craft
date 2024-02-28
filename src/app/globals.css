@@ -62,23 +62,25 @@ body::-webkit-scrollbar {
   background-color: #d6d6d6;
 }
 
-
 .react-syntax-highlighter-line-number {
   margin-right: 5px !important;
 }
 
-
-.no_scrollbar_container::-webkit-scrollbar {
+.custom_scrollbar::-webkit-scrollbar {
   background-color: transparent;
   height: 6px;
   width: 6px !important;
 }
-.no_scrollbar_container::-webkit-scrollbar-thumb {
+.custom_scrollbar::-webkit-scrollbar-thumb {
   background-color: transparent;
   border-radius: 10px;
   transition: all 1s ease;
 }
 
-.no_scrollbar_container:hover::-webkit-scrollbar-thumb {
+.custom_scrollbar:hover::-webkit-scrollbar-thumb {
   background-color: #e9e8e8;
+}
+
+.no_scrollbar::-webkit-scrollbar {
+  display: none !important;
 }
