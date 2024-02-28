@@ -1,7 +1,7 @@
 "use client";
 
 import ElementLayout from "../../../ElementLayout";
-import { codeblock } from "./codeblock";
+import { tabs } from "./codeblock";
 import { FC, useState } from "react";
 import { Variants, motion } from "framer-motion";
 
@@ -29,6 +29,13 @@ const MotionVariants: Variants = {
   }),
 };
 
+const dependencies = [
+  {
+    label: "Framer Motion",
+    command: "npm install framer-motion",
+  },
+];
+
 const Link004: FC = () => {
   const [isLinkHovered, setIsLinkHovered] = useState(false);
 
@@ -54,7 +61,7 @@ const Link004: FC = () => {
   });
 
   return (
-    <ElementLayout codeBlock={codeblock}>
+    <ElementLayout dependencies={dependencies} tabs={tabs}>
       <a
         onMouseEnter={hoverLink}
         onMouseLeave={unhoverLink}

@@ -2,11 +2,18 @@
 
 import { ArrowRight } from "lucide-react";
 import ElementLayout from "../../../ElementLayout";
-import { codeblock } from "./codeblock";
+import { tabs } from "./codeblock";
+
+const dependencies = [
+  {
+    label: "Lucide React",
+    command: "npm install lucide-react",
+  },
+];
 
 const Link007 = () => {
   return (
-    <ElementLayout codeBlock={codeblock}>
+    <ElementLayout tabs={tabs} dependencies={dependencies}>
       <a href="" className="group/link flex items-center gap-3 lg:gap-5 h-20">
         <div className="bg-lime-500 size-8 md:size-10 rounded-full grid place-items-center scale-100 group-hover/link:size-0 group-hover/link:translate-x-4  overflow-hidden transition-all duration-500">
           <ArrowRight className="h-[14px] w-[14px] group-hover/link:translate-x-[150%] transition-all duration-300" />

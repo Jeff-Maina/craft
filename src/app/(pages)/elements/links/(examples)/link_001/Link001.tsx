@@ -1,15 +1,23 @@
 import { ArrowRight } from "lucide-react";
-import ElementLayout from "../../../ElementLayout";
-import { codeblock } from "./codeblock";
 import { FC } from "react";
 
-const ArrowSvg:FC = () => (
+import ElementLayout from "../../../ElementLayout";
+import { tabs } from "./codeblock";
+
+const ArrowSvg: FC = () => (
   <ArrowRight className="h-[14px] md:h-[16px] w-[14px] md:w-[16px] stroke-white" />
 );
 
-const Link01:FC = () => {
+const dependencies = [
+  {
+    label: "Lucide React",
+    command: "npm install lucide-react",
+  },
+];
+
+const Link01: FC = () => {
   return (
-    <ElementLayout codeBlock={codeblock}>
+    <ElementLayout dependencies={dependencies} tabs={tabs}>
       <a
         href="#"
         className="group/link flex items-center gap-2 justify-between cursor-pointer pl-0 hover:pl-4 transition-all duration-500 outline-none"

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import ElementLayout from "../../../ElementLayout";
-import { codeblock } from "./codeblock";
+import { tabs } from "./codeblock";
 import Motiondiv from "@/components/Motiondiv";
 
 const motionVariants = {
@@ -27,13 +27,20 @@ const motionVariants = {
   },
 };
 
+const dependencies = [
+  {
+    label: "Framer Motion",
+    command: "npm install framer-motion",
+  },
+];
+
 const Link005 = () => {
   const [isLinkHovered, setLinkHovered] = useState(false),
     hoverLink: () => void = () => setLinkHovered(true),
     unhoverLink: () => void = () => setLinkHovered(false);
 
   return (
-    <ElementLayout codeBlock={codeblock}>
+    <ElementLayout tabs={tabs} dependencies={dependencies}>
       <a
         href="#"
         onMouseEnter={hoverLink}

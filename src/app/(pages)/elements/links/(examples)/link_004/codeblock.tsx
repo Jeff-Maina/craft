@@ -1,11 +1,11 @@
+import { linkCompProps } from "../../Interfaces";
+
 const javascript: string = 
 `import {  useState } from "react";
 import {  motion } from "framer-motion";
 
 const MotionVariants = {
-  initial: {
-    y: "0%",
-  },
+  initial: { y: "0%" },
   hovered: (index) => ({
     y: "-100%",
     transition: {
@@ -69,15 +69,11 @@ export default Link;
 `;
 
 const typescript: string = 
-`"use client";
-
-import { FC, useState } from "react";
+`import { FC, useState } from "react";
 import { Variants, motion } from "framer-motion";
 
 const MotionVariants: Variants = {
-  initial: {
-    y: "0%",
-  },
+  initial: { y: "0%" },
   hovered: (index : number) => ({
     y: "-100%",
     transition: {
@@ -140,7 +136,11 @@ const Link: FC = () => {
 export default Link;
 `;
 
-export const codeblock = {
+const link: linkCompProps = {
   javascript,
   typescript,
+  label: "link",
+  dateCreated: "Thursday, 8 February 2024",
 };
+
+export const tabs = [link];

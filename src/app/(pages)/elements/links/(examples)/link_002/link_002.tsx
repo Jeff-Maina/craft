@@ -1,15 +1,11 @@
-import { ArrowRight } from "lucide-react";
-import ElementLayout from "../../../ElementLayout";
-import { codeblock } from "./codeblock";
 import { FC } from "react";
 
-const ArrowSvg = () => (
-  <ArrowRight className="h-[14px] md:h-[16px] w-[14px] md:w-[16px] stroke-white" />
-);
+import ElementLayout from "../../../ElementLayout";
+import { tabs } from "./codeblock";
 
 const Link02: FC = () => {
   return (
-    <ElementLayout codeBlock={codeblock}>
+    <ElementLayout dependencies={[]} tabs={tabs}>
       <a href="#" className="group/link relative max-w-fit overflow-hidden">
         <span className="lg:text-xl">Read more</span>
         <div className="absolute bottom-0 h-[1px] w-full bg-black -translate-x-[150%]  group-hover/link:translate-x-0 transition-all duration-500 ease-in-out"></div>
