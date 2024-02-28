@@ -1,10 +1,10 @@
 "use client";
 
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import ElementLayout from "@/app/(pages)/elements/ElementLayout";
-import { codeblock } from "./codeblock";
+import { tabs } from "./codeblock";
 import useScreenSize from "@/utils/hooks/useScreenSize";
 import {
   opacityVariants,
@@ -30,6 +30,17 @@ const Links: Link[] = [
   { label: "App", link: "App" },
   { label: "Company", link: "Company" },
   { label: "Community", link: "Community" },
+];
+
+const dependencies = [
+  {
+    label: "Framer Motion",
+    command: "npm install framer-motion",
+  },
+  {
+    label: "Lucide React",
+    command: "npm install lucide-react",
+  },
 ];
 
 //! mini components;
@@ -102,7 +113,11 @@ const Navbar002: FC = () => {
   );
 
   return (
-    <ElementLayout codeBlock={codeblock} className="!pt-0 border-none">
+    <ElementLayout
+      dependencies={dependencies}
+      tabs={tabs}
+      className="!pt-0 border-none"
+    >
       <div className="w-full h-full flex items-start justify-center pt-5 lg:pt-10 text-sm xl:text-lg xl:pr-20 bg-[#c6c0b6]">
         <div
           onMouseLeave={resetMenu}
@@ -131,27 +146,54 @@ const Navbar002: FC = () => {
               <p className="uppercase">Preorder</p>
             </div>
           </div>
-          <motion.div
-            variants={!isXlScreen ? heightVariants : widthVariants}
-            initial="initial"
-            animate={isMenuActive ? "active" : "inactive"}
-            className={`overflow-hidden ${isXlScreen ? "max-w-fit" : "w-full"}`}
-          >
-            <motion.ul
-              variants={opacityVariants}
-              initial="initial"
-              animate={isMenuActive ? "active" : "inactive"}
-              className="py-6 xl:py-0 px-2 flex flex-col xl:flex-row xl:pl-8 gap-5 xl:gap-10 items-center pt-6 text-[10px] xl:text-sm h-full w-full"
-            >
-              {Links.map((link, index) => (
-                <LinkAnim
-                  key={index}
-                  label={link.label}
-                  isMenuActive={isMenuActive}
-                />
-              ))}
-            </motion.ul>
-          </motion.div>
+          <>
+            <div className="lg:hidden">
+              <motion.div
+                variants={heightVariants}
+                initial="initial"
+                animate={isMenuActive ? "active" : "inactive"}
+                className={`overflow-hidden w-full`}
+              >
+                <motion.ul
+                  variants={opacityVariants}
+                  initial="initial"
+                  animate={isMenuActive ? "active" : "inactive"}
+                  className="py-6 xl:py-0 px-2 flex flex-col xl:flex-row xl:pl-8 gap-5 xl:gap-10 items-center pt-6 text-[10px] xl:text-sm h-full w-full"
+                >
+                  {Links.map((link, index) => (
+                    <LinkAnim
+                      key={index}
+                      label={link.label}
+                      isMenuActive={isMenuActive}
+                    />
+                  ))}
+                </motion.ul>
+              </motion.div>
+            </div>
+            <div className="hidden lg:block">
+              <motion.div
+                variants={widthVariants}
+                initial="initial"
+                animate={isMenuActive ? "active" : "inactive"}
+                className={`overflow-hidden w-full`}
+              >
+                <motion.ul
+                  variants={opacityVariants}
+                  initial="initial"
+                  animate={isMenuActive ? "active" : "inactive"}
+                  className="py-6 xl:py-0 px-2 flex flex-col xl:flex-row xl:pl-8 gap-5 xl:gap-10 items-center pt-6 text-[10px] xl:text-sm h-full w-full"
+                >
+                  {Links.map((link, index) => (
+                    <LinkAnim
+                      key={index}
+                      label={link.label}
+                      isMenuActive={isMenuActive}
+                    />
+                  ))}
+                </motion.ul>
+              </motion.div>
+            </div>
+          </>
         </div>
       </div>
     </ElementLayout>
@@ -159,6 +201,5 @@ const Navbar002: FC = () => {
 };
 
 export default Navbar002;
-
 
 // inspiration https://pebblelife.com/
