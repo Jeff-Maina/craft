@@ -2,9 +2,16 @@
 
 import { useAnimate } from "framer-motion";
 import ElementLayout from "../../../ElementLayout";
-import { codeblock } from "./codeblock";
+import { tabs } from "./codeblock";
 
 import { FC, MouseEvent } from "react";
+
+const dependencies = [
+  {
+    label: "Framer Motion",
+    command: "npm install framer-motion",
+  },
+];
 
 const Cursor002: FC = () => {
   const [scope, animate] = useAnimate();
@@ -17,7 +24,7 @@ const Cursor002: FC = () => {
     }, 500);
   };
   return (
-    <ElementLayout codeBlock={codeblock} className="!pt-0">
+    <ElementLayout dependencies={dependencies} tabs={tabs} className="!pt-0">
       <div className="w-full h-full grid place-items-center relative cursor-none bg-white">
         <p className="uppercase text-6xl tracking-tighter relative z-20 pointer-events-none text-white mix-blend-difference">
           pixel.

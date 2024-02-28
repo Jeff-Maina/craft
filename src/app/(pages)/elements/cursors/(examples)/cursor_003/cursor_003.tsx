@@ -1,11 +1,12 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { ArrowUpRight, Play } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+
 import ElementLayout from "../../../ElementLayout";
 import { useCursorPosition } from "../../../../../../utils/hooks/useCursorPosition";
-import { codeblock } from "./codeblock";
-import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Play } from "lucide-react";
+import { tabs } from "./codeblock";
 
 const ArrowVariants = {
   initial: {
@@ -35,6 +36,17 @@ const ArrowVariants = {
   },
 };
 
+const dependencies = [
+  {
+    label: "Framer Motion",
+    command: "npm install framer-motion",
+  },
+  {
+    label: "Lucide React",
+    command: "npm install lucide-react",
+  },
+];
+
 const Cursor003 = () => {
   const ref = useRef(null);
   const { x, y } = useCursorPosition(ref);
@@ -51,7 +63,7 @@ const Cursor003 = () => {
   const newY = y + 20;
 
   return (
-    <ElementLayout codeBlock={codeblock} className="!pt-0">
+    <ElementLayout dependencies={dependencies} tabs={tabs} className="!pt-0">
       <div
         ref={ref}
         className="h-full w-full grid place-items-center relative overflow-hidden"

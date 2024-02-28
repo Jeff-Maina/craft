@@ -2,9 +2,15 @@
 
 import { FC, MouseEvent, useRef, useState } from "react";
 import ElementLayout from "../../../ElementLayout";
-import { codeblock } from "./codeblock";
+import { tabs } from "./codeblock";
 import { useAnimate } from "framer-motion";
 
+const dependencies = [
+  {
+    label: "Framer Motion",
+    command: "npm install framer-motion",
+  },
+];
 const Cursor001: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -61,7 +67,7 @@ const Cursor001: FC = () => {
   };
 
   return (
-    <ElementLayout codeBlock={codeblock} className="pt-0">
+    <ElementLayout dependencies={dependencies} tabs={tabs} className="pt-0">
       <div
         ref={containerRef}
         onMouseMove={handleMouseMove}
