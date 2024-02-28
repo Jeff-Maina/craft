@@ -2,8 +2,8 @@ type navBarCompProps = {
     javascript: string;
     typescript: string;
     label: string;
-    dateCreated?: string;
+    dateCreated: string;
 };
- export type {
+export type {
     navBarCompProps
- }
+}
