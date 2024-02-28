@@ -16,7 +16,7 @@ type tabType = {
   changeTab: (index: number) => void;
   activeTabIndex: number;
   isJavaScript: boolean;
-  updateDate: (date?: string) => void;
+  updateDate: (date: string) => void;
 };
 
 const Tab: FC<tabType> = ({
