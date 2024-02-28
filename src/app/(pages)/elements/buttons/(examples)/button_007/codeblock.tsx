@@ -1,3 +1,5 @@
+import { buttonCompProps } from "../../Interfaces";
+
 const javascript: string = `import { ArrowRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
@@ -66,11 +68,8 @@ export default Button;
 `;
 
 const typescript: string = `import { ArrowRight } from "lucide-react";
-import { AnimatePresence, motion,Variants } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 import { useState,FC } from "react";
-
-interface ButtonProps {
-}
 
 // animation variants;
 const motionVariants: Variants = {
@@ -91,7 +90,7 @@ const motionVariants: Variants = {
   },
 };
 
-const Button:FC<ButtonProps> = () => {
+const Button:FC = () => {
 
   const [isLinkHovered, setLinkHovered] = useState<boolean>(false);
   const hoverLink: () => void = () => setLinkHovered(true);
@@ -109,9 +108,7 @@ const Button:FC<ButtonProps> = () => {
       </span>
       <div className="size-10 lg:size-16 rounded-full border border-black bg-white grid place-items-center">
         <div className="relative overflow-hidden">
-
-          {/* Feel free to replace this with a different SVG component  */}
-          
+          {/* Feel free to replace this with a different SVG component  */}          
           <ArrowRight className="h-[18px] w-[18px] md:h-[24px] md:w-[24px] group-hover/button:translate-x-full transition-all duration-500" />
           <ArrowRight className="absolute inset-0 h-[18px] w-[18px] md:h-[24px] md:w-[24px] -translate-x-full group-hover/button:translate-x-0 transition-all duration-500" />
         </div>
@@ -129,12 +126,17 @@ const Button:FC<ButtonProps> = () => {
         ></motion.div>
       ) : null}
     </AnimatePresence>
+
   </button>
   )
 }
 export default Button;
 `;
-export const codeblock = {
+const button: buttonCompProps = {
   javascript,
   typescript,
+  label: "button",
+  dateCreated: "Friday, 9 Feb 2024",
 };
+
+export const tabs = [button];

@@ -1,10 +1,15 @@
 import { ArrowUpRight } from "lucide-react";
-import { codeblock } from "./codeblock";
+import { tabs } from "./codeblock";
 import ElementLayout from "../../../ElementLayout";
-
+const dependencies = [
+  {
+    label: "Lucide React",
+    command: "npm install lucide-react",
+  },
+];
 const Button003 = () => {
   return (
-    <ElementLayout codeBlock={codeblock}>
+    <ElementLayout dependencies={dependencies} tabs={tabs}>
       <button className="bg-[#2a2a2a] text-white leading-none p-2 rounded-full flex items-center gap-3 justify-center pl-6 lg:pl-8 group/button active:bg-black outline-blue-500">
         <span className="lg:text-lg">Start project today</span>
         <div className="size-8 md:size-12 scale-[20%] group-hover/button:scale-100 group-focus/button:scale-100 grid place-items-center rounded-full bg-white transition-all duration-300">

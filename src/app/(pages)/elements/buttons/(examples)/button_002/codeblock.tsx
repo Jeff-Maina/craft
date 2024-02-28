@@ -1,3 +1,5 @@
+import { buttonCompProps } from "../../Interfaces";
+
 const javascript: string = `import { ArrowRight } from "lucide-react";
 
 const Button = () => {
@@ -16,9 +18,8 @@ export default Button
 
 `;
 
-const typescript: string = 
-`import { ArrowRight } from "lucide-react";
-import { FC } from React;
+const typescript: string = `import { ArrowRight } from "lucide-react";
+import { FC } from 'react';
 
 const Button:FC = () => {
   return (
@@ -36,7 +37,12 @@ export default Button
 
 `;
 
-export const codeblock = {
+const button: buttonCompProps = {
   javascript,
   typescript,
+  label: "button",
+  dateCreated: "Tuesday, 6 Feb 2024",
 };
+
+export const tabs = [button];
+

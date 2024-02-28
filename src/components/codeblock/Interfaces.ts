@@ -2,6 +2,7 @@ type tabProps = {
     javascript: string;
     typescript: string;
     label: string;
+    dateCreated: string;
 };
 
 type dependency = {
@@ -22,8 +23,7 @@ interface ModalProps {
 
 interface CodeboxProps {
     tabs: Array<tabProps>;
-    closeModal: () => void
-
+    updateDate: (date: string) => void;
 }
 
 interface MaskProps {

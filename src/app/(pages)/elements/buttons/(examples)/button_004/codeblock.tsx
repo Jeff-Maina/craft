@@ -1,12 +1,11 @@
-const javascript: string = `// install framer-motion;
+import { buttonCompProps } from "../../Interfaces";
 
+const javascript: string = `// install framer motion;
 import { AnimatePresence, motion } from "framer-motion";
 
 // motion variants;
 const ButtonVariants = {
-  initial: {
-    y: "20%",
-  },
+  initial: { y: "20%" },
   active: {
     y: "-50%",
     transition: {
@@ -17,8 +16,7 @@ const ButtonVariants = {
   },
   inactive: {
     y: "-120%",
-    transition: {
-      y: {
+    transition: { y: {
         duration: 0.3,
       },
     },
@@ -38,7 +36,6 @@ const Button = () => {
       className="border border-black bg-white leading-none p-5 px-10 rounded-full group/button active:scale-105 outline-blue-500 relative isolate overflow-hidden transition-all duration-300"
      >
       <span className="relative lg:text-lg text-black group-hover/button:text-white transition-colors duration-300"> Join us today</span>
-    
         <AnimatePresence mode="wait">
           {isButtonHovered ? (
             <motion.div
@@ -57,7 +54,7 @@ export default Button;
 `;
 
 const typescript: string = `// install framer-motion;
-import { FC } from "React";
+import { FC } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 // motion variants;
@@ -96,7 +93,6 @@ const Button:FC = () => {
       className="border border-black bg-white leading-none p-5 px-10 rounded-full group/button active:scale-105 outline-blue-500 relative isolate overflow-hidden transition-all duration-300"
      >
       <span className="relative lg:text-lg text-black group-hover/button:text-white transition-colors duration-300"> Join us today</span>
-
         <AnimatePresence mode="wait">
           {isButtonHovered ? (
             <motion.div
@@ -114,7 +110,12 @@ const Button:FC = () => {
 export default Button;
 `;
 
-export const codeblock = {
+const button: buttonCompProps = {
   javascript,
   typescript,
+  label: "button",
+  dateCreated: "Tuesday, 6 Feb 2024",
 };
+
+export const tabs = [button];
+

@@ -1,5 +1,5 @@
 "use client";
-import { codeblock } from "./codeblock";
+import { tabs } from "./codeblock";
 import ElementLayout from "../../../ElementLayout";
 import { useState } from "react";
 import Motiondiv from "@/components/Motiondiv";
@@ -26,19 +26,29 @@ const ButtonVariants = {
   },
 };
 
+const dependencies = [
+  {
+    label: "Framer motion",
+    command: "npm install framer-motion",
+  },
+];
+
 const Button004 = () => {
   const [isButtonHovered, setButtonHovered] = useState(false);
   const hoverButton: () => void = () => setButtonHovered(true);
   const unHoverButton: () => void = () => setButtonHovered(false);
 
   return (
-    <ElementLayout codeBlock={codeblock}>
+    <ElementLayout dependencies={dependencies} tabs={tabs}>
       <button
         onMouseOver={hoverButton}
         onMouseLeave={unHoverButton}
         className="border border-black bg-white leading-none p-5 px-10 rounded-full group/button active:scale-105 outline-blue-500 relative isolate overflow-hidden transition-all duration-300"
       >
-        <span className="relative md:text-lg text-white mix-blend-difference transition-colors duration-300"> Join us today</span>
+        <span className="relative md:text-lg text-white mix-blend-difference transition-colors duration-300">
+          {" "}
+          Join us today
+        </span>
 
         <Motiondiv
           isAnimatePresence={true}

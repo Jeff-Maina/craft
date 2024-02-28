@@ -1,11 +1,12 @@
 "use client";
 
+// 3rd party libraries;
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { useState, FC } from "react";
-
 import { ArrowRight } from "lucide-react";
+
 import ElementLayout from "../../../ElementLayout";
-import { codeblock } from "./codeblock";
+import { tabs } from "./codeblock";
 
 const motionVariants: Variants = {
   initial: {
@@ -25,12 +26,23 @@ const motionVariants: Variants = {
   },
 };
 
+const dependencies = [
+  {
+    label: "Framer motion",
+    command: "npm install framer-motion",
+  },
+  {
+    label: "Lucide React",
+    command: "npm install lucide-react",
+  },
+];
+
 const Button007: FC = () => {
   const [isLinkHovered, setLinkHovered] = useState(false);
   const hoverLink: () => void = () => setLinkHovered(true);
   const unhoverLink: () => void = () => setLinkHovered(false);
   return (
-    <ElementLayout codeBlock={codeblock}>
+    <ElementLayout dependencies={dependencies} tabs={tabs}>
       <button
         onMouseEnter={hoverLink}
         onMouseLeave={unhoverLink}

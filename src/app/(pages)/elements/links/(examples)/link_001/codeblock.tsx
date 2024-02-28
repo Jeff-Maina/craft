@@ -23,7 +23,7 @@ const Link = () => {
 export default Link;
  `;
 const typescript: string = `import { ArrowRight } from "lucide-react";
-import { FC } from "React"
+import { FC } from "react"
 
 const ArrowRightSvg: FC = () => <ArrowRight className="h-[14px] md:h-[16px] w-[14px] md:w-[16px] stroke-white" />;
 

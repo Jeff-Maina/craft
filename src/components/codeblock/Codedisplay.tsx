@@ -2,7 +2,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { solarizedLight } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import { Copy, Check, X } from "lucide-react";
 import { CodeboxProps, tabProps } from "./Interfaces";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 const customStyle = {
   lineHeight: "1.8",
@@ -16,6 +16,7 @@ type tabType = {
   changeTab: (index: number) => void;
   activeTabIndex: number;
   isJavaScript: boolean;
+  updateDate: (date: string) => void;
 };
 
 const Tab: FC<tabType> = ({
@@ -24,11 +25,15 @@ const Tab: FC<tabType> = ({
   changeTab,
   activeTabIndex,
   isJavaScript,
+  updateDate,
 }) => {
-  const { javascript, typescript, label } = tab;
+  const { javascript, typescript, label, dateCreated } = tab;
 
   const currentLanguage = isJavaScript ? javascript : typescript;
 
+  useEffect(() => {
+    updateDate(dateCreated);
+  }, []);
   // copying the text to clipboard;
   const [hasCopied, setHasCopied] = useState(false);
   const buttonSvg = hasCopied ? (
@@ -83,7 +88,7 @@ const Tab: FC<tabType> = ({
   );
 };
 
-const Codebox: FC<CodeboxProps> = ({ tabs }) => {
+const Codebox: FC<CodeboxProps> = ({ tabs, updateDate }) => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const tabLabels = tabs.map((tab) => tab.label);
   const changeTab = (index: number) => setActiveTabIndex(index);
@@ -128,6 +133,7 @@ const Codebox: FC<CodeboxProps> = ({ tabs }) => {
                 changeTab={changeTab}
                 activeTabIndex={activeTabIndex}
                 isJavaScript={isJavaScript}
+                updateDate={updateDate}
               />
             )
           );

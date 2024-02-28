@@ -1,10 +1,17 @@
 import { ArrowRight } from "lucide-react";
 import ElementLayout from "../../../ElementLayout";
-import { codeblock } from "./codeblock";
+import { tabs } from "./codeblock";
+
+const dependencies = [
+  {
+    label: "Lucide React",
+    command: "npm install lucide-react",
+  },
+];
 
 const Button005 = () => {
   return (
-    <ElementLayout codeBlock={codeblock}>
+    <ElementLayout dependencies={dependencies} tabs={tabs}>
       <button className="group/button px-8 py-4 lg:py-5 uppercase lg:text-lg rounded-full border border-zinc-300 !leading-none flex items-center gap-3">
         <span className="tracking-wider">contact</span>
         <div className="relative overflow-hidden">
