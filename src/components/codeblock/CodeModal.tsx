@@ -1,11 +1,13 @@
 // 3rd party libraries;
-import { FC, useState } from "react";
+import { FC } from "react";
 import { AnimatePresence, motion, useDragControls } from "framer-motion";
 import { ModalProps } from "./Interfaces";
 import { MaskVariants, ModalVariants } from "./Variants";
 import useScreenSize from "@/utils/hooks/useScreenSize";
 import Codebox from "./Codebox";
 import { X } from "lucide-react";
+import Dependencies from "./Dependencies";
+import Assets from "./Assets";
 
 const CodeModal: FC<ModalProps> = ({ modalProps }) => {
   const { setModalActive, isModalActive, codeBlock } = modalProps;
@@ -47,9 +49,9 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
             initial="initial"
             animate="active"
             exit="inactive"
-            className="p-6 md:p-4 flex flex-col gap-6 md:gap-4 md:w-full w-[95%] md:rounded-[0.5rem] max-w-xl lg:max-w-2xl   bg-white h-full md:h-[95%] shadow-xl absolute z-[50] right-0 md:right-6"
+            className="p-6  md:p-4 flex flex-col gap-6 md:gap-4 md:w-full w-[95%] md:rounded-[0.5rem] max-w-xl lg:max-w-2xl   bg-white h-full md:h-[95%] shadow-xl absolute z-[50] right-0 md:right-6"
           >
-            <div className="flex justify-between items-center md:pr-4">
+            <div className="flex justify-between items-center md:pr-4 relative">
               <div
                 onPointerDown={startDrag}
                 className="hidden lg:block cursor-grab active:cursor-grabbing  p-4"
@@ -59,8 +61,30 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
               <button className="ml-auto" onClick={closeModal}>
                 <X size={18} />
               </button>
+              <div className="w-full h-10 bg-gradient-to-b from-white via-[#ffffffc4] to-transparent absolute top-3/4"></div>
             </div>
-            <Codebox codeBlock={codeBlock} closeModal={closeModal} />
+            <section className="flex flex-col gap-6 md:gap-4 overflow-y-scroll no_scrollbar_container">
+              <Codebox codeBlock={codeBlock} closeModal={closeModal} />
+              <div className="p-4">
+                <div className="text-sm grid gap-4">
+                  <div className="flex items-center gap-2 text-sm">
+                    <button className="text-zinc-600">Dependencies</button>
+                  </div>
+                  <Dependencies />
+                </div>
+              </div>
+
+              <div className="px-4 flex justify-between items-center gap-3 w-full">
+                <p className="text-zinc-600 text-sm">
+                  Inspired by :{" "}
+                  <span className="text-black">addifico.design</span>
+                </p>
+                <p className="text-zinc-600 text-sm">
+                  <span className="text-black">Wednesday 28th February</span>
+                </p>
+              </div>
+              {/* <div className="absolute bottom-6 h-6 bg-gradient-to-t from-white to-transparent w-full"></div> */}
+            </section>
           </motion.section>
         </section>
       ) : null}

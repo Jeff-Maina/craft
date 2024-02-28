@@ -42,7 +42,7 @@ const Codebox: FC<CodeboxProps> = ({ codeBlock, closeModal }) => {
   // dragging logic
 
   return (
-    <section className=" w-full h-full lg:px-4 flex flex-col gap-6 md:gap-4">
+    <section className=" w-full  lg:px-4 flex flex-col gap-6 md:gap-4">
       <div className="flex items-center gap-2 text-sm">
         <button
           className={`${
