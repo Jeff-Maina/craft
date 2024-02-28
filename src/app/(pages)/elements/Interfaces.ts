@@ -2,6 +2,8 @@
 type tabProps = {
     javascript: string;
     typescript: string;
+    label: string;
+    dateCreated: string;
 };
 
 type dependency = {
