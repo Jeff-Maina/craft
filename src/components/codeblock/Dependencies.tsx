@@ -1,18 +1,6 @@
-import {  ArrowRight, Check, Copy } from "lucide-react";
+import { ArrowRight, Check, Copy } from "lucide-react";
 import { FC, useState } from "react";
-
-type dependencyType = {
-  label: string;
-  command: string;
-};
-
-interface dependecyObj {
-  dependency: dependencyType;
-}
-
-interface dependeciesProps {
-  dependencies: Array<dependencyType>;
-}
+import { dependecyObj, dependeciesProps } from "./Interfaces";
 
 const Dependencycard: FC<dependecyObj> = ({ dependency }) => {
   const { label, command } = dependency;
@@ -20,6 +8,7 @@ const Dependencycard: FC<dependecyObj> = ({ dependency }) => {
 
   const copyCommand = () => {
     setCopied(true);
+    navigator.clipboard.writeText(command);
     setTimeout(() => {
       setCopied(false);
     }, 1500);
@@ -46,28 +35,22 @@ const Dependencycard: FC<dependecyObj> = ({ dependency }) => {
   );
 };
 
-const dependencies = [
-  {
-    label: "Framer motion",
-    command: "npm install framer-motion",
-  },
-  {
-    label: "Lucide react",
-    command: "npm install lucide-react",
-  },
-  {
-    label: "GSAP",
-    command: "npm install gsap",
-  },
-];
-
-const Dependencies: FC<dependeciesProps> = () => {
+const Dependencies: FC<dependeciesProps> = ({ dependencies }) => {
+  const dependenciesCount = dependencies.length;
   return (
-    <ul className="list-disc list-inside flex flex-col gap-2">
-      {dependencies.map((dependecy, index) => (
-        <Dependencycard key={index} dependency={dependecy} />
-      ))}
-    </ul>
+    <>
+      {dependenciesCount > 0 ? (
+        <ul className="list-disc list-inside flex flex-col gap-2">
+          {dependencies.map((dependecy, index) => (
+            <Dependencycard key={index} dependency={dependecy} />
+          ))}
+        </ul>
+      ) : (
+        <div>
+          <p>~ None</p>
+        </div>
+      )}
+    </>
   );
 };
 

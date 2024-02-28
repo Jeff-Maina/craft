@@ -1,20 +1,34 @@
 // 3rd party libraries;
 import { FC } from "react";
 import { AnimatePresence, motion, useDragControls } from "framer-motion";
-import { ModalProps } from "./Interfaces";
+import { X } from "lucide-react";
+
+// component imports;
+import Codebox from "./Codedisplay";
+
+import { MaskProps, ModalProps } from "./Interfaces";
 import { MaskVariants, ModalVariants } from "./Variants";
 import useScreenSize from "@/utils/hooks/useScreenSize";
-import Codebox from "./Codebox";
-import { X } from "lucide-react";
 import Dependencies from "./Dependencies";
-import Assets from "./Assets";
+
+const Mask: FC<MaskProps> = ({ closeModal }) => {
+  return (
+    <motion.section
+      onClick={closeModal}
+      variants={MaskVariants}
+      initial="initial"
+      animate="active"
+      exit="inactive"
+      className="absolute top-0 left-0 w-full h-screen bg-[#0000002d] backdrop-blur-sm md:backdrop-blur-none"
+    ></motion.section>
+  );
+};
 
 const CodeModal: FC<ModalProps> = ({ modalProps }) => {
-  const { setModalActive, isModalActive, codeBlock } = modalProps;
+  const { setModalActive, isModalActive, tabs, dependencies } = modalProps;
 
   // toggle modal functions;
   const closeModal = () => setModalActive(false);
-  const openModal = () => setModalActive(true);
 
   const screensize = useScreenSize();
   const isLargeScreen = screensize.width > 1024;
@@ -29,14 +43,7 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
     <AnimatePresence mode="wait">
       {isModalActive ? (
         <section className="fixed inset-0 h-screen w-full z-[999] flex items-center ">
-          <motion.section
-            onClick={closeModal}
-            variants={MaskVariants}
-            initial="initial"
-            animate="active"
-            exit="inactive"
-            className="absolute top-0 left-0 w-full h-screen bg-[#0000002d] backdrop-blur-sm md:backdrop-blur-none"
-          ></motion.section>
+          <Mask closeModal={closeModal} />
           <motion.section
             variants={ModalVariants}
             drag={isLargeScreen ? true : false}
@@ -64,26 +71,22 @@ const CodeModal: FC<ModalProps> = ({ modalProps }) => {
               <div className="w-full h-10 bg-gradient-to-b from-white via-[#ffffffc4] to-transparent absolute top-3/4"></div>
             </div>
             <section className="flex flex-col gap-6 md:gap-4 overflow-y-scroll no_scrollbar_container">
-              <Codebox codeBlock={codeBlock} closeModal={closeModal} />
+              <Codebox tabs={tabs} closeModal={closeModal} />
               <div className="p-4">
                 <div className="text-sm grid gap-4">
                   <div className="flex items-center gap-2 text-sm">
                     <button className="text-zinc-600">Dependencies</button>
                   </div>
-                  <Dependencies />
+                  <Dependencies dependencies={dependencies} />
                 </div>
               </div>
 
               <div className="px-4 flex justify-between items-center gap-3 w-full">
                 <p className="text-zinc-600 text-sm">
-                  Inspired by :{" "}
-                  <span className="text-black">addifico.design</span>
-                </p>
-                <p className="text-zinc-600 text-sm">
-                  <span className="text-black">Wednesday 28th February</span>
+                  Added on :{" "}
+                  <span className="text-black">24th February 2024</span>
                 </p>
               </div>
-              {/* <div className="absolute bottom-6 h-6 bg-gradient-to-t from-white to-transparent w-full"></div> */}
             </section>
           </motion.section>
         </section>

@@ -1,9 +1,9 @@
 import ElementLayout from "../../../ElementLayout";
-import { codeblock } from "./codeblock";
+import { codeblock, tabs } from "./codeblock";
 
 const Button001 = () => {
   return (
-    <ElementLayout codeBlock={codeblock}>
+    <ElementLayout dependencies={[]} codeBlock={codeblock} tabs={tabs}>
       <button className="relative px-8 py-3 group/button outline-blue-500 isolate">
         <span className="uppercase  text-sm md:text-base font-satoshi-medium text-white group-hover/button:text-black transition-colors duration-300">
           hover me

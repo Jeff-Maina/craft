@@ -1,29 +1,27 @@
 "use client";
 
+// 3rd party libraries
 import { FC, useState } from "react";
-import CodeModal from "@/components/codeblock/CodeModal";
 import { Code } from "lucide-react";
 
-// ts types;
-type codeBlock = {
-  javascript: string;
-  typescript: string;
-};
-interface ButtonProps {
-  children: JSX.Element;
-  codeBlock: codeBlock;
-  className?: string;
-}
+// ***
+import CodeModal from "@/components/codeblock/CodeModal";
+import { ButtonProps } from "./Interfaces";
 
-const ElementLayout: FC<ButtonProps> = ({ children, codeBlock, className }) => {
+const ElementLayout: FC<ButtonProps> = ({
+  children,
+  tabs,
+  dependencies,
+  className,
+}) => {
   const [isModalActive, setModalActive] = useState(false);
-  // toggle modal;
   const toggleModal = () => setModalActive(!isModalActive);
 
   const modalProps = {
     isModalActive,
-    codeBlock,
+    tabs,
     setModalActive,
+    dependencies,
   };
 
   return (

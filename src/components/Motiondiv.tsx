@@ -21,6 +21,7 @@ const Motiondiv: FC<Motionprops> = ({
   isAnimationActive,
   className,
   isAnimatePresence,
+  ...restProps
 }) => {
   return isAnimatePresence ? (
     <AnimatePresence mode="wait">
@@ -31,6 +32,7 @@ const Motiondiv: FC<Motionprops> = ({
           animate={variants.active}
           exit={variants.inactive}
           className={className}
+          {...restProps}
         >
           {children}
         </motion.div>
@@ -42,6 +44,7 @@ const Motiondiv: FC<Motionprops> = ({
       initial={variants.initial}
       animate={isAnimationActive ? variants.active : variants.inactive}
       className={className}
+      {...restProps}
     >
       {children}
     </motion.div>
