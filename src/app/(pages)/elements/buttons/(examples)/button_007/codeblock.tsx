@@ -41,15 +41,12 @@ const Button = () => {
       </span>
       <div className="size-10 lg:size-16 rounded-full border border-black bg-white grid place-items-center">
         <div className="relative overflow-hidden">
-
           {/* Feel free to replace this with a different SVG component  */}
-          
           <ArrowRight className="h-[18px] w-[18px] md:h-[24px] md:w-[24px] group-hover/button:translate-x-full transition-all duration-500" />
           <ArrowRight className="absolute inset-0 h-[18px] w-[18px] md:h-[24px] md:w-[24px] -translate-x-full group-hover/button:translate-x-0 transition-all duration-500" />
         </div>
       </div>
     </div>
-
     <AnimatePresence mode="wait">
       {isLinkHovered ? (
         <motion.div
@@ -136,7 +133,7 @@ const button: buttonCompProps = {
   javascript,
   typescript,
   label: "button",
-  dateCreated: "Friday, 9 Feb 2024",
+  dateCreated: "Tuesday, 2 February 2024",
 };
 
 export const tabs = [button];

@@ -1,14 +1,25 @@
 "use client";
 
+// 3rd party libraries
 import { MouseEvent, MouseEventHandler, useRef } from "react";
-import ElementLayout from "../../../ElementLayout";
-import { codeblock } from "./codeblock";
 import { useAnimate } from "framer-motion";
+
+// components
+import ElementLayout from "../../../ElementLayout";
+import { tabs } from "./codeblock";
 
 interface BubbleElement extends HTMLElement {
   className: string;
   style: CSSStyleDeclaration;
 }
+
+const dependencies = [
+  {
+    label: "Framer Motion",
+    command: "npm install framer-motion",
+  },
+  
+];
 
 const Button009 = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -54,7 +65,7 @@ const Button009 = () => {
   };
 
   return (
-    <ElementLayout codeBlock={codeblock}>
+    <ElementLayout dependencies={dependencies} tabs={tabs}>
       <button
         ref={buttonRef}
         onClick={addBubbles}

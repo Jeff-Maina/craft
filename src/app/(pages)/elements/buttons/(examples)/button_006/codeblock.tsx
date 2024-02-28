@@ -27,7 +27,7 @@ const button: buttonCompProps = {
   javascript,
   typescript,
   label: "button",
-  dateCreated: "Friday, 9 Feb 2024",
+  dateCreated: "Friday, 9 February 2024",
 };
 
 export const tabs = [button];

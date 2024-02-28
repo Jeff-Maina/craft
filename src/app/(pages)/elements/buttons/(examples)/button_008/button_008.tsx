@@ -2,8 +2,19 @@
 
 import { useEffect, useRef } from "react";
 import ElementLayout from "../../../ElementLayout";
-import { codeblock } from "./codeblock";
+import { tabs } from "./codeblock";
 import { gsap } from "gsap";
+
+const dependencies = [
+  {
+    label: "GSAP",
+    command: "npm install gsap",
+  },
+  {
+    label: "Framer Motion",
+    command: "npm install framer-motion",
+  },
+];
 
 const Button008 = () => {
   const buttonRef = useRef<HTMLDivElement>(null);
@@ -22,7 +33,7 @@ const Button008 = () => {
 
     if (!button) return;
 
-    button.addEventListener("mousemove", (e) => {
+    button.addEventListener("mousemove", (e: MouseEvent) => {
       const { clientX, clientY } = e;
       const { top, left, height, width } = button.getBoundingClientRect();
       const x = clientX - (left + width / 2);
@@ -39,7 +50,7 @@ const Button008 = () => {
   }, []);
 
   return (
-    <ElementLayout codeBlock={codeblock}>
+    <ElementLayout dependencies={dependencies} tabs={tabs}>
       <button className="relative isolate">
         <div
           ref={buttonRef}

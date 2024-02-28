@@ -114,7 +114,7 @@ const button: buttonCompProps = {
   javascript,
   typescript,
   label: "button",
-  dateCreated: "Tuesday, 6 Feb 2024",
+  dateCreated: "Tuesday, 6 February 2024",
 };
 
 export const tabs = [button];
