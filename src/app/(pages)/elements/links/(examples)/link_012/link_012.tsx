@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import ElementLayout from "../../../ElementLayout";
-import { codeblock } from "./codeblock";
-import { MouseEvent, MouseEventHandler, useRef, useState } from "react";
 import { PlayIcon } from "lucide-react";
 import { gsap } from "gsap";
+
+import ElementLayout from "../../../ElementLayout";
+import { tabs } from "./codeblock";
+import { MouseEvent, MouseEventHandler, useRef, useState } from "react";
 
 const textVariants = {
   initial: {
@@ -139,6 +140,21 @@ const SvgVariants = {
   },
 };
 
+const dependencies = [
+  {
+    label: "Lucide React",
+    command: "npm install lucide-react",
+  },
+  {
+    label: "Framer Motion",
+    command: "npm install framer-motion",
+  },
+  {
+    label: "GSAP",
+    command: "npm install gsap",
+  },
+];
+
 const Link012 = () => {
   const [isLinkHovered, setLinkHovered] = useState(false);
   const hoverLink: () => void = () => setLinkHovered(true);
@@ -168,7 +184,7 @@ const Link012 = () => {
   };
 
   return (
-    <ElementLayout codeBlock={codeblock}>
+    <ElementLayout tabs={tabs} dependencies={dependencies}>
       <a
         href=""
         className="font-satoshi-medium lg:text-4xl relative"

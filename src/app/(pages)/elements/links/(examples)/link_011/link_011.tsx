@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import ElementLayout from "../../../ElementLayout";
-import { codeblock } from "./codeblock";
+import { tabs } from "./codeblock";
 import { MouseEventHandler, MouseEvent, useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { gsap } from "gsap";
@@ -74,6 +74,21 @@ const SvgVariants = {
   },
 };
 
+const dependencies = [
+  {
+    label: "Lucide React",
+    command: "npm install lucide-react",
+  },
+  {
+    label: "Framer Motion",
+    command: "npm install framer-motion",
+  },
+  {
+    label: "GSAP",
+    command: "npm install gsap",
+  },
+];
+
 const Link011 = () => {
   const [isLinkHovered, setLinkHovered] = useState(false);
   const hoverlink: () => void = () => setLinkHovered(true);
@@ -102,7 +117,7 @@ const Link011 = () => {
   };
 
   return (
-    <ElementLayout codeBlock={codeblock}>
+    <ElementLayout dependencies={dependencies} tabs={tabs}>
       <a
         onMouseEnter={hoverlink}
         onMouseLeave={unhoverlink}

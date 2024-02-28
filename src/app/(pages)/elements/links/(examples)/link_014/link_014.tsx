@@ -1,10 +1,11 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
-import ElementLayout from "../../../ElementLayout";
-import { codeblock } from "./codeblock";
-import { MouseEvent, useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { gsap } from "gsap";
+
+import ElementLayout from "../../../ElementLayout";
+import { tabs } from "./codeblock";
+import { MouseEvent, useRef, useState } from "react";
 
 //animation variants;
 
@@ -49,6 +50,17 @@ const images = [
   },
 ];
 
+const dependencies = [
+  {
+    label: "Framer Motion",
+    command: "npm install framer-motion",
+  },
+  {
+    label: "GSAP",
+    command: "npm install gsap",
+  },
+];
+
 const Link014 = () => {
   const [isLinkHovered, setLinkHovered] = useState(false);
   const hoverLink: () => void = () => setLinkHovered(true);
@@ -83,7 +95,7 @@ const Link014 = () => {
   const [activeImage, setActiveImage] = useState("");
 
   return (
-    <ElementLayout codeBlock={codeblock}>
+    <ElementLayout dependencies={dependencies} tabs={tabs}>
       <div
         ref={parentRef}
         onMouseMove={handleMouseMove}

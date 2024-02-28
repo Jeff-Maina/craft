@@ -1,9 +1,17 @@
 "use client";
 
 import { FC, useEffect, useRef } from "react";
-import ElementLayout from "../../../ElementLayout";
-import { codeblock } from "./codeblock";
 import { gsap } from "gsap";
+
+import ElementLayout from "../../../ElementLayout";
+import { tabs } from "./codeblock";
+
+const dependencies = [
+  {
+    label: "GSAP",
+    command: "npm install gsap",
+  },
+];
 
 const Link013: FC = () => {
   const link = useRef<HTMLAnchorElement>(null);
@@ -38,8 +46,9 @@ const Link013: FC = () => {
       yTo(0);
     });
   }, []);
+
   return (
-    <ElementLayout codeBlock={codeblock}>
+    <ElementLayout dependencies={dependencies} tabs={tabs}>
       <a ref={link} href="" className="lg:text-2xl">
         About us
       </a>
