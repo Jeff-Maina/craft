@@ -145,7 +145,7 @@ const Page = () => {
   return (
     <section className="h-screen w-full bg-[#18181a] font-satoshi-medium">
       <nav className="flex items-center justify-between relative">
-        <div className="absolute top-10 left-6 lg:top-16 lg:left-16 ">
+        <div className="absolute top-[2.3rem] left-6 lg:top-16 lg:left-16 ">
           <Link href="/sections/navmenus">
             <ChevronLeft className="stroke-white" />
           </Link>

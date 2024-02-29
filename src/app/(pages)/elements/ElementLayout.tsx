@@ -32,7 +32,7 @@ const ElementLayout: FC<ButtonProps> = ({
       <div className=" w-full h-full flex items-center justify-center">
         {children}
       </div>
-      <div className="flex justify-end max-w-fit items-center h-[15%] absolute bottom-0 right-0 z-50">
+      <div className="flex justify-end max-w-fit items-center h-[15%] absolute bottom-0 right-0 z-[15]">
         <button
           onClick={toggleModal}
           className="font-satoshi-medium h-full aspect-square grid place-items-center"

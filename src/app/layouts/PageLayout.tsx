@@ -30,7 +30,7 @@ const Breadcrumb: FC<BreadcrumbProps> = ({ breadCrumbProps }) => {
   return (
     <>
       {!isMainPage && (
-        <div className="px-4 border-b border-zinc-200/60 lg:border-none sticky top-0 backdrop-blur-xl bg-[#ffffff8a] z-[5] lg:hidden">
+        <div className="px-4 border-b border-zinc-200/60 lg:border-none sticky top-0 bg-[#ffffffea] backdrop-blur-3xl z-20 lg:hidden">
           <div className="font-satoshi-medium flex items-center gap-1 md:text-lg lg:text-xl py-5 lg:py-6">
             <Link
               href={`/${path}`}
