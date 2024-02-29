@@ -29,7 +29,7 @@ const NavMenus = () => {
             <Link href={navmenu.pageLink}>
               <div
                 key={index}
-                className="group/card w-full aspect-square border border-zinc-200/60 md:border-zinc-200 hover:border-zinc-400 transition-all duration-300 relative mix-blend-difference"
+                className="group/card w-full aspect-square border border-zinc-300 hover:border-black transition-all duration-300 relative mix-blend-difference"
               >
                 <img
                   src={`/Images/navmenus/${navmenu.gif}`}
