@@ -13,12 +13,12 @@ export const NavMenusList: Array<navMenu> = [
     draft: true,
   },
   {
-    gif: "",
+    gif: "nextbank_navmenu.png",
     pageLink: `${link}navmenu_002`,
     draft: false,
   },
   {
-    gif: "",
+    gif: "plantica_navmenu.png",
     pageLink: `${link}navmenu_003`,
     draft: false,
   },

@@ -226,7 +226,7 @@ const NavMenu002 = () => {
   return (
     <section className="w-full h-screen font-graphik-regular bg-black">
       <nav className="p-10 flex items-center justify-between xl:p-20">
-        <Link href="/" className="underline text-white">
+        <Link href="/sections/navmenus/" className="underline text-white">
           back
         </Link>
         <motion.div

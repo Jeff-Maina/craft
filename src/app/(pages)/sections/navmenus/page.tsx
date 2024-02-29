@@ -25,16 +25,21 @@ const NavMenus = () => {
           <TableOfContent data={SectionsData} />
         </section>
         <section className="lg:grid w-full gap-2 lg:gap-4 col-span-8 grid md:grid-cols-2">
-          {FinishedNavMenus.map((navbar, index) => (
-            <Link href={navbar.pageLink}>
+          {FinishedNavMenus.map((navmenu, index) => (
+            <Link href={navmenu.pageLink}>
               <div
                 key={index}
-                className="group/card w-full aspect-square border border-zinc-200/60 md:border-zinc-200 hover:border-zinc-400 transition-all duration-300 relative"
+                className="group/card w-full aspect-square border border-zinc-200/60 md:border-zinc-200 hover:border-zinc-400 transition-all duration-300 relative mix-blend-difference"
               >
-                <div className="absolute top-4 right-4 translate-y-2 -translate-x-2 group-hover/card:translate-x-0 group-hover/card:-translate-y-0 transition-all duration-300">
+                <img
+                  src={`/Images/navmenus/${navmenu.gif}`}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  alt=""
+                />
+                <div className="absolute bottom-4 left-4 translate-y-2 -translate-x-2 group-hover/card:translate-x-0 group-hover/card:-translate-y-0 transition-all duration-300 mix-blend-difference">
                   <ArrowUpRight
                     size={18}
-                    className="stroke-zinc-200 group-hover/card:stroke-black transition-all duration-300"
+                    className="stroke-black group-hover/card:stroke-white transition-all duration-300"
                   />
                 </div>
               </div>
