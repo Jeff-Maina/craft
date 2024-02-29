@@ -1,144 +1,38 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { FC, useState } from "react";
-
-const Links = [
-  "Introduction",
-  "Current Market",
-  "Products",
-  "Team",
-  "Careers",
-  "White Paper",
-  "FAQ",
-  "Contact",
-];
-
-interface ButtonProps {
-  isMenuActive: boolean;
-  toggleMenu: () => void;
-}
-interface MaskProps {
-  isMenuActive: boolean;
-  closeMenu: () => void;
-}
-
-// Variants
-const MaskVariants = {
-  initial: {
-    opacity: 0,
-  },
-  active: {
-    opacity: 1,
-    transition: {
-      duration: 0.4,
-    },
-  },
-  inactive: {
-    opacity: 0,
-    transition: {
-      duration: 0.4,
-    },
-  },
-};
-
-const LinkVariants = {
-  initial: {
-    y: "-500%",
-    opacity: 0,
-  },
-  active: (index: number) => ({
-    y: "0%",
-    opacity: 1,
-    transition: {
-      y: {
-        duration: 0.3,
-        delay: 1 - index * 0.1,
-      },
-      opacity: {
-        duration: 0.5,
-        delay: 0.8 - index * 0.1,
-      },
-    },
-  }),
-  inactive: (index: number) => ({
-    y: "-500%",
-    opacity: 0,
-    transition: {
-      y: {
-        duration: 0.5,
-        delay: index * 0.05,
-        ease: "easeIn",
-      },
-    },
-  }),
-};
+import { ButtonProps } from "./Interfaces";
+import NavMenu from "./Navmenu";
+import Mask from "./Mask";
 
 const Button: FC<ButtonProps> = ({ isMenuActive, toggleMenu }) => {
   const label = isMenuActive ? "Close" : "Menu";
   const svg = isMenuActive ? (
-    <X className="stroke-white" size={16} />
+    <X className="size-4 lg:size-5 stroke-white group-hover/button:stroke-red-500 transition-all duration-300" />
   ) : (
-    <Menu className="stroke-white" size={16} />
+    <Menu
+      className="size-4 lg:size-5 stroke-white group-hover/button:stroke-neutral-400 transition-all duration-300"
+      size={16}
+    />
   );
   return (
-    <button onClick={toggleMenu} className="text-white flex items-center gap-2">
-      <span className="text-sm">{label}</span>
+    <button
+      onClick={toggleMenu}
+      className="text-white flex items-center gap-3  p-3  px-6 lg:px-8 group/button"
+    >
+      <span
+        className={`text-sm lg:text-lg ${
+          isMenuActive
+            ? "group-hover/button:text-red-500"
+            : "group-hover/button:text-neutral-400"
+        } transition-all duration-300`}
+      >
+        {label}
+      </span>
       <div>{svg}</div>
     </button>
-  );
-};
-
-const NavMenu: FC<MaskProps> = ({ isMenuActive, closeMenu }) => {
-  return (
-    <AnimatePresence mode="wait">
-      {isMenuActive ? (
-        <motion.section
-          variants={MaskVariants}
-          initial="initial"
-          animate="active"
-          exit="inactive"
-          className="absolute top-full left-0 w-full h-[85vh]"
-        >
-          <div className="w-full h-full grid grid-cols-2 py-[6px] gap-[6px]">
-            {Links.map((link, index) => {
-              return (
-                <motion.div
-                  key={index}
-                  custom={index}
-                  variants={LinkVariants}
-                  initial="initial"
-                  animate="active"
-                  exit="inactive"
-                  className="w-full aspect-square bg-black rounded-[0.3rem]"
-                >
-                  <p className="text-white">{0.8 - index * 0.1}</p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </motion.section>
-      ) : null}
-    </AnimatePresence>
-  );
-};
-
-const Mask: FC<MaskProps> = ({ isMenuActive, closeMenu }) => {
-  return (
-    <AnimatePresence mode="wait">
-      {isMenuActive ? (
-        <motion.section
-          variants={MaskVariants}
-          initial="initial"
-          animate="active"
-          exit="inactive"
-          onClick={closeMenu}
-          className="fixed z-10 inset-0 h-screen w-screen bg-black/30"
-        ></motion.section>
-      ) : null}
-    </AnimatePresence>
   );
 };
 
@@ -146,10 +40,11 @@ const page: FC = () => {
   const [isMenuActive, setMenuActive] = useState(false);
   const toggleMenu = () => setMenuActive(!isMenuActive);
   const closeMenu = () => setMenuActive(false);
+  
   return (
     <section className="w-full h-screen bg-[#ffffd4] font-graphik-regular">
-      <nav className="fixed top-6 left-2/4 -translate-x-2/4 max-w-sm p-3 w-full rounded bg-black flex items-center justify-between z-20">
-        <div className="h-full aspect-square grid place-items-center">
+      <nav className="fixed top-6 left-6 max-w-sm lg:max-w-2xl w-[90%] rounded lg:rounded-[0.5rem] bg-black flex items-center justify-between z-20">
+        <div className=" p-3 lg:px-6 grid place-items-center ">
           <Link href="/sections/navmenus">
             <ChevronLeft size={18} className="stroke-white" />
           </Link>

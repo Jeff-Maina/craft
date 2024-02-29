@@ -28,7 +28,7 @@ export const NavMenusList: Array<navMenu> = [
     draft: false,
   },
   {
-    gif: "basecreate.png",
+    gif: "enpowertrading.png",
     pageLink: `${link}navmenu_005`,
     draft: false,
   },
