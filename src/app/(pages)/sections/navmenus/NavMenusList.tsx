@@ -17,6 +17,11 @@ export const NavMenusList: Array<navMenu> = [
     pageLink: `${link}navmenu_002`,
     draft: false,
   },
+  {
+    gif: "",
+    pageLink: `${link}navmenu_003`,
+    draft: false,
+  },
 ];
 
 export const FinishedNavMenus = NavMenusList.filter(
