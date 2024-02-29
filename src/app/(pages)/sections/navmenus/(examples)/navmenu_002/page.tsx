@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { MoveRight } from "lucide-react";
+import { ChevronLeft, MoveRight } from "lucide-react";
 import Link from "next/link";
 import { useState, FC } from "react";
 import {
@@ -226,8 +226,8 @@ const NavMenu002 = () => {
   return (
     <section className="w-full h-screen font-graphik-regular bg-black">
       <nav className="p-10 flex items-center justify-between xl:p-20">
-        <Link href="/sections/navmenus/" className="underline text-white">
-          back
+        <Link href="/sections/navmenus/">
+          <ChevronLeft className="stroke-white" />
         </Link>
         <motion.div
           initial={{

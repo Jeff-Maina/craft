@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FC, useState } from "react";
 import { ButtonProps, MenuProps } from "./Interfaces";
 import { MenuVariants, LinkVariants } from "./Variants";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronLeft } from "lucide-react";
 
 const Links = [
   "Home",
@@ -25,7 +25,7 @@ const Button: FC<ButtonProps> = ({ toggleMenu, isMenuActive, openMenu }) => {
         onClick={toggleMenu}
         className="rounded-full overflow-hidden relative"
       >
-        <div className="py-1 lg:py-2 text-white grid place-items-center text-sm px-4 lg:px-10 tracking-wider bg-black">
+        <div className="py-2 text-white grid place-items-center text-sm px-4 lg:px-10 tracking-wider bg-black">
           <div className="overflow-hidden">
             <p
               style={{
@@ -44,7 +44,7 @@ const Button: FC<ButtonProps> = ({ toggleMenu, isMenuActive, openMenu }) => {
             transform: isMenuActive ? "translate(0,0)" : "translate(0,100%)",
             borderRadius: isMenuActive ? 0 : "50%",
           }}
-          className={`absolute inset-0 z-10  py-1 lg:py-2 bg-purple-500 text-white text-sm px-4 lg:px-10 tracking-wider transition-all duration-500`}
+          className={`absolute inset-0 z-10  py-2 bg-purple-500 text-white text-sm px-4 lg:px-10 tracking-wider transition-all duration-500`}
         >
           CLOSE
         </div>
@@ -63,7 +63,7 @@ const NavMenu: FC<MenuProps> = ({ isMenuActive, closeMenu }) => {
           animate="active"
           onMouseLeave={closeMenu}
           exit="inactive"
-          className="fixed w-[80%] lg:max-w-lg bg-black top-3 lg:top-6 right-3 lg:right-6 rounded lg:rounded-[0.4rem] p-10 lg:p-16 py-16 lg:py-24"
+          className="fixed w-[80%] lg:max-w-lg bg-black top-3 lg:top-6 right-3 lg:right-6 rounded-[0.5rem] p-10 lg:p-16 py-16 lg:py-24"
         >
           <div className="flex flex-col gap-3 lg:gap-5  text-white items-start">
             {Links.map((link, index) => {
@@ -107,7 +107,7 @@ const Page = () => {
     <section className="w-full h-screen font-satoshi-medium">
       <nav className="p-6 lg:p-10 flex items-center justify-between">
         <Link href="/sections/navmenus" className="underline">
-          Back
+          <ChevronLeft />
         </Link>
         <Button
           toggleMenu={toggleMenu}

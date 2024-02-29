@@ -24,12 +24,12 @@ const NavMenus = () => {
         <section className="col-span-2 hidden lg:block font-satoshi-medium items-center">
           <TableOfContent data={SectionsData} />
         </section>
-        <section className="lg:grid w-full gap-2 lg:gap-4 col-span-8 grid md:grid-cols-2">
+        <section className="lg:grid w-full gap-4 col-span-8 grid md:grid-cols-2">
           {FinishedNavMenus.map((navmenu, index) => (
             <Link href={navmenu.pageLink}>
               <div
                 key={index}
-                className="group/card w-full aspect-square border border-zinc-300 hover:border-black transition-all duration-300 relative mix-blend-difference"
+                className="group/card w-full aspect-square border border-zinc-200 hover:border-black transition-all duration-300 relative mix-blend-difference"
               >
                 <img
                   src={`/Images/navmenus/${navmenu.gif}`}

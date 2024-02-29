@@ -101,7 +101,7 @@ const Hamburger: FC<HamburgerProps> = ({
         <div
           style={{
             transform: isMenuActive
-              ? "rotate(45deg) translate(10%,100%)"
+              ? "rotate(45deg) translate(13%,110%)"
               : "rotate(0deg) translate(0%,0%)",
           }}
           className="h-[2px] w-[40%] rounded-full bg-[#18181a] origin-center transition-all duration-500"
@@ -109,7 +109,7 @@ const Hamburger: FC<HamburgerProps> = ({
         <div
           style={{
             transform: isMenuActive
-              ? "rotate(-45deg) translate(10%,-100%)"
+              ? "rotate(-45deg) translate(13%,-110%)"
               : "rotate(0deg) translate(0%,0%)",
           }}
           className="h-[2px] w-[40%] rounded-full bg-[#18181a] origin-center transition-all duration-500"
@@ -145,7 +145,7 @@ const Page = () => {
   return (
     <section className="h-screen w-full bg-[#18181a] font-satoshi-medium">
       <nav className="flex items-center justify-between relative">
-        <div className="fixed top-6 left-6 lg:top-16 lg:left-16 ">
+        <div className="absolute top-10 left-6 lg:top-16 lg:left-16 ">
           <Link href="/sections/navmenus">
             <ChevronLeft className="stroke-white" />
           </Link>
