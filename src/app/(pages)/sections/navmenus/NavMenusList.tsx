@@ -21,6 +21,10 @@ export const NavMenusList: Array<navMenu> = [
     gif: "plantica_navmenu.png",
     pageLink: `${link}navmenu_003`,
     draft: false,
+  },  {
+    gif: "plantica_navmenu.png",
+    pageLink: `${link}navmenu_004`,
+    draft: false,
   },
 ];
 
