@@ -249,7 +249,7 @@ const Navbar001 = () => {
     <ElementLayout
       dependencies={dependencies}
       tabs={tabs}
-      className="!pt-0 !h-[26rem] lg:!h-auto border-none !rounded-3xl overflow-hidden"
+      className="!pt-0 !h-[26rem] md:!h-auto border-none !rounded-3xl overflow-hidden"
     >
       <div
         style={{
