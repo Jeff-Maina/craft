@@ -29,17 +29,17 @@ const NavMenus = () => {
             <Link href={navmenu.pageLink}>
               <div
                 key={index}
-                className="group/card w-full aspect-square border border-zinc-200 hover:border-black transition-all duration-300 relative mix-blend-difference"
+                className="group/card w-full aspect-square border border-zinc-200 md:border-zinc-300/80 hover:border-zinc-400 transition-all duration-300 relative"
               >
                 <img
                   src={`/Images/navmenus/${navmenu.gif}`}
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="absolute h-[90%] aspect-square top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 object-cover group-hover/card:scale-[0.99] transition-all duration-300"
                   alt=""
                 />
-                <div className="absolute bottom-4 left-4 translate-y-2 -translate-x-2 group-hover/card:translate-x-0 group-hover/card:-translate-y-0 transition-all duration-300 mix-blend-difference">
+                <div className="absolute top-2 right-2 translate-y-1 -translate-x-1 opacity-0 group-hover/card:translate-x-0 group-hover/card:-translate-y-0 group-hover/card:!opacity-100 transition-all duration-300 ">
                   <ArrowUpRight
-                    size={18}
-                    className="stroke-black group-hover/card:stroke-white transition-all duration-300"
+                    size={14}
+                    className="stroke-black transition-all duration-300"
                   />
                 </div>
               </div>
