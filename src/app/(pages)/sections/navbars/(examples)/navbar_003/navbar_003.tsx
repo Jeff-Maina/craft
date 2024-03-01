@@ -38,7 +38,7 @@ const Navbar003 = () => {
                       transition={{
                         duration: 0.3,
                       }}
-                      className="absolute w-full h-full inset-0 opacity-[0] group-hover/nav:opacity-100 transition-opacity duration-100 p-1"
+                      className="absolute w-full h-full inset-0 !opacity-0 group-hover/nav:!opacity-100 transition-opacity duration-300 p-1"
                     >
                       <div className="w-full h-full bg-[#2a2a2a] rounded pointer-events-none"></div>
                     </motion.div>
