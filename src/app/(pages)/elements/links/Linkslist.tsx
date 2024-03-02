@@ -12,6 +12,7 @@ import Link011 from "./(examples)/link_011/link_011";
 import Link012 from "./(examples)/link_012/link_012";
 import Link013 from "./(examples)/link_013/link_013";
 import Link014 from "./(examples)/link_014/link_014";
+import Link015 from "./(examples)/link_015/link_015";
 
 type LinkProps = { component: JSX.Element; draft: boolean };
 
@@ -30,6 +31,7 @@ export const Linklist: Array<LinkProps> = [
   { component: <Link012 />, draft: false },
   { component: <Link013 />, draft: false },
   { component: <Link014 />, draft: false },
+  { component: <Link015 />, draft: false },
 ];
 
 export const FinishedLinks = Linklist.filter((link) => link.draft === false);
