@@ -16,7 +16,7 @@ const Button011 = () => {
   const [scope, animate] = useAnimate();
 
   const addBubble = async (el: BubbleElement) =>
-    animate(el, { scale: 15 }, { duration: 0.7 });
+    animate(el, { scale: 20 }, { duration: 0.6 });
 
   const removeBubble = async (el: any) =>
     animate(el, { opacity: 0 }, { duration: 0.2 });
@@ -64,9 +64,9 @@ const Button011 = () => {
         }}
         onMouseLeave={removeBubbles}
         ref={buttonRef}
-        className="p-5 px-12 rounded-full bg-[#5267ab] text-white tracking-wider relative overflow-hidden"
+        className="p-5 lg:p-6 px-12 lg:px-16 rounded-full bg-[#5267ab] text-white tracking-wider relative overflow-hidden"
       >
-        <div className="flex uppercase text-sm relative z-10">
+        <div className="flex uppercase lg:text-lg relative z-10">
           {Array.from("Readmore").map((char, index) => {
             return <div className={`${index === 3 && "mr-2"}`}>{char}</div>;
           })}
