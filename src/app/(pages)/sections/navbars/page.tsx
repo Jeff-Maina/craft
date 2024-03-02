@@ -2,8 +2,7 @@ import PageLayout from "@/app/layouts/PageLayout";
 import { SectionsData } from "@/data/AppData";
 import type { Pageprops } from "@/lib/Interfaces";
 import TableOfContent from "../../(components)/TableofContents";
-import { FinishedNavbars,NavbarCount } from "./NavbarList";
-
+import { FinishedNavbars, NavbarCount } from "./NavbarList";
 
 const PageOptions: Pageprops = {
   page: "Navbars",
@@ -14,13 +13,15 @@ const PageOptions: Pageprops = {
 const Navbars = () => {
   return (
     <PageLayout pageOptions={PageOptions}>
-      <section className="section_layout lg:grid lg:grid-cols-10 lg:gap-4">
-        <section className="col-span-2 hidden lg:block font-satoshi-medium items-center">
+      <section className="!p-4 lg:grid lg:grid-cols-10 lg:gap-4 w-full">
+        <section className="lg:col-span-2 hidden lg:block font-satoshi-medium items-center">
           <TableOfContent data={SectionsData} />
         </section>
-        <section className="grid w-full gap-4 col-span-8">
+        <section className="flex flex-col gap-4 max-w-full lg:col-span-8">
           {FinishedNavbars.map((navbar, index) => (
-            <div key={index}>{navbar.component}</div>
+            <div key={index} className="">
+              {navbar.component}
+            </div>
           ))}
         </section>
       </section>

@@ -118,7 +118,7 @@ const Navbar002: FC = () => {
       tabs={tabs}
       className="!pt-0 border-none"
     >
-      <div className="w-full h-full flex items-start justify-center pt-5 lg:pt-10 text-sm xl:text-lg xl:pr-20 bg-[#c6c0b6]">
+      <div className="w-full h-80 md:!h-full flex items-start justify-center pt-5 lg:pt-10 text-sm xl:text-lg xl:pr-20 bg-[#c6c0b6]">
         <div
           onMouseLeave={resetMenu}
           className={`bg-[#f2efe9] ${
@@ -147,7 +147,7 @@ const Navbar002: FC = () => {
             </div>
           </div>
           <>
-            <div className="lg:hidden">
+            <div className="xl:hidden">
               <motion.div
                 variants={heightVariants}
                 initial="initial"
@@ -170,7 +170,7 @@ const Navbar002: FC = () => {
                 </motion.ul>
               </motion.div>
             </div>
-            <div className="hidden lg:block">
+            <div className="hidden xl:block">
               <motion.div
                 variants={widthVariants}
                 initial="initial"

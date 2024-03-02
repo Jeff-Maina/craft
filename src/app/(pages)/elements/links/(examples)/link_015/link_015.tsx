@@ -15,7 +15,7 @@ const Link015 = () => {
       <div
         onMouseEnter={hoverButton}
         onMouseLeave={unHoveredButton}
-        className="font-alfa text-6xl relative cursor-pointer leading-none origin-left group/link"
+        className="font-alfa text-5xl md:text-6xl relative cursor-pointer leading-none origin-left group/link"
       >
         <div className="flex select-none origin-left rotate-0 group-hover/link:-rotate-[4deg] transition-all duration-300">
           {Array.from("Bordeaux").map((char, index) => {
