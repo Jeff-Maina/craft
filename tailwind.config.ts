@@ -71,6 +71,7 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        'ping-slow': 'ping 1.2s cubic-bezier(0, 0, 0.2, 1) infinite',
       },
       fontFamily: {
         "campton-bold": "Campton Bold",
@@ -80,7 +81,8 @@ const config = {
         "satoshi-medium": "Satoshi Medium",
         "satoshi-bold": "Satoshi Bold",
         "fira": "Fira Code",
-        "alfa": "Alfa Slab One"
+        "alfa": "Alfa Slab One",
+        "inter": "Inter"
       }
     },
   },
