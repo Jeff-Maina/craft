@@ -8,6 +8,7 @@ import Button007 from "./(examples)/button_007/button_007";
 import Button008 from "./(examples)/button_008/button_008";
 import Button009 from "./(examples)/button_009/button_009";
 import Button010 from "./(examples)/button_010/button_010";
+import Button011 from "./(examples)/button_011/button_011";
 
 type Button = { component: JSX.Element; draft: boolean };
 
@@ -22,6 +23,7 @@ export const ButtonsList: Array<Button> = [
   { component: <Button008 />, draft: false },
   { component: <Button009 />, draft: false },
   { component: <Button010 />, draft: false },
+  { component: <Button011 />, draft: false },
 ];
 
 export const FinishedButtons = ButtonsList.filter(
