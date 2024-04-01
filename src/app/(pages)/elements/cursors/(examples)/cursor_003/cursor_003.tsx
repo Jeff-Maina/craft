@@ -88,7 +88,9 @@ const Cursor003 = () => {
               duration: 0.3,
             },
           }}
-          className={`aspect-square bg-[#5e68f9] absolute inset-0 rounded-full pointer-events-none z-50 transition-size grid place-items-center overflow-hidden`}
+          className={`aspect-square ${
+            hoverItem === "video" ? "bg-red-500" : "bg-[#5e68f9]"
+          } absolute inset-0 rounded-full pointer-events-none z-50 transition-size grid place-items-center overflow-hidden transition-colors duration-200`}
         >
           <AnimatePresence mode="wait">
             {isHovering && (

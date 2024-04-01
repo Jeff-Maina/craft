@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, MouseEvent, MouseEventHandler } from "react";
+import { useState, useRef, MouseEvent, MouseEventHandler, FC } from "react";
 import ElementLayout from "../../../ElementLayout";
 import { tabs } from "./codeblock";
 import { motion, useAnimate } from "framer-motion";
@@ -9,7 +9,7 @@ interface BubbleElement extends HTMLElement {
   style: CSSStyleDeclaration;
 }
 
-const Button011 = () => {
+const Button011:FC = () => {
   const [colorCount, setColorCount] = useState(0);
 
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -18,7 +18,7 @@ const Button011 = () => {
   const addBubble = async (el: BubbleElement) =>
     animate(el, { scale: 20 }, { duration: 0.6 });
 
-  const removeBubble = async (el: any) =>
+  const removeBubble = async (el: Element) =>
     animate(el, { opacity: 0 }, { duration: 0.2 });
 
   const elementStyle = "bubble size-8 absolute rounded-full z-[5]";
