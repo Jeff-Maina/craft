@@ -19,7 +19,7 @@ const Navbar003 = () => {
   const moveIndicator = (index: number) => setHoveredLinkIndex(index);
 
   return (
-    <ElementLayout tabs={tabs} dependencies={depndencies} className="!pt-0">
+    <ElementLayout tabs={tabs} dependencies={depndencies} isSection={true} link="https://github.com/Jeff-Maina/craft/tree/main/src/app/(pages)/sections/navbars/(examples)/navbar_003" className="!pt-0">
       <div className="h-full w-full flex justify-end p-8">
         <nav className="max-w-fit relative z-10">
           <div className="flex items-center bg-[#000000ab] text-white rounded-[0.3rem] group/nav backdrop-blur">

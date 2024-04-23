@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { PlayIcon } from "lucide-react";
 import { gsap } from "gsap";
 
@@ -8,7 +8,7 @@ import ElementLayout from "../../../ElementLayout";
 import { tabs } from "./codeblock";
 import { MouseEvent, MouseEventHandler, useRef, useState } from "react";
 
-const textVariants = {
+const textVariants: Variants = {
   initial: {
     x: 0,
   },
@@ -31,7 +31,7 @@ const textVariants = {
     },
   },
 };
-const textVariants2 = {
+const textVariants2: Variants = {
   initial: {
     x: "-110%",
   },
@@ -54,7 +54,7 @@ const textVariants2 = {
     },
   },
 };
-const lineVariants = {
+const lineVariants: Variants = {
   initial: {
     x: 0,
   },
@@ -76,7 +76,7 @@ const lineVariants = {
     },
   },
 };
-const lineVariants2 = {
+const lineVariants2: Variants = {
   initial: {
     x: "-110%",
   },
@@ -98,7 +98,7 @@ const lineVariants2 = {
     },
   },
 };
-const iconVariants = {
+const iconVariants: Variants = {
   initial: {
     scale: 0,
   },
@@ -109,8 +109,7 @@ const iconVariants = {
     scale: 1,
   },
 };
-
-const SvgVariants = {
+const SvgVariants: Variants = {
   initial: {
     transform: "translate(-130%,130%)",
     opacity: 0,

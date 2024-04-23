@@ -8,7 +8,6 @@ import { tabs } from "./codeblock";
 import { MouseEvent, useRef, useState } from "react";
 
 //animation variants;
-
 const modalVariants = {
   initial: {
     opacity: 0,
@@ -31,8 +30,13 @@ const modalVariants = {
   },
 };
 
+type Imagetype = {
+  album: string;
+  imagePath: string;
+};
+
 // data
-const images = [
+const images: Array<Imagetype> = [
   {
     album: "TNS",
     imagePath:

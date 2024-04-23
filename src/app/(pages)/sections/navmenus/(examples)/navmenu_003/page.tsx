@@ -116,6 +116,13 @@ const Page = () => {
         />
         <NavMenu closeMenu={closeMenu} isMenuActive={isMenuActive} />
       </nav>
+      <a
+        target="_blank"
+        href="https://github.com/Jeff-Maina/craft/tree/main/src/app/(pages)/sections/navmenus/(examples)/navmenu_003"
+        className="fixed right-4 bottom-4 z-[999] underline"
+      >
+        source code
+      </a>
     </section>
   );
 };

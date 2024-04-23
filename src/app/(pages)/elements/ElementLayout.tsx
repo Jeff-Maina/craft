@@ -2,7 +2,7 @@
 
 // 3rd party libraries
 import { FC, useState } from "react";
-import { Code } from "lucide-react";
+import { Code, Link } from "lucide-react";
 
 // ***
 import CodeModal from "@/components/codeblock/CodeModal";
@@ -13,17 +13,36 @@ const ElementLayout: FC<ButtonProps> = ({
   tabs,
   dependencies,
   className,
+  isSection,
+  link,
 }) => {
   const [isModalActive, setModalActive] = useState(false);
   const toggleModal = () => setModalActive(!isModalActive);
   const closeModal = () => setModalActive(false);
-  
+
   const modalProps = {
     isModalActive,
     closeModal,
     tabs,
     dependencies,
   };
+
+  const el = isSection ? (
+    <a
+    target="_blank"
+      href={`${link}`}
+      className="font-satoshi-medium h-full aspect-square grid place-items-center"
+    >
+      <Link className="h-[18px] stroke-zinc-500 w-[18px] md:stroke-zinc-300 group-hover/card:stroke-zinc-800 transition-all duration-150" />
+    </a>
+  ) : (
+    <button
+      onClick={toggleModal}
+      className="font-satoshi-medium h-full aspect-square grid place-items-center"
+    >
+      <Code className="h-[18px] stroke-zinc-500 w-[18px] md:stroke-zinc-300 group-hover/card:stroke-zinc-800 transition-all duration-150" />
+    </button>
+  );
 
   return (
     <article
@@ -33,12 +52,7 @@ const ElementLayout: FC<ButtonProps> = ({
         {children}
       </div>
       <div className="flex justify-end max-w-fit items-center h-[15%] absolute bottom-0 right-0 z-[15]">
-        <button
-          onClick={toggleModal}
-          className="font-satoshi-medium h-full aspect-square grid place-items-center"
-        >
-          <Code className="h-[18px] stroke-zinc-500 w-[18px] md:stroke-zinc-300 group-hover/card:stroke-zinc-800 transition-all duration-150" />
-        </button>
+        {el}
       </div>
       <CodeModal modalProps={modalProps} />
     </article>

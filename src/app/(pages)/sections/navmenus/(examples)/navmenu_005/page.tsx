@@ -53,6 +53,13 @@ const page: FC = () => {
         <NavMenu isMenuActive={isMenuActive} closeMenu={closeMenu} />
       </nav>
       <Mask isMenuActive={isMenuActive} closeMenu={closeMenu} />
+      <a
+        target="_blank"
+        href="https://github.com/Jeff-Maina/craft/tree/main/src/app/(pages)/sections/navmenus/(examples)/navmenu_005"
+        className="fixed right-4 bottom-4 text-black z-[999] underline"
+      >
+        source code
+      </a>
     </section>
   );
 };

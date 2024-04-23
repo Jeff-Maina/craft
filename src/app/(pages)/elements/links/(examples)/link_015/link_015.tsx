@@ -9,16 +9,24 @@ const Link015 = () => {
   const [isButtonHovered, setButtonHovered] = useState(false);
   const hoverButton = () => setButtonHovered(true);
   const unHoveredButton = () => setButtonHovered(false);
+  const word: string = "Bordeaux";
+
+  const dependencies = [
+    {
+      label: "Framer motion",
+      command: "npm install framer-motion",
+    },
+  ];
 
   return (
-    <ElementLayout tabs={tabs} dependencies={[]}>
+    <ElementLayout tabs={tabs} dependencies={dependencies}>
       <div
         onMouseEnter={hoverButton}
         onMouseLeave={unHoveredButton}
         className="font-alfa text-5xl md:text-6xl relative cursor-pointer leading-none origin-left group/link"
       >
         <div className="flex select-none origin-left rotate-0 group-hover/link:-rotate-[4deg] transition-all duration-300">
-          {Array.from("Bordeaux").map((char, index) => {
+          {Array.from(word).map((char, index) => {
             return (
               <motion.div
                 initial={{

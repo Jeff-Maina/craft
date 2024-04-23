@@ -16,6 +16,8 @@ interface ButtonProps {
     tabs: Array<tabProps>;
     className?: string;
     dependencies: Array<dependency>;
+    isSection?: boolean;
+    link?: string;
 }
 
 export type {

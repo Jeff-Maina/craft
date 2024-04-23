@@ -116,6 +116,8 @@ const Navbar002: FC = () => {
     <ElementLayout
       dependencies={dependencies}
       tabs={tabs}
+      isSection={true}
+      link="https://github.com/Jeff-Maina/craft/tree/main/src/app/(pages)/sections/navbars/(examples)/navbar_002"
       className="!pt-0 border-none"
     >
       <div className="w-full h-80 md:!h-full flex items-start justify-center pt-5 lg:pt-10 text-sm xl:text-lg xl:pr-20 bg-[#c6c0b6]">

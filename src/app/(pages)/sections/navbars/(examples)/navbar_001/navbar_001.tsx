@@ -249,6 +249,8 @@ const Navbar001 = () => {
     <ElementLayout
       dependencies={dependencies}
       tabs={tabs}
+      isSection={true}
+      link='https://github.com/Jeff-Maina/craft/tree/main/src/app/(pages)/sections/navbars/(examples)/navbar_001'
       className="!pt-0 !h-[26rem] md:!h-auto border-none !rounded-3xl overflow-hidden"
     >
       <div

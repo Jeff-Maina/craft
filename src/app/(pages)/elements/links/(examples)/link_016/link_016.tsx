@@ -1,11 +1,11 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, FC } from "react";
 import ElementLayout from "../../../ElementLayout";
 import { tabs } from "./codeblock";
 import { gsap } from "gsap";
 
-const Link016 = () => {
+const Link016:FC = () => {
   const bubbleRef = useRef<HTMLDivElement | null>(null);
   const parentRef = useRef<HTMLDivElement | null>(null);
 
